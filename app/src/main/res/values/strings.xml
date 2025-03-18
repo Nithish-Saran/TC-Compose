@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">ComposeTamilCalendar2025</string>
+
+    <string-array name="tamil_letters">
+        <!-- Uyir Ezhuthukkal (Vowels) -->
+        <item>அ</item> <item>ஆ</item> <item>இ</item> <item>ஈ</item> <item>உ</item> <item>ஊ</item>
+        <item>எ</item> <item>ஏ</item> <item>ஐ</item> <item>ஒ</item> <item>ஓ</item> <item>ஔ</item>
+
+        <!-- Mei Ezhuthukkal (Consonants) -->
+        <item>க்</item> <item>ச்</item> <item>ட்</item> <item>த்</item> <item>ப்</item> <item>ற்</item>
+        <item>ங்</item> <item>ஞ்</item> <item>ண்</item> <item>ந்</item> <item>ம்</item> <item>ன்</item>
+        <item>ய்</item> <item>ர்</item> <item>ல்</item> <item>வ்</item> <item>ழ்</item> <item>ள்</item>
+
+        <!-- Uyirmei Ezhuthukkal (Vowel-Consonant Combinations) -->
+        <item>க</item> <item>கா</item> <item>கி</item> <item>கீ</item> <item>கு</item> <item>கூ</item>
+        <item>கெ</item> <item>கே</item> <item>கை</item> <item>கொ</item> <item>கோ</item> <item>கௌ</item>
+
+        <item>ச</item> <item>சா</item> <item>சி</item> <item>சீ</item> <item>சு</item> <item>சூ</item>
+        <item>செ</item> <item>சே</item> <item>சை</item> <item>சொ</item> <item>சோ</item> <item>சௌ</item>
+
+        <item>ட</item> <item>டா</item> <item>டி</item> <item>டீ</item> <item>டு</item> <item>டூ</item>
+        <item>டெ</item> <item>டே</item> <item>டை</item> <item>டொ</item> <item>டோ</item> <item>டௌ</item>
+
+        <item>த</item> <item>தா</item> <item>தி</item> <item>தீ</item> <item>து</item> <item>தூ</item>
+        <item>தெ</item> <item>தே</item> <item>தை</item> <item>தொ</item> <item>தோ</item> <item>தௌ</item>
+
+        <item>ப</item> <item>பா</item> <item>பி</item> <item>பீ</item> <item>பு</item> <item>பூ</item>
+        <item>பெ</item> <item>பே</item> <item>பை</item> <item>பொ</item> <item>போ</item> <item>பௌ</item>
+
+        <item>ற</item> <item>றா</item> <item>றி</item> <item>றீ</item> <item>று</item> <item>றூ</item>
+        <item>றெ</item> <item>றே</item> <item>றை</item> <item>றொ</item> <item>றோ</item> <item>றௌ</item>
+
+        <item>ஞ</item> <item>ஞா</item> <item>ஞி</item> <item>ஞீ</item> <item>ஞு</item> <item>ஞூ</item>
+        <item>ஞெ</item> <item>ஞே</item> <item>ஞை</item> <item>ஞொ</item> <item>ஞோ</item> <item>ஞௌ</item>
+
+        <item>ம</item> <item>மா</item> <item>மி</item> <item>மீ</item> <item>மு</item> <item>மூ</item>
+        <item>மெ</item> <item>மே</item> <item>மை</item> <item>மொ</item> <item>மோ</item> <item>மௌ</item>
+
+        <item>ய</item> <item>யா</item> <item>யி</item> <item>யீ</item> <item>யு</item> <item>யூ</item>
+        <item>யெ</item> <item>யே</item> <item>யை</item> <item>யொ</item> <item>யோ</item> <item>யௌ</item>
+
+        <item>ர</item> <item>ரா</item> <item>ரி</item> <item>ரீ</item> <item>ரு</item> <item>ரூ</item>
+        <item>ரெ</item> <item>ரே</item> <item>ரை</item> <item>ரொ</item> <item>ரோ</item> <item>ரௌ</item>
+
+        <item>ல</item> <item>லா</item> <item>லி</item> <item>லீ</item> <item>லு</item> <item>லூ</item>
+        <item>லெ</item> <item>லே</item> <item>லை</item> <item>லொ</item> <item>லோ</item> <item>லௌ</item>
+
+        <item>ள</item> <item>ளா</item> <item>ளி</item> <item>ளீ</item> <item>ளு</item> <item>ளூ</item>
+        <item>ளெ</item> <item>ளே</item> <item>ளை</item> <item>ளொ</item> <item>ளோ</item> <item>ளௌ</item>
+
+        <item>ழ</item> <item>ழா</item> <item>ழி</item> <item>ழீ</item> <item>ழு</item> <item>ழூ</item>
+        <item>ழெ</item> <item>ழே</item> <item>ழை</item> <item>ழொ</item> <item>ழோ</item> <item>ழௌ</item>
+
+        <item>ங</item> <item>ஙா</item> <item>ஙி</item> <item>ஙீ</item> <item>ஙு</item> <item>ஙூ</item>
+        <item>ஙெ</item> <item>ஙே</item> <item>ஙை</item> <item>ஙொ</item> <item>ஙோ</item> <item>ஙௌ</item>
+
+        <item>ண</item> <item>ணா</item> <item>ணி</item> <item>ணீ</item> <item>ணு</item> <item>ணூ</item>
+        <item>ணெ</item> <item>ணே</item> <item>ணை</item> <item>ணொ</item> <item>ணோ</item> <item>ணௌ</item>
+
+        <item>ந</item> <item>நா</item> <item>நி</item> <item>நீ</item> <item>நு</item> <item>நூ</item>
+        <item>நெ</item> <item>நே</item> <item>நை</item> <item>நொ</item> <item>நோ</item> <item>நௌ</item>
+
+        <item>ன</item> <item>னா</item> <item>னி</item> <item>னீ</item> <item>னு</item> <item>னூ</item>
+        <item>னெ</item> <item>னே</item> <item>னை</item> <item>னொ</item> <item>னோ</item> <item>னௌ</item>
+
+        <item>வ</item> <item>வா</item> <item>வி</item> <item>வீ</item> <item>வு</item> <item>வூ</item>
+        <item>வெ</item> <item>வே</item> <item>வை</item> <item>வொ</item> <item>வோ</item> <item>வௌ</item>
+
+        <item>ஸ்</item> <item>ஸ</item> <item>ஸா</item> <item>ஸி</item> <item>ஸீ</item> <item>ஸு</item> <item>ஸூ</item>
+        <item>ஸெ</item> <item>ஸே</item> <item>ஸை</item> <item>ஸொ</item> <item>ஸோ</item> <item>ஸௌ</item>
+
+        <item>ஷ்</item> <item>ஷ</item> <item>ஷா</item> <item>ஷி</item> <item>ஷீ</item> <item>ஷு</item> <item>ஷூ</item>
+        <item>ஷெ</item> <item>ஷே</item> <item>ஷை</item> <item>ஷொ</item> <item>ஷோ</item> <item>ஷௌ</item>
+
+        <item>ஹ்</item> <item>ஹ</item> <item>ஹா</item> <item>ஹி</item> <item>ஹீ</item> <item>ஹு</item> <item>ஹூ</item>
+        <item>ஹெ</item> <item>ஹே</item> <item>ஹை</item> <item>ஹொ</item> <item>ஹோ</item> <item>ஹௌ</item>
+
+
+        <!-- Grantha Letters -->
+        <item>ஜ</item> <item>ஜா</item> <item>ஜி</item> <item>ஜீ</item> <item>ஜு</item> <item>ஜூ</item>
+        <item>ஸ</item> <item>ஷ</item> <item>ஹ</item> <item>க்ஷ</item>
+
+        <item>ஸா</item> <item>ஸி</item> <item>ஸீ</item> <item>ஸு</item> <item>ஸூ</item>
+        <item>ஸெ</item> <item>ஸே</item> <item>ஸை</item> <item>ஸொ</item> <item>ஸோ</item> <item>ஸௌ</item>
+
+        <item>ஷா</item> <item>ஷி</item> <item>ஷீ</item> <item>ஷு</item> <item>ஷூ</item>
+        <item>ஷெ</item> <item>ஷே</item> <item>ஷை</item> <item>ஷொ</item> <item>ஷோ</item> <item>ஷௌ</item>
+
+        <item>ஹா</item> <item>ஹி</item> <item>ஹீ</item> <item>ஹு</item> <item>ஹூ</item>
+        <item>ஹெ</item> <item>ஹே</item> <item>ஹை</item> <item>ஹொ</item> <item>ஹோ</item> <item>ஹௌ</item>
+
+        <item>க்ஷா</item> <item>க்ஷி</item> <item>க்ஷீ</item> <item>க்ஷு</item> <item>க்ஷூ</item>
+        <item>க்ஷெ</item> <item>க்ஷே</item> <item>க்ஷை</item> <item>க்ஷொ</item> <item>க்ஷோ</item> <item>க்ஷௌ</item>
+    </string-array>
+
+    <string-array name="tamil_months_gregorian">
+        <item>ஜனவரி</item>
+        <item>பிப்ரவரி</item>
+        <item>மார்ச்</item>
+        <item>ஏப்ரல்</item>
+        <item>மே</item>
+        <item>ஜூன்</item>
+        <item>ஜூலை</item>
+        <item>ஆகஸ்ட்</item>
+        <item>செப்டம்பர்</item>
+        <item>அக்டோபர்</item>
+        <item>நவம்பர்</item>
+        <item>டிசம்பர்</item>
+    </string-array>
+
+    <string-array name="rewind_categories">
+        <item>முக்கிய நிகழ்வுகள்</item>
+        <item>இந்தியா</item>
+        <item>உலகம்</item>
+        <item>அரசியல்</item>
+        <item>உலக சினிமா</item>
+        <item>விளையாட்டு</item>
+    </string-array>
+
+</resources>
