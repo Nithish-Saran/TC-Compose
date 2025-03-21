@@ -28,7 +28,7 @@ fun ListDialog(
                         heading = "தேர்வு செய்யவும்",
                         bgColor = colorPrimaryDark,
                         textColor = colorAccent,
-                        withBack = false
+                        onBackReq = {}
                     )
                     CommonList(items = titles) {
                         onReturn()

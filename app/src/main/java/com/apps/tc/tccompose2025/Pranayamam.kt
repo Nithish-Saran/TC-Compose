@@ -38,7 +38,7 @@ fun Pranayamam() {
             heading = "பிராணாயாமம்",
             bgColor = Color(0xFF36006E),
             textColor = colorPrimary,
-            withBack = false
+            onBackReq = {}
         )
         GridMenu(menuItems) { }
     }

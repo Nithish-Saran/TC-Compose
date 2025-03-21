@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ComposeTamilCalendar2025</string>
+    <string name="app_name">TC</string>
 
     <string-array name="tamil_letters">
         <!-- Uyir Ezhuthukkal (Vowels) -->

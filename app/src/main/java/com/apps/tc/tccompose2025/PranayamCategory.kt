@@ -48,7 +48,8 @@ fun PranayamamCategory() {
             Header(
                 heading = "பிராணாயாமம்",
                 bgColor = actBeautyDark,
-                textColor = colorAccent
+                textColor = colorAccent,
+                onBackReq = {}
             )
             Column(
                 modifier = Modifier

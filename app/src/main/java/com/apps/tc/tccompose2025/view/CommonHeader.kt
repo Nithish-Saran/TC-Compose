@@ -1,6 +1,7 @@
 package com.apps.tc.tccompose2025.view
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,7 +26,7 @@ fun Header(
     heading: String,
     bgColor: Color,
     textColor: Color = colorWhite,
-    withBack: Boolean = true
+    onBackReq: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -33,16 +34,21 @@ fun Header(
             .background(bgColor),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (withBack) {
-            Icon(
-                imageVector = Icons.Default.ArrowBack,
-                contentDescription = "Main Action",
-                tint = colorWhite,
-                modifier = Modifier
-                    .padding(start = 8.dp)
-                    .size(28.dp)
-            )
-        }
+        Icon(
+            imageVector = Icons.Default.ArrowBack,
+            contentDescription = "Main Action",
+            tint = colorWhite,
+            modifier = Modifier
+                .padding(start = 8.dp)
+                .size(28.dp)
+                .clickable(
+                    enabled = true,
+                    onClick = {
+                        onBackReq()
+                    }
+                )
+        )
+
         Text(
             text = heading,
             color = textColor,
@@ -59,5 +65,9 @@ fun Header(
 @Composable
 @Preview( showSystemUi = true, showBackground = true)
 fun PreviewHeader() {
-    Header("Heading", colorPrimary)
+    Header(
+        "Heading", colorPrimary,
+        textColor = colorPrimary,
+        onBackReq = {}
+    )
 }

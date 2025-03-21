@@ -27,6 +27,7 @@ fun BabyNamesList() {
             heading = "குழந்தை பெயர்கள்",
             bgColor = Color(0xFF36006E),
             textColor = colorPrimary,
+            onBackReq = {}
         )
         Text(
             text = "* Please tap on the names, to share it!",

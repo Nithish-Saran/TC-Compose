@@ -23,7 +23,7 @@ fun BabyNames() {
             heading = "குழந்தை பெயர்கள்",
             bgColor = Color(0xFF36006E),
             textColor = colorPrimary,
-            withBack = false
+            onBackReq = {}
         )
         GridMenu(emptyList()) { }   //todo:handle
     }

@@ -114,19 +114,6 @@ enum class Rasi(val value: Int) {
     }
 }
 
-fun JSONArray.objectArray(): Array<JSONObject> {
-    val objects = mutableListOf<JSONObject>()
-    repeat(this.length()) { objects.add(this.getJSONObject(it)) }
-    return objects.toTypedArray()
-}
-
-fun JSONObject.objectArray(arg: String): Array<JSONObject> {
-    val objects = mutableListOf<JSONObject>()
-    val jsonArray = this.getJSONArray(arg)
-    repeat(jsonArray.length()) { objects.add(jsonArray.getJSONObject(it)) }
-    return objects.toTypedArray()
-}
-
 fun loadJsonFromAssets(context: Context, fileName: String): String {
     return context.assets.open(fileName).use { inputStream ->
         InputStreamReader(inputStream).readText()
@@ -154,4 +141,57 @@ fun ComponentActivity.setStatusBarColor(color: Int) {
 
     // Apply light icons on the status bar
     windowInsetsController.isAppearanceLightStatusBars = false
+}
+
+
+/**
+ * JSONObject related util methods
+ */
+fun JSONObject.nullInt(key: String): Int? =
+    if (this.has(key) && !this.isNull(key)) this.getInt(key) else null
+fun JSONObject.nullDouble(key: String): Double? =
+    if (this.has(key) && !this.isNull(key)) this.getDouble(key) else null
+fun JSONObject.nullString(key: String): String? =
+    if (this.has(key) && !this.isNull(key)) this.getString(key) else null
+fun JSONObject.nullBool(key: String): Boolean? =
+    if (this.has(key) && !this.isNull(key)) this.getBoolean(key) else null
+fun JSONObject.nullObj(key: String): JSONObject? =
+    if (this.has(key) && !this.isNull(key)) this.getJSONObject(key) else null
+fun JSONObject.nullArray(key: String): JSONArray? =
+    if (this.has(key) && !this.isNull(key)) this.getJSONArray(key) else null
+
+fun JSONArray.stringArray() = (0 until this.length()).map { this.getString(it) }.toTypedArray()
+fun JSONArray.intArray() = (0 until this.length()).map { this.getInt(it) }.toTypedArray()
+fun JSONArray.objectArray(): Array<JSONObject> = (0 until this.length()).map {
+    this.getJSONObject(it)
+}.toTypedArray()
+
+fun JSONArray.jsonArrayArray(): Array<JSONArray> = (0 until this.length()).map {
+    this.optJSONArray(it)
+}.toTypedArray()
+
+fun JSONArray.longArray() = (0 until this.length()).map { this.getLong(it) }.toTypedArray()
+
+fun JSONObject.intArray(arg: String): Array<Int> = try {
+    with(getJSONArray(arg)) { intArray() }
+} catch (e: Exception) {
+    emptyArray()
+}
+
+fun JSONObject.stringArray(arg: String): Array<String> = try {
+    with(getJSONArray(arg)) { stringArray() }
+} catch (e: Exception) {
+    emptyArray()
+}
+
+fun JSONObject.objectArray(arg: String): Array<JSONObject> = try {
+    with(getJSONArray(arg)) { objectArray() }
+} catch (e: Exception) {
+    emptyArray()
+}
+
+fun JSONObject.longArray(arg: String): Array<Long> = try {
+    with(getJSONArray(arg)) { longArray() }
+} catch (e: Exception) {
+    emptyArray()
 }

@@ -3,6 +3,7 @@ package com.apps.tc.tccompose2025.view
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,14 +30,21 @@ fun CommonList(items: List<String>, onReturn: (Int) -> Unit) {
         horizontalAlignment = Alignment.Start,
     ) {
         itemsIndexed(items) { index, value ->
-            Text(
-                text = value,
-                style = MaterialTheme.typography.bodyMedium,
+            Column(
                 modifier = Modifier
-                    .clickable { onReturn(index) }
-                    .padding(8.dp,)
-            )
-            HorizontalDivider()
+                    .fillMaxWidth()
+                    .clickable {
+                        onReturn(index)
+                    }
+            ) {
+                Text(
+                    text = value,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier
+                        .padding(8.dp,)
+                )
+                HorizontalDivider()
+            }
         }
     }
 }

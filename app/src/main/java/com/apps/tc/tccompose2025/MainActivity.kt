@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.apps.tc.tccompose2025.dialog.BabyNameDialog
@@ -36,17 +37,30 @@ class MainActivity : ComponentActivity() {
 
                 Scaffold(
                     modifier = Modifier.fillMaxSize()
-                ){
-                    VirtualPooja()
-                    /*NavHost(
+                ){innerPadding ->
+                    NavHost(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(innerPadding),
                         navController = navController,
-                        startDestination = ""
+                        startDestination = Screen.SplashScreen.route
                     ) {
+                        composable(Screen.SplashScreen.route) {
+                            SplashScreen {
+                                navController.navigate(Screen.Palankal.route) {
+                                    popUpTo(Screen.SplashScreen.route) { inclusive = true }
+                                }
+                            }
+                        }
 
-                    }*/
+                        composable(
+                            route = Screen.Palankal.route,
+                        ) {
+                            Palankal(1) {
+                                navController.navigate(Screen.Palankal.route)
+                            }
+                        }
+                    }
                 }
             }
         }

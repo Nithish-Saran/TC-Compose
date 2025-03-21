@@ -23,7 +23,7 @@ fun Riddles() {
             heading = "விடுகதை விளயாட்டு",
             bgColor = Color(0xFFB51E25),
             textColor = colorPrimary,
-            withBack = false
+            onBackReq = {}
         )
         GridMenu(emptyList()) { }   //todo:handle
     }

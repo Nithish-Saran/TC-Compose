@@ -68,7 +68,8 @@ fun RiddlesPlay(selectedId: Int) {
     Header(
         heading = title,
         bgColor = colorPrimaryDark,
-        textColor = colorAccent
+        textColor = colorAccent,
+        onBackReq = {}
     )
 
     Column(

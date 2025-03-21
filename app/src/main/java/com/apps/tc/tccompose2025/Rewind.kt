@@ -55,7 +55,7 @@ fun Rewind() {
             heading = "Rewind 2023",
             bgColor = MaterialTheme.colorScheme.primary,
             textColor = colorAccent,
-            withBack = false
+            onBackReq = {}
         )
 
         ScrollableTabRow(
