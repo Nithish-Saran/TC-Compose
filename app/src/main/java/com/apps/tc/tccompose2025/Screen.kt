@@ -14,4 +14,22 @@ sealed class Screen(
     data object Palankal : Screen(
         route = "palankal"
     )
+    data object Numerology : Screen(
+        route = "numerology"
+    )
+    data object Wishes : Screen(
+        route = "wishes"
+    )
+    data object ParigaraThalangal : Screen(
+        route = "parigaraThalangal"
+    )
+    data object WebScreen : Screen(
+        route = "web/{mode}/{uri}",
+        navArguments = listOf(
+            navArgument("mode") { type = NavType.IntType },
+            navArgument("uri") { type = NavType.StringType },
+        )
+    ) {
+        fun createRoute(mode: Int, uri: String) = "web/$mode/$uri"
+    }
 }

@@ -26,7 +26,7 @@ fun CommonList(items: List<String>, onReturn: (Int) -> Unit) {
             .background(
                 color = colorPrimary
             )
-            .fillMaxSize(),
+            .fillMaxWidth(),
         horizontalAlignment = Alignment.Start,
     ) {
         itemsIndexed(items) { index, value ->
@@ -41,7 +41,7 @@ fun CommonList(items: List<String>, onReturn: (Int) -> Unit) {
                     text = value,
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier
-                        .padding(8.dp,)
+                        .padding(vertical = 8.dp, horizontal = 16.dp)
                 )
                 HorizontalDivider()
             }

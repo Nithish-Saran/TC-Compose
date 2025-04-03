@@ -15,7 +15,9 @@ import androidx.compose.ui.window.DialogProperties
 fun AppDialog(content: @Composable () -> Unit, onDismissRequest: () -> Unit) {
     Dialog(
         onDismissRequest = { onDismissRequest() },
-        properties = DialogProperties(usePlatformDefaultWidth = false),
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            usePlatformDefaultWidth = false),
     ) {
         Card(
             modifier = Modifier

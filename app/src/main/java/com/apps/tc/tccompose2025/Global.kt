@@ -195,3 +195,18 @@ fun JSONObject.longArray(arg: String): Array<Long> = try {
 } catch (e: Exception) {
     emptyArray()
 }
+
+enum class WebScreenMode(val value: Int) {
+    Internal(0),
+    External(1),
+    Assets(2);
+}
+
+val Int.webScreenMode: WebScreenMode get() {
+    return when (this) {
+        0 -> WebScreenMode.Internal
+        1 -> WebScreenMode.External
+        else -> WebScreenMode.Assets
+    }
+}
+

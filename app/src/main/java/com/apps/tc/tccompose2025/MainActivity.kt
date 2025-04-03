@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,9 +19,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.apps.tc.tccompose2025.dialog.BabyNameDialog
+import com.apps.tc.tccompose2025.Numerology.Numerology
+import com.apps.tc.tccompose2025.Palankal.Palankal
+import com.apps.tc.tccompose2025.Parigaram.ParigaraThalangal
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
-import com.apps.tc.tccompose2025.ui.theme.colorPrimary
+import com.apps.tc.tccompose2025.ui.theme.colorGoldBg
+import com.apps.tc.tccompose2025.view.WebScreen
+import com.apps.tc.tccompose2025.Wishes.Wishes
+import java.net.URLEncoder
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -36,7 +40,11 @@ class MainActivity : ComponentActivity() {
                 val currentDestination by navController.currentBackStackEntryAsState()
 
                 Scaffold(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            color = colorGoldBg
+                        )
                 ){innerPadding ->
                     NavHost(
                         modifier = Modifier
@@ -47,7 +55,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.Palankal.route) {
+                                navController.navigate(Screen.ParigaraThalangal.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -56,9 +64,50 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.Palankal.route,
                         ) {
-                            Palankal(1) {
+                            Palankal(2) {
                                 navController.navigate(Screen.Palankal.route)
                             }
+                        }
+
+                        composable(
+                            route = Screen.Numerology.route,
+                        ) {
+                            Numerology {
+                                navController.navigate(Screen.Numerology.route)
+                            }
+                        }
+
+                        composable(
+                            route = Screen.Wishes.route,
+                        ) {
+                            Wishes {
+                                navController.navigate(Screen.Wishes.route)
+                            }
+                        }
+
+                        composable(
+                            route = Screen.ParigaraThalangal.route,
+                        ) {
+                            ParigaraThalangal(
+                                onReturn = {
+                                    navController.navigate(
+                                        Screen.WebScreen.createRoute(
+                                            WebScreenMode.Assets.value,
+                                            URLEncoder.encode(it, "utf-8")
+                                        )
+                                    )
+                                },
+                                onBackReq = {}
+                            )
+                        }
+
+                        composable(
+                            route = Screen.WebScreen.route,
+                            arguments = Screen.WebScreen.navArguments,
+                        ) { backStackEntry ->
+                            val mode = (backStackEntry.arguments?.getInt("mode") ?: 0).webScreenMode
+                            val uri = backStackEntry.arguments?.getString("uri") ?: ""
+                            WebScreen(mode = mode, uri = uri)
                         }
                     }
                 }
