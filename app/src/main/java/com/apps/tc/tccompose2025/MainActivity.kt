@@ -19,13 +19,18 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.apps.tc.tccompose2025.Numerology.Numerology
-import com.apps.tc.tccompose2025.Palankal.Palankal
-import com.apps.tc.tccompose2025.Parigaram.ParigaraThalangal
+import com.apps.tc.tccompose2025.models.RewindData
+import com.apps.tc.tccompose2025.numerology.Numerology
+import com.apps.tc.tccompose2025.palankal.Palankal
+import com.apps.tc.tccompose2025.parigaram.ParigaraThalangal
+import com.apps.tc.tccompose2025.rewind.Rewind
+import com.apps.tc.tccompose2025.rewind.YearBookDetail
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
 import com.apps.tc.tccompose2025.ui.theme.colorGoldBg
 import com.apps.tc.tccompose2025.view.WebScreen
-import com.apps.tc.tccompose2025.Wishes.Wishes
+import com.apps.tc.tccompose2025.wishes.Wishes
+import kotlinx.serialization.json.Json
+import java.net.URLDecoder
 import java.net.URLEncoder
 
 class MainActivity : ComponentActivity() {
@@ -55,7 +60,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.ParigaraThalangal.route) {
+                                navController.navigate(Screen.Rewind.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -109,6 +114,30 @@ class MainActivity : ComponentActivity() {
                             val uri = backStackEntry.arguments?.getString("uri") ?: ""
                             WebScreen(mode = mode, uri = uri)
                         }
+
+                        composable(
+                            route = Screen.Rewind.route
+                        ) {
+                            Rewind(2024) {
+                                navController.navigate(
+                                    Screen.YearBook.createRoute(it, 2024)
+                                )
+                            }
+                        }
+
+                        composable(
+                            route = Screen.YearBook.route,
+                            arguments = Screen.YearBook.navArguments
+                        ) { backStackEntry ->
+                            val json = backStackEntry.arguments?.getString("data") ?: ""
+                            val decodedJson = URLDecoder.decode(json, "utf-8") // Decode JSON from URL
+                            val rewindData = Json.decodeFromString<RewindData>(decodedJson) // Convert back to object
+
+                            val year = backStackEntry.arguments?.getInt("year") ?: 2024  // Fetch dynamic year
+
+                            YearBookDetail(rewindData, year) // Pass decoded data and correct year
+                        }
+
                     }
                 }
             }
