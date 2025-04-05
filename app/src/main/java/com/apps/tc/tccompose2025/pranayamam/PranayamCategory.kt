@@ -141,16 +141,15 @@ private fun BannerSection() {
                 )
             }
 
-            if (showDialog) {
-                CommonAppDialog(
-                    title = "எச்சரிக்கை!",
-                    desc = "",
-                    confirmText = "ஏற்கிறேன்",
-                    cancelText = "பின்செல்",
-                    onConfirm = {},
-                    onCancel = { showDialog = false }
-                )
-            }
+            CommonAppDialog(
+                showDialog = showDialog,
+                title = "எச்சரிக்கை!",
+                desc = "",
+                confirmText = "ஏற்கிறேன்",
+                cancelText = "பின்செல்",
+                onConfirm = {},
+                onCancel = { showDialog = false }
+            )
         }
     }
 }

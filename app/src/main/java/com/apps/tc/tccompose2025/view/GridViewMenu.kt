@@ -4,7 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -15,44 +18,56 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.apps.tc.tccompose2025.R
 import com.apps.tc.tccompose2025.ui.theme.colorPrimary
 
 @Composable
-fun GridMenu(menu: List<Pair<Int, String>>, onItemClick: (Int) -> Unit) {
+fun GridMenu(menu: List<Pair<String, String>>, onItemClick: (Int) -> Unit) {
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(3), // Adjust the column count as needed
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+            .fillMaxWidth(),
         horizontalArrangement = Arrangement.Center,
         verticalArrangement = Arrangement.SpaceBetween,
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 18.dp)
     ) {
         itemsIndexed(menu) { index, value ->
             Column(
                 modifier = Modifier
                     .clickable { onItemClick(index) },
-                verticalArrangement = Arrangement.SpaceBetween,
+                verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
-                    painter = painterResource(value.first),
+                    painter = rememberAsyncImagePainter(
+                        ImageRequest.Builder(LocalContext.current)
+                            .data(value.first)
+                            .crossfade(true)
+                            .build()
+                    ),
                     contentDescription = "image",
                     modifier = Modifier
-                        .padding(top = 12.dp)
                         .size(64.dp)
                 )
+
                 Text(
                     text = value.second,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.labelSmall,
                     color = colorPrimary,
+                    textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .padding(horizontal = 8.dp)
+                        .padding(top = 8.dp)
                 )
+
+                Spacer(modifier = Modifier.height(24.dp))
             }
         }
     }
@@ -76,5 +91,5 @@ fun PreviewGridMenu() {
         Pair(R.drawable.ic_pranayamam_shining_face,  "Pranayammam"),
         Pair(R.drawable.ic_pranayamam_weight_loss,  "Pranayammam"),
     )
-    GridMenu(menuItems, onItemClick = {})
+    GridMenu(listOf(Pair("", "")), onItemClick = {})
 }

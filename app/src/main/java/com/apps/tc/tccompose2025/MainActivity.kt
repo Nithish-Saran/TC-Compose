@@ -20,11 +20,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.apps.tc.tccompose2025.models.RewindData
+import com.apps.tc.tccompose2025.models.RiddlesData
+import com.apps.tc.tccompose2025.notes.Notes
 import com.apps.tc.tccompose2025.numerology.Numerology
 import com.apps.tc.tccompose2025.palankal.Palankal
 import com.apps.tc.tccompose2025.parigaram.ParigaraThalangal
 import com.apps.tc.tccompose2025.rewind.Rewind
 import com.apps.tc.tccompose2025.rewind.YearBookDetail
+import com.apps.tc.tccompose2025.riddles.Riddles
+import com.apps.tc.tccompose2025.riddles.RiddlesPlay
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
 import com.apps.tc.tccompose2025.ui.theme.colorGoldBg
 import com.apps.tc.tccompose2025.view.WebScreen
@@ -34,6 +38,8 @@ import java.net.URLDecoder
 import java.net.URLEncoder
 
 class MainActivity : ComponentActivity() {
+    private val app: App by lazy { application as App }
+
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +66,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.Rewind.route) {
+                                navController.navigate(Screen.Notes.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -136,6 +142,41 @@ class MainActivity : ComponentActivity() {
                             val year = backStackEntry.arguments?.getInt("year") ?: 2024  // Fetch dynamic year
 
                             YearBookDetail(rewindData, year) // Pass decoded data and correct year
+                        }
+
+                        composable(
+                            route = Screen.Riddles.route
+                        ) {
+                            Riddles(
+                                onBackReq = {
+                                    navController.navigate(Screen.Riddles.route)
+                                },
+                                onNextReq = {
+                                    navController.navigate(
+                                        Screen.RiddlesPlay.createRoute(it))
+                                }
+                            )
+                        }
+
+                        composable(
+                            route = Screen.RiddlesPlay.route,
+                            arguments = Screen.RiddlesPlay.navArguments
+                        ) { backStackEntry ->
+                            val json = backStackEntry.arguments?.getString("data") ?: ""
+                            val decodedJson = URLDecoder.decode(json, "utf-8") // Decode JSON from URL
+                            val riddle = Json.decodeFromString<RiddlesData>(decodedJson) // Convert back to object
+
+                            RiddlesPlay(riddle) {
+                                navController.navigate(
+                                    Screen.Riddles.route)
+
+                            }
+                        }
+
+                        composable(
+                            route = Screen.Notes.route,
+                        ) {
+                            Notes(app)
                         }
 
                     }

@@ -41,7 +41,7 @@ fun Pranayamam() {
             textColor = colorPrimary,
             onBackReq = {}
         )
-        GridMenu(menuItems) { }
+        GridMenu(emptyList()) { }
     }
 
 }

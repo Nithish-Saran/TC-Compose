@@ -1,20 +1,25 @@
 package com.apps.tc.tccompose2025.rewind
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
@@ -30,10 +35,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,96 +71,110 @@ fun Rewind(year: Int, onReturn: (RewindData) -> Unit) {
     val pagerState = rememberPagerState { headings.size }
     val scope = rememberCoroutineScope()
 
-
-    Column(
+    Box(
         modifier = Modifier
-            .fillMaxWidth()
-            .background(color = colorPrimary)
-    ) {
-
-        Text(
-            text =  "Rewind $year",
-            color = colorAccent,
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.titleMedium,
+            .fillMaxSize()
+    ){
+        Column(
             modifier = Modifier
-                .background(color = MaterialTheme.colorScheme.primary)
-                .padding(vertical = 8.dp)
                 .fillMaxWidth()
-
-        )
-
-        ScrollableTabRow(
-            selectedTabIndex = pagerState.currentPage,
-            containerColor = colorPrimaryDark,
-            contentColor = colorWhite,
-            modifier = Modifier.fillMaxWidth(),
-            edgePadding = 0.dp,
-            indicator = {
-                SecondaryIndicator(
-                    modifier = Modifier
-                        .tabIndicatorOffset(it[pagerState.currentPage])
-                        .padding(horizontal = 8.dp),
-                    height = 4.dp,
-                    color = colorGoldBg
-                )
-            }
+                .background(color = colorPrimary)
         ) {
-            headings.forEachIndexed { index, letter ->
-                Tab(
-                    selected = pagerState.currentPage == index,
-                    onClick = {
-                        scope.launch {
-                            pagerState.animateScrollToPage(index)
-                        }
-                    },
-                    text = {
-                        Text(
-                            text = letter,
-                            style = MaterialTheme.typography.titleSmall,
-                            textAlign = TextAlign.Center,
-                        )
-                    },
-                )
-            }
-        }
 
-        HorizontalPager(
-            state = pagerState,
-            modifier = Modifier.fillMaxSize()
-        ) { pageIndex ->
-            when(rewindState) {
-                is RewindViewState.Loading -> {
-                    CircularProgressIndicator()
+            Text(
+                text =  "Rewind $year",
+                color = colorAccent,
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier
+                    .background(color = MaterialTheme.colorScheme.primary)
+                    .padding(vertical = 8.dp)
+                    .fillMaxWidth()
+
+            )
+
+            ScrollableTabRow(
+                selectedTabIndex = pagerState.currentPage,
+                containerColor = colorPrimaryDark,
+                contentColor = colorWhite,
+                modifier = Modifier.fillMaxWidth(),
+                edgePadding = 0.dp,
+                indicator = {
+                    SecondaryIndicator(
+                        modifier = Modifier
+                            .tabIndicatorOffset(it[pagerState.currentPage])
+                            .padding(horizontal = 8.dp),
+                        height = 4.dp,
+                        color = colorGoldBg
+                    )
                 }
-                is RewindViewState.Success -> {
-                    RewindHomeList(rewindState.data, year) {
-                        onReturn(it)
+            ) {
+                headings.forEachIndexed { index, letter ->
+                    Tab(
+                        selected = pagerState.currentPage == index,
+                        onClick = {
+                            scope.launch {
+                                pagerState.animateScrollToPage(index)
+                            }
+                        },
+                        text = {
+                            Text(
+                                text = letter,
+                                style = MaterialTheme.typography.titleSmall,
+                                textAlign = TextAlign.Center,
+                            )
+                        },
+                    )
+                }
+            }
+
+            HorizontalPager(
+                state = pagerState,
+                modifier = Modifier.fillMaxSize()
+            ) { pageIndex ->
+                when(rewindState) {
+                    is RewindViewState.Loading -> {
+                        CircularProgressIndicator()
+                        //todo: handle
+                    }
+                    is RewindViewState.Success -> {
+                        RewindHomeList(rewindState.data, year) {
+                            onReturn(it)
+                        }
+                    }
+
+                    is RewindViewState.Error -> {//todo:handle
                     }
                 }
-
-                is RewindViewState.Error -> {}
             }
+
+            ListDialog(
+                titles = months,
+                showDialog = showFilterDialog,
+                onDismiss = {
+                    showFilterDialog = false
+                },
+                onReturn = {
+                    //todo:handle here
+                }
+            )
         }
-
-
-        FloatingButton(
-            image = R.drawable.year_book_filter_btn
-        ) {
-            showFilterDialog = true
-        }
-
-        ListDialog(
-            titles = months,
-            showDialog = showFilterDialog,
-            onDismiss = {
-                showFilterDialog = false
-            },
-            onReturn = {
-                //todo:handle here
-            }
+        Image(
+            painter = painterResource(R.drawable.year_book_filter_btn),
+            contentDescription = "filter",
+            modifier = Modifier
+                .padding(bottom = 8.dp, end = 8.dp)
+                .align(Alignment.BottomEnd)
+                .background(
+                    color = Color.Transparent,
+                    shape = CircleShape
+                )
+                .clickable { showFilterDialog = true }
+                .padding(8.dp)
+                .size(48.dp),
         )
     }
+
 
     LaunchedEffect(pagerState.currentPage) {
         scope.launch {

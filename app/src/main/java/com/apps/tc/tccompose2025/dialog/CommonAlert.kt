@@ -18,14 +18,12 @@ import com.apps.tc.tccompose2025.ui.theme.colorPrimary
 import com.apps.tc.tccompose2025.ui.theme.colorPrimaryDark
 
 @Composable
-fun CommonAppDialog(
-    showDialog: Boolean,
+fun CommonAlertDialog(
     title: String,
     desc: String,
+    showDialog: Boolean,
     confirmText: String,
-    cancelText: String,
     onConfirm: () -> Unit,
-    onCancel: () -> Unit
 ) {
     if (showDialog) {
         AppDialog(
@@ -64,27 +62,17 @@ fun CommonAppDialog(
                             .fillMaxWidth()
                             .clickable { onConfirm() }
                     )
-                    Text(
-                        text = cancelText,
-                        style = MaterialTheme.typography.labelLarge,
-                        textAlign = TextAlign.Center,
-                        color = colorPrimaryDark,
-                        modifier = Modifier
-                            .padding(top = 16.dp)
-                            .clickable { onCancel() }
-                            .fillMaxWidth()
-                    )
                 }
             }
-        ) { onCancel() }
+        ) { onConfirm() }
     }
 
 }
 
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
-fun PreviewAppDialog() {
-    CommonAppDialog(
+fun PreviewAlertDialog() {
+    CommonAlertDialog (
         title = "எச்சரிக்கை!",
         desc = "தமிழ் உலகின் பழமையான மொழிகளில் ஒன்றாகும். " +
                 "இதன் இலக்கிய மரபுகள் பல ஆயிரம் ஆண்டுகளாக தொடர்ந்திருக்கின்றன. " +
@@ -92,9 +80,7 @@ fun PreviewAppDialog() {
                 "பரிணாமங்களை கண்டுள்ளது. தமிழின் கவிதைகள், கதைகள், மற்றும் " +
                 "பழமொழிகள் அதன் பண்பாட்டு வளத்தை வெளிப்படுத்துகின்றன",
         confirmText = "ஏற்கிறேன்",
-        cancelText = "பின்செல்",
         onConfirm = {},
-        onCancel = {},
         showDialog = true
     )
 }

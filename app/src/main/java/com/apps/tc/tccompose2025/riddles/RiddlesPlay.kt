@@ -1,231 +1,226 @@
 package com.apps.tc.tccompose2025.riddles
 
-import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Share
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.*
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.apps.tc.tccompose2025.R
-import com.apps.tc.tccompose2025.dialog.CommonDialog
-import com.apps.tc.tccompose2025.dialog.CorrectAns
-import com.apps.tc.tccompose2025.dialog.WrongAnsDialog
-import com.apps.tc.tccompose2025.loadJsonFromAssets
-import com.apps.tc.tccompose2025.ui.theme.colorAccent
+import com.apps.tc.tccompose2025.dialog.CommonAlertDialog
+import com.apps.tc.tccompose2025.dialog.CommonAppDialog
+import com.apps.tc.tccompose2025.models.RiddlesData
+import com.apps.tc.tccompose2025.ui.theme.colorPrimary
 import com.apps.tc.tccompose2025.ui.theme.colorPrimaryDark
 import com.apps.tc.tccompose2025.view.Header
-import org.json.JSONArray
-import org.json.JSONObject
 
 @Composable
-fun RiddlesPlay(selectedId: Int) {
+fun RiddlesPlay(riddleData: RiddlesData, onBackReq: () -> Unit) {
     val context = LocalContext.current
+
     var question by remember { mutableStateOf("") }
     var answer by remember { mutableStateOf("") }
     var hint by remember { mutableStateOf("") }
-    var title by remember { mutableStateOf("") }
-    var size by remember { mutableStateOf(0) }
+    var size by remember { mutableStateOf(riddleData.riddles.size) }
+
     val selectedLetters = remember { mutableStateListOf<Char>() }
     var shuffledHints by remember { mutableStateOf(listOf<Char>()) }
     var currentIndex by remember { mutableStateOf(0) }
-    var riddlesList by remember { mutableStateOf(listOf<JSONObject>()) }
     var showWrongDialog by remember { mutableStateOf(false) }
     var showCommonDialog by remember { mutableStateOf(false) }
     var showCorrectAnsDialog by remember { mutableStateOf(false) }
 
+    // Load the riddle based on index
+    fun loadRiddle(index: Int) {
+        if (index in riddleData.riddles.indices) {
+            val riddleObject = riddleData.riddles[index]
+            question = riddleObject.question
+            answer = riddleObject.answer.trim()
+            hint = riddleObject.hint
 
-    // Load a riddle based on index
-    fun loadRiddle(index: Int, riddles: List<JSONObject>) {
-        if (index in riddles.indices) {
-            val riddleObject = riddles[index]
-            question = riddleObject.getString("question")
-            answer = riddleObject.getString("answer").trim()
-            hint = riddleObject.getString("hint")
-
-            val answerChars = answer.toList()
             val extraTamilLetters = context.resources.getStringArray(R.array.tamil_letters).flatMap { it.toList() }
-            shuffledHints = (answerChars + extraTamilLetters.shuffled().take(3)).shuffled()
+            shuffledHints = (answer.toList() + extraTamilLetters.shuffled().take(3)).shuffled()
+
             selectedLetters.clear()
-            Log.d("WHILOG", "Answer: $answer")
-            Log.d("WHILOG", "Answer: ${shuffledHints.joinToString()}")
         }
     }
 
-    Header(
-        heading = title,
-        bgColor = colorPrimaryDark,
-        textColor = colorAccent,
-        onBackReq = {}
-    )
+    // Load the first riddle on first composition
+    LaunchedEffect(Unit) {
+        loadRiddle(currentIndex)
+    }
 
-    Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+    Box(
+        modifier = Modifier.fillMaxSize()
     ) {
-        PaginationUI (
-            currentPage = currentIndex + 1,
-            totalPages = size,
-            onPrevious = {
-                if (currentIndex > 0) {
-                    currentIndex--
-                    loadRiddle(currentIndex, riddlesList)
-                }
-            },
-            onNext = {
-                if (currentIndex < size - 1) {
-                    currentIndex++
-                    loadRiddle(currentIndex, riddlesList)
-                }
-            }
-        )
-
-        Text(
-            text = question,
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
-            textAlign = TextAlign.Center
-        )
-
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Text(
-                text = "HINT",
-                color = colorPrimaryDark,
-                fontSize = 18.sp,
-                modifier = Modifier
-                    .padding(end = 32.dp)
-                    .clickable {
-                        showCommonDialog = true
-                    }
-            )
-            Text(
-                text = "CLEAR",
-                color = colorPrimaryDark,
-                fontSize = 18.sp,
-                modifier = Modifier.clickable { selectedLetters.clear() }
-            )
-        }
-
-        AnswerBox(answer.length, selectedLetters.toList())
-        Log.d("WHILOG", "Answer Length: ${answer.length}")
-        Log.d("WHILOG", "Answer: $answer")
-
-        HintBox(shuffledHints) { letter ->
-            if (selectedLetters.size < answer.length) {
-                selectedLetters.add(letter)
-
-                if (selectedLetters.size == answer.length) {
-                    val userAnswer = selectedLetters.joinToString("")
-                    if (userAnswer == answer) {
-                        showCorrectAnsDialog = true
-                    } else {
-                        showWrongDialog = true
-                    }
-                }
-            }
-        }
-
-        CorrectAns(
-            showDialog = showCorrectAnsDialog,
-            onConfirm = {
-                showCorrectAnsDialog = false
-                currentIndex++ // Move to the next question
-                loadRiddle(currentIndex, riddlesList)
-            },
-            title = "சபாஷ!" ,
-            message = "மிகச் சரியான பதில்.",
-            btnTxt = "அடுத்த கேள்விக்கு செல்லவும்..."
-        )
-
-        CommonDialog(
-            showDialog = showCommonDialog,
-            onConfirm = {
-                showCommonDialog = false
-            },
-            title = "சாடைக்குறிப்பு (HINT)" ,
-            message = hint,
-            btnTxt = "OK"
-        )
-
-        WrongAnsDialog(
-            showDialog = showWrongDialog,
-            onTryAgain = {
-                selectedLetters.clear()
-                showWrongDialog = false
-            },
-            onNextQuestion = {
-                if (currentIndex < size - 1) {
-                    currentIndex++
-                    loadRiddle(currentIndex, riddlesList)
-                    selectedLetters.clear()
-                }
-                showWrongDialog = false
-            }
-        )
-
-        Box(
+        Column(
             modifier = Modifier
-                .fillMaxSize()
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            FloatingActionButton(
-                onClick = {  },
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .size(48.dp),
-                containerColor = Color.Green,
-                shape = CircleShape
+            Header(
+                heading = riddleData.title,
+                bgColor = Color(0xFFB51E25),
+                textColor = colorPrimary,
+                onBackReq = {onBackReq()}
+            )
+
+            PaginationUI(
+                currentPage = currentIndex + 1,
+                totalPages = size,
+                onPrevious = {
+                    if (currentIndex > 0) {
+                        currentIndex--
+                        loadRiddle(currentIndex)
+                    }
+                },
+                onNext = {
+                    if (currentIndex < size - 1) {
+                        currentIndex++
+                        loadRiddle(currentIndex)
+                    }
+                }
+            )
+
+            Text(
+                text = question,
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                textAlign = TextAlign.Center
+            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                horizontalArrangement = Arrangement.Center
             ) {
-                Icon(
-                    imageVector = Icons.Default.Share,
-                    contentDescription = "Main Action",
-                    tint = Color.White,
+                Text(
+                    text = "HINT",
+                    color = colorPrimaryDark,
+                    fontSize = 18.sp,
                     modifier = Modifier
-                        .size(36.dp)
+                        .padding(end = 32.dp)
+                        .clickable { showCommonDialog = true }
+                )
+                Text(
+                    text = "CLEAR",
+                    color = colorPrimaryDark,
+                    fontSize = 18.sp,
+                    modifier = Modifier.clickable { selectedLetters.clear() }
                 )
             }
-        }
-    }
 
-    // Load JSON and filter by ID
-    LaunchedEffect(selectedId) {
-        val jsonString = loadJsonFromAssets(context, "riddles.json")
-        val jsonArray = JSONArray(jsonString)
+            AnswerBox(answer.length, selectedLetters.toList())
 
-        for (i in 0 until jsonArray.length()) {
-            val riddleCategory = jsonArray.getJSONObject(i)
-            if (riddleCategory.getInt("id") == selectedId) {  // Filter by ID
-                title = riddleCategory.getString("title")
-                val riddlesArray = riddleCategory.getJSONArray("riddles")
+            HintBox(shuffledHints) { letter ->
+                if (selectedLetters.size < answer.length) {
+                    selectedLetters.add(letter)
 
-                if (riddlesArray.length() > 0) {
-                    riddlesList = List(riddlesArray.length()) { riddlesArray.getJSONObject(it) }
-                    size = riddlesList.size
-                    selectedLetters.clear()
-                    loadRiddle(currentIndex, riddlesList) // Load the first riddle
+                    if (selectedLetters.size == answer.length) {
+                        val userAnswer = selectedLetters.joinToString("")
+                        if (userAnswer == answer) {
+                            showCorrectAnsDialog = true
+                        } else {
+                            showWrongDialog = true
+                        }
+                    }
                 }
-                break
             }
+
+            // Correct answer dialog
+            CommonAlertDialog(
+                showDialog = showCorrectAnsDialog,
+                title = "சபாஷ!",
+                desc = "மிகச் சரியான பதில்.",
+                confirmText = "அடுத்த கேள்விக்கு செல்லவும்...",
+                onConfirm = {
+                    showCorrectAnsDialog = false
+                    if (currentIndex < size - 1) {
+                        currentIndex++
+                        loadRiddle(currentIndex)
+                    }
+                }
+            )
+
+            // Hint dialog
+            CommonAlertDialog(
+                showDialog = showCommonDialog,
+                title = "சாடைக்குறிப்பு (HINT)",
+                desc = hint,
+                confirmText = "OK",
+                onConfirm = {
+                    showCommonDialog = false
+                }
+            )
+
+            CommonAppDialog(
+                showDialog = showWrongDialog,
+                title = "தவறான பதில்!",
+                desc = "இந்த விடுகதைக்கு உங்கள் பதில் பொருந்தவில்லை.",
+                confirmText = "NEXT",
+                cancelText = "TRY AGAIN",
+                onConfirm = {
+                    if (currentIndex < size - 1) {
+                        currentIndex++
+                        loadRiddle(currentIndex)
+                        selectedLetters.clear()
+                    }
+                    showWrongDialog = false
+                },
+                onCancel = {
+                    selectedLetters.clear()
+                    showWrongDialog = false
+                }
+            )
         }
-    }
-    LaunchedEffect(currentIndex) {
-        loadRiddle(currentIndex, riddlesList)  // Ensures only 1 update per index change
+
+        Image(
+            painter = painterResource(R.drawable.ic_share),
+            contentDescription = "filter",
+            modifier = Modifier
+                .padding(bottom = 8.dp, end = 8.dp)
+                .align(Alignment.BottomEnd)
+                .background(
+                    color = Color.Transparent,
+                    shape = CircleShape
+                )
+                .padding(8.dp)
+                .size(48.dp)
+        )
     }
 }
+
 
 @Composable
 fun AnswerBox(answerLength: Int, selectedLetters: List<Char>) {
@@ -284,7 +279,6 @@ fun HintBox(hintLetters: List<Char>, onLetterClick: (Char) -> Unit) {
     }
 }
 
-
 @Composable
 fun PaginationUI(currentPage: Int, totalPages: Int, onPrevious: () -> Unit, onNext: () -> Unit) {
     Row(
@@ -292,6 +286,7 @@ fun PaginationUI(currentPage: Int, totalPages: Int, onPrevious: () -> Unit, onNe
         horizontalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxWidth()
+            .padding(vertical = 16.dp)
     ) {
         IconButton(
             onClick = onPrevious,
@@ -329,5 +324,7 @@ fun PaginationUI(currentPage: Int, totalPages: Int, onPrevious: () -> Unit, onNe
 @Composable
 @Preview( showSystemUi = true, showBackground = true)
 fun PreviewRiddles() {
-    RiddlesPlay(1)
+    RiddlesPlay(
+        riddleData = TODO()
+    ) {}
 }

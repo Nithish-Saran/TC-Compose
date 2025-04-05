@@ -12,6 +12,9 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStreamReader
 
+const val AppPref = "whiture.reader.pref"
+const val PrefNotes = "PrefNotes"
+
 enum class Rasi(val value: Int) {
     mesham(0),
     rishabam(1),
