@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.Date
 
 class NotesViewModel: ViewModel() {
@@ -19,34 +20,50 @@ class NotesViewModel: ViewModel() {
 
     fun getNotes(app: App) {
         _notesViewState.value = NotesViewState.Loading
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
+            notesList.clear()
             notesList = app.getNotes().toMutableList()
             if (notesList.isNotEmpty()) {
-                _notesViewState.value = NotesViewState.NotesList(notesList.toTypedArray())
+                withContext(Dispatchers.Main) {
+                    _notesViewState.value = NotesViewState.NotesList(notesList.toTypedArray())
+                }
             }
             else {
-                _notesViewState.value = NotesViewState.NoData
+                withContext(Dispatchers.Main) {
+                    _notesViewState.value = NotesViewState.NoData
+                }
             }
         }
-
     }
 
     fun addNote(app: App, notes: Pair<String, String>) {
         viewModelScope.launch(Dispatchers.IO) {
             if (notes.first.isEmpty() || notes.second.isEmpty()) {
-                _notesViewState.value = NotesViewState.Empty
+                withContext(Dispatchers.Main) {
+                    _notesViewState.value = NotesViewState.Empty
+                }
             }
             else {
-                val reminderNote = ReminderNote(notes.first, notes.second, Date())
-                notesList.add(reminderNote)
-                app.setNotes(notesList.toTypedArray())
-                getNotes(app)
+                withContext(Dispatchers.Main) {
+                    val reminderNote = ReminderNote(notes.first, notes.second, Date())
+                    notesList.add(reminderNote)
+                    app.setNotes(notesList.toTypedArray())
+                    getNotes(app)
+                }
             }
         }
     }
 
     fun showEmptyFieldsAlert() {
         _notesViewState.value = NotesViewState.Empty
+    }
+
+    fun deleteNote(app: App, position: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            notesList.removeAt(position)
+            app.setNotes(notesList.toTypedArray())
+            getNotes(app)
+        }
     }
 
 }

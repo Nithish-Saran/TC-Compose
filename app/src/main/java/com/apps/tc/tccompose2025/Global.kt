@@ -11,6 +11,8 @@ import androidx.core.view.WindowCompat
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStreamReader
+import java.text.SimpleDateFormat
+import java.util.Date
 
 const val AppPref = "whiture.reader.pref"
 const val PrefNotes = "PrefNotes"
@@ -74,37 +76,6 @@ enum class Rasi(val value: Int) {
             kumbam -> "கும்பம்/சிம்மம்"
             meenam -> "மீனம்/கன்னி"
         }
-//    val displayIconLite: Int
-//        get() = when (this) {
-//            mesham -> R.drawable.rasi_ic_mesam
-//            rishabam -> R.drawable.rasi_ic_risabam
-//            midhunam -> R.drawable.rasi_ic_midhunam
-//            kadagam -> R.drawable.rasi_ic_kadagam
-//            simmam -> R.drawable.rasi_ic_simmam
-//            kanni -> R.drawable.rasi_ic_kanni
-//            thulaam -> R.drawable.rasi_ic_dhulam
-//            viruchigam -> R.drawable.rasi_ic_viruchigam
-//            thanusu -> R.drawable.rasi_ic_dhanushu
-//            magaram -> R.drawable.rasi_ic_magaram
-//            kumbam -> R.drawable.rasi_ic_kumbam
-//            meenam -> R.drawable.rasi_ic_meenam
-//        }
-//
-//    val displayIconDark: Int
-//        get() = when (this) {
-//            mesham -> R.drawable.widget_mesam
-//            rishabam -> R.drawable.widget_risabam
-//            midhunam -> R.drawable.widget_midhunam
-//            kadagam -> R.drawable.widget_kadagam
-//            simmam -> R.drawable.widget_simmam
-//            kanni -> R.drawable.widget_kanni
-//            thulaam -> R.drawable.widget_dhulam
-//            viruchigam -> R.drawable.widget_viruchigam
-//            thanusu -> R.drawable.widget_dhanushu
-//            magaram -> R.drawable.widget_magaram
-//            kumbam -> R.drawable.widget_kumbam
-//            meenam -> R.drawable.widget_meenam
-//        }
 
     companion object {
         fun getAllRasis() = arrayOf(
@@ -212,4 +183,7 @@ val Int.webScreenMode: WebScreenMode get() {
         else -> WebScreenMode.Assets
     }
 }
+
+val Date.displayStringWithSlash: String
+    get() = SimpleDateFormat("dd/MM/yyyy").format(this)
 

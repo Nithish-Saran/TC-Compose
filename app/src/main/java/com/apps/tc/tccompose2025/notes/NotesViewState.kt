@@ -7,6 +7,6 @@ sealed class NotesViewState {
     data object NoData : NotesViewState()
     data object Empty : NotesViewState()
     //data class AddNote(val notes: Pair<String, String>) : NotesViewState()
-    data class NotesList(val message: Array<ReminderNote>) : NotesViewState()
+    data class NotesList(val notes: Array<ReminderNote>) : NotesViewState()
 
 }

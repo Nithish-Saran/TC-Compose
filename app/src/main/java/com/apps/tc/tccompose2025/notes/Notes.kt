@@ -9,11 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -40,12 +41,13 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun Notes(app: App) {
-    val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val viewModel: NotesViewModel = viewModel()
     val state = viewModel.notesViewState.collectAsState().value
     val showNoteDialog = remember { mutableStateOf(false) }
     val showEmptyFieldsDialog = remember { mutableStateOf(false) }
+    val showDeleteDialog = remember { mutableStateOf(false) }
+    val selectedNotePos = remember { mutableIntStateOf(-1) }
 
     Box(
         modifier = Modifier
@@ -66,7 +68,7 @@ fun Notes(app: App) {
 
             when(state) {
                 is NotesViewState.Loading -> {
-
+                    //todo:handle
                 }
                 is NotesViewState.NoData -> {
                     Box(
@@ -95,13 +97,9 @@ fun Notes(app: App) {
                 }
 
                 is NotesViewState.NotesList -> {
-                    CommonAlertDialog(
-                        title = state.message.toString(),
-                        desc = "",
-                        showDialog = showEmptyFieldsDialog.value,
-                        confirmText = "OK"
-                    ) {
-
+                    NotesList(state.notes) {
+                        showDeleteDialog.value = true
+                        selectedNotePos.intValue = it
                     }
                 }
             }
@@ -120,6 +118,19 @@ fun Notes(app: App) {
                     viewModel.showEmptyFieldsAlert()
                 }
             }
+
+            CommonAppDialog(
+                showDialog = showDeleteDialog.value,
+                title = "Please Confirm",
+                desc = "This will delete the note, do you want to do that?",
+                confirmText = "DELETE",
+                cancelText = "CLOSE",
+                onConfirm = {
+                    viewModel.deleteNote(app, selectedNotePos.intValue)
+                    showDeleteDialog.value = false
+                },
+                onCancel = {showDeleteDialog.value = false}
+            )
         }
 
         Image(
