@@ -44,12 +44,10 @@ class NotesViewModel: ViewModel() {
                 }
             }
             else {
-                withContext(Dispatchers.Main) {
-                    val reminderNote = ReminderNote(notes.first, notes.second, Date())
-                    notesList.add(reminderNote)
-                    app.setNotes(notesList.toTypedArray())
-                    getNotes(app)
-                }
+                val reminderNote = ReminderNote(notes.first, notes.second, Date())
+                notesList.add(reminderNote)
+                app.setNotes(notesList.toTypedArray())
+                getNotes(app)
             }
         }
     }

@@ -77,4 +77,8 @@ sealed class Screen(
         route = "notes"
     )
 
+    data object BabyNames : Screen(
+        route = "babyNames"
+    )
+
 }

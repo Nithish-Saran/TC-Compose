@@ -34,7 +34,7 @@ fun Palankal(mode: Int, onReturn: () -> Unit){
     val palanState = viewModel.palankalState.collectAsState().value
     val scope = rememberCoroutineScope()
     val palanKalTitle = remember { mutableStateListOf<String>() }
-    val title =
+
     Column(
         modifier = Modifier
             .fillMaxSize()

@@ -2,6 +2,7 @@ package com.apps.tc.tccompose2025
 
 import android.app.UiModeManager
 import android.content.Context
+import android.util.Log
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
@@ -16,6 +17,7 @@ import java.util.Date
 
 const val AppPref = "whiture.reader.pref"
 const val PrefNotes = "PrefNotes"
+const val WHILOGS = "WHILOGS"
 
 enum class Rasi(val value: Int) {
     mesham(0),
@@ -168,6 +170,14 @@ fun JSONObject.longArray(arg: String): Array<Long> = try {
     with(getJSONArray(arg)) { longArray() }
 } catch (e: Exception) {
     emptyArray()
+}
+
+fun log(message: Any) {
+    Log.d(WHILOGS, message.toString())
+}
+
+fun logE(e: Throwable?, message: String) {
+    Log.e(WHILOGS, message, e)
 }
 
 enum class WebScreenMode(val value: Int) {

@@ -19,6 +19,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.apps.tc.tccompose2025.babyNames.BabyNames
 import com.apps.tc.tccompose2025.models.RewindData
 import com.apps.tc.tccompose2025.models.RiddlesData
 import com.apps.tc.tccompose2025.notes.Notes
@@ -66,7 +67,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.Notes.route) {
+                                navController.navigate(Screen.BabyNames.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -179,6 +180,11 @@ class MainActivity : ComponentActivity() {
                             Notes(app)
                         }
 
+                        composable(
+                            route = Screen.BabyNames.route
+                        ) {
+                            BabyNames(app) { }
+                        }
                     }
                 }
             }

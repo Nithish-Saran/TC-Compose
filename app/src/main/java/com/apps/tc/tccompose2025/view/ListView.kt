@@ -26,7 +26,7 @@ fun CommonList(items: List<String>, onReturn: (Int) -> Unit) {
             .background(
                 color = colorPrimary
             )
-            .fillMaxWidth(),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.Start,
     ) {
         itemsIndexed(items) { index, value ->
