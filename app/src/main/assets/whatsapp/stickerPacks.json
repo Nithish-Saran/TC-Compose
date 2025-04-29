@@ -1,0 +1,44 @@
+{
+	"sticker_packs": [{
+			"identifier": "1",
+			"name": "சிந்தனைத்துளிகள்",
+			"publisher": "சுதாகர் கனகராஜ்",
+			"tray_image_file": "whatsapp_sinthanai_thuligal.webp",
+			"folder_name": "Sinthanai Thuligal",
+			"size":"0.95MB"
+		},
+		{
+			"identifier": "2",
+			"name": "வசனங்கள் 1",
+			"publisher": "சுதாகர் கனகராஜ்",
+			"tray_image_file": "whatsapp_vasanangal1.webp",
+			"folder_name": "Vasanangal 1",
+			"size":"1.1MB"
+		},
+		{
+			"identifier": "3",
+			"name": "தமிழ் காலெண்டர் ",
+			"publisher": "சுதாகர் கனகராஜ்",
+			"tray_image_file": "whatsapp_tamil_calendar.webp",
+			"folder_name": "Tamil Calendar Thoguppugal",
+			"size":"0.98MB"
+		},
+		{
+			"identifier": "4",
+			"name": "வசனங்கள் 2",
+			"publisher": "சுதாகர் கனகராஜ்",
+			"tray_image_file": "whatsapp_vasanangal2.webp",
+			"folder_name": "Vasanangal 2",
+			"size":"0.91MB"
+		},
+		{
+			"identifier": "5",
+			"name": "வாழ்த்துக்கள்",
+			"publisher": "சுதாகர் கனகராஜ்",
+			"tray_image_file": "whatsapp_valthukal.webp",
+			"folder_name": "Vazhthukkal",
+			"size":"1.2MB"
+		}
+	]
+}
+

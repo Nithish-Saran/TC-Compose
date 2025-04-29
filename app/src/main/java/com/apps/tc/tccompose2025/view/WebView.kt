@@ -56,14 +56,9 @@ fun WebViewAssets(modifier: Modifier, url: String) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
-//            val htmlContent = context.assets.open("parigaram/parigaram_1_1.html").bufferedReader().use(
-//                BufferedReader::readText
-//            )
             WebView(context).apply {
                 webViewClient = WebViewClient()
                 settings.javaScriptEnabled = true
-
-                //loadData(htmlContent, "text/html", "UTF-8")
                 loadUrl("file:///android_asset/$url")
             }
         }

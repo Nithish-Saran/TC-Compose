@@ -33,6 +33,7 @@ import com.apps.tc.tccompose2025.riddles.RiddlesPlay
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
 import com.apps.tc.tccompose2025.ui.theme.colorGoldBg
 import com.apps.tc.tccompose2025.view.WebScreen
+import com.apps.tc.tccompose2025.whatsappStickers.Stickers
 import com.apps.tc.tccompose2025.wishes.Wishes
 import kotlinx.serialization.json.Json
 import java.net.URLDecoder
@@ -67,7 +68,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.BabyNames.route) {
+                                navController.navigate(Screen.Stickers.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -184,6 +185,12 @@ class MainActivity : ComponentActivity() {
                             route = Screen.BabyNames.route
                         ) {
                             BabyNames(app) { }
+                        }
+
+                        composable(
+                            route = Screen.Stickers.route
+                        ) {
+                            Stickers(app) { }
                         }
                     }
                 }
