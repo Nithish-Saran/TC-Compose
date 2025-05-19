@@ -116,7 +116,7 @@ private fun BannerSection() {
             )
 
             Text(
-                text = "விகிதம் - 2:1:2:1 \\n (Inhale : Hold : Exhale : Retain)",
+                text = "விகிதம் - 2:1:2:1 (Inhale : Hold : Exhale : Retain)",
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .padding(top = 4.dp),

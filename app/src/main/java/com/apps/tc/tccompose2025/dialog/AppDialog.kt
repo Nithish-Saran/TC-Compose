@@ -23,7 +23,7 @@ fun AppDialog(content: @Composable () -> Unit, onDismissRequest: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentHeight()
-                .padding(12.dp),
+                .padding(32.dp),
             shape = RoundedCornerShape(8.dp)
         ) {
             content()

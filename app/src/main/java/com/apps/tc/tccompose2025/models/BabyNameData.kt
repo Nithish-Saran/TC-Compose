@@ -11,10 +11,7 @@ data class BabyNameData(
     val title: String,
     val names: Array<String>
 ) {
-    val imgUrl get() = "file:///android_asset/babyName/ic_${id}.png"
-    val imgDefault get() = "file:///android_asset/babyName/ic_0.png"
-    val starTitle get() = "நட்சத்திர பெயர்கள்"
-
+    val imgUrl get() = "babyName/ic_${id}"
     companion object {
         fun serialize(json: JSONObject): BabyNameData? = try {
             Json.decodeFromString<BabyNameData>(json.toString())

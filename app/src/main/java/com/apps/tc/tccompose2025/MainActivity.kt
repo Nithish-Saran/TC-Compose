@@ -26,6 +26,7 @@ import com.apps.tc.tccompose2025.notes.Notes
 import com.apps.tc.tccompose2025.numerology.Numerology
 import com.apps.tc.tccompose2025.palankal.Palankal
 import com.apps.tc.tccompose2025.parigaram.ParigaraThalangal
+import com.apps.tc.tccompose2025.pranayamam.Pranayamam
 import com.apps.tc.tccompose2025.rewind.Rewind
 import com.apps.tc.tccompose2025.rewind.YearBookDetail
 import com.apps.tc.tccompose2025.riddles.Riddles
@@ -68,7 +69,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.Stickers.route) {
+                                navController.navigate(Screen.Pranayamam.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -191,6 +192,32 @@ class MainActivity : ComponentActivity() {
                             route = Screen.Stickers.route
                         ) {
                             Stickers(app) { }
+                        }
+
+                        composable(
+                            route = Screen.Numerology.route,
+                        ) {
+                            Numerology {
+                                navController.navigate(Screen.Numerology.route)
+                            }
+                        }
+
+                        composable(
+                            route = Screen.Pranayamam.route
+                        ) {
+                            Pranayamam(
+                                app = app,
+                                onReturn = {
+                                    navController.navigate(
+                                        Screen.WebScreen.createRoute(
+                                            WebScreenMode.Assets.value,
+                                            URLEncoder.encode(it, "utf-8")
+                                        )
+                                    )
+                                }
+                            ) {
+                                navController.navigate(Screen.Pranayamam.route)
+                            }
                         }
                     }
                 }

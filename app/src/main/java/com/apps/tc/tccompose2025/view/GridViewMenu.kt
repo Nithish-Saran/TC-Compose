@@ -49,7 +49,7 @@ fun GridMenu(menu: List<Pair<String, String>>, onItemClick: (Int) -> Unit) {
                 Image(
                     painter = rememberAsyncImagePainter(
                         ImageRequest.Builder(LocalContext.current)
-                            .data(value.first)
+                            .data("file:///android_asset/${value.first}.png")
                             .crossfade(true)
                             .build()
                     ),

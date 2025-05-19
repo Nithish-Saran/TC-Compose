@@ -85,4 +85,8 @@ sealed class Screen(
         route = "stickers"
     )
 
+    data object Pranayamam : Screen(
+        route = "pranayamam"
+    )
+
 }

@@ -19,7 +19,7 @@ data class RiddlesData(
     val title: String,
     val riddles: List<Riddle>
 ) {
-    val imgUrl get() = "file:///android_asset/riddles/ic_$id.png"
+    val imgUrl get() = "riddles/ic_$id"
     val heading get() = "$title(${riddles.size})"
     companion object {
         fun serialize (json: JSONObject): RiddlesData? = try {

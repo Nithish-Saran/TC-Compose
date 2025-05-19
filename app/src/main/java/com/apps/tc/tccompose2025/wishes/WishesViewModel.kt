@@ -26,9 +26,6 @@ class WishesViewModel : ViewModel() {
             val data = loadJsonFromAssets(context, "wishes.json")
             val json = JSONArray(data)
             if (json.length() > 0) {
-//                val wishes = json.objectArray().map {
-//                    Pair(it.getString("title"), it.getString("ic"))
-//                }.toTypedArray()
                 json.objectArray().map {
                     wishMenu.add(Pair(it.getString("title"), it.getString("ic")))
                     wishList.add(Pair(it.getString("title"), it.stringArray("items")))
