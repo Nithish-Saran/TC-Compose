@@ -26,6 +26,7 @@ import com.apps.tc.tccompose2025.notes.Notes
 import com.apps.tc.tccompose2025.numerology.Numerology
 import com.apps.tc.tccompose2025.palankal.Palankal
 import com.apps.tc.tccompose2025.parigaram.ParigaraThalangal
+import com.apps.tc.tccompose2025.planetory.KiragaAmaippu
 import com.apps.tc.tccompose2025.pranayamam.Pranayamam
 import com.apps.tc.tccompose2025.rewind.Rewind
 import com.apps.tc.tccompose2025.rewind.YearBookDetail
@@ -69,7 +70,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.Pranayamam.route) {
+                                navController.navigate(Screen.KiragaAmaippu.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -84,19 +85,23 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(
-                            route = Screen.Numerology.route,
-                        ) {
-                            Numerology {
-                                navController.navigate(Screen.Numerology.route)
-                            }
-                        }
-
-                        composable(
                             route = Screen.Wishes.route,
                         ) {
                             Wishes {
                                 navController.navigate(Screen.Wishes.route)
                             }
+                        }
+
+                        composable(
+                            route = Screen.Planetory.route,
+                        ) {
+                            Planetary()
+                        }
+
+                        composable(
+                            route = Screen.KiragaAmaippu.route,
+                        ) {
+                            KiragaAmaippu()
                         }
 
                         composable(
@@ -197,9 +202,20 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.Numerology.route,
                         ) {
-                            Numerology {
-                                navController.navigate(Screen.Numerology.route)
-                            }
+                            Numerology(
+                                app = app,
+                                onReturn = {
+                                    navController.navigate(
+                                        Screen.WebScreen.createRoute(
+                                            WebScreenMode.Assets.value,
+                                            URLEncoder.encode(it, "utf-8")
+                                        )
+                                    )
+                                },
+                                onBackReq = {
+                                    navController.navigate(Screen.Numerology.route)
+                                }
+                            )
                         }
 
                         composable(

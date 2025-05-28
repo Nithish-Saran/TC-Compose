@@ -15,11 +15,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults
 import androidx.compose.material3.TabRowDefaults.SecondaryIndicator
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
@@ -33,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -42,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 import kotlin.math.cos
 import kotlin.math.roundToInt
@@ -111,8 +115,8 @@ fun Planetary() {
 
             LaunchedEffect(selectedTab.intValue) {
                 val targetDegree = when (selectedTab.intValue) {
-                    0 -> 135f + Date().totalDays("17/5/2023") * 0.0328f
-                    1 -> (Date().totalDays("29/4/2024") * -0.0547f) - 80
+                    0 -> 160f + Date().totalDays("29/3/2025") * 0.0328f
+                    1 -> (Date().totalDays("29/4/2024") * 0.0547f) - 80
                     2 -> 135f + Date().totalDays("1/5/2024") * 0.08219178f
                     else -> 0f
                 }
@@ -226,12 +230,53 @@ private fun PlanetaryData(title: String, content: String) {
     }
 }
 
-fun Date.totalDays(dateString: String): Int {
-    dateFromString(dateString, "dd/MM/yyyy")?.let {
-        return this.daysBetween(it)
+
+/*@Composable
+private fun PlanetaryData(title: String, content: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "$title : ",
+            color = MaterialTheme.colorScheme.onBackground,
+            style = MaterialTheme.typography.labelMedium,
+            textAlign = TextAlign.End,
+            modifier = Modifier.width(180.dp)
+        )
+        Text(
+            text = content,
+            color = MaterialTheme.colorScheme.onBackground,
+            style = MaterialTheme.typography.labelMedium
+        )
     }
-    return 1
+}*/
+
+fun Date.totalDays(dateString: String): Int {
+    val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    val startDate = formatter.parse(dateString)
+    val diff = this.time - (startDate?.time ?: 0L)
+    return TimeUnit.MILLISECONDS.toDays(diff).toInt()
 }
+
+fun calculateDegree(
+    daysElapsed: Int,
+    orbitalPeriodInDays: Float,
+    baseOffset: Float = 0f,
+    isRetrograde: Boolean = false
+): Float {
+    val rotation = (daysElapsed / orbitalPeriodInDays) * 360f
+    return if (isRetrograde) baseOffset - rotation else baseOffset + rotation
+}
+
+//fun Date.totalDays(dateString: String): Int {
+//    dateFromString(dateString, "dd/MM/yyyy")?.let {
+//        return this.daysBetween(it)
+//    }
+//    return 1
+//}
 
 fun dateFromString(value: String, format: String): Date? = SimpleDateFormat(format).parse(value)
 
