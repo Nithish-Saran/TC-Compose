@@ -27,6 +27,7 @@ import com.apps.tc.tccompose2025.numerology.Numerology
 import com.apps.tc.tccompose2025.palankal.Palankal
 import com.apps.tc.tccompose2025.parigaram.ParigaraThalangal
 import com.apps.tc.tccompose2025.planetory.KiragaAmaippu
+import com.apps.tc.tccompose2025.poojacorner.VirtualPooja
 import com.apps.tc.tccompose2025.pranayamam.Pranayamam
 import com.apps.tc.tccompose2025.rewind.Rewind
 import com.apps.tc.tccompose2025.rewind.YearBookDetail
@@ -70,7 +71,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.KiragaAmaippu.route) {
+                                navController.navigate(Screen.VirtualPooja.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -234,6 +235,11 @@ class MainActivity : ComponentActivity() {
                             ) {
                                 navController.navigate(Screen.Pranayamam.route)
                             }
+                        }
+                        composable(
+                            route = Screen.VirtualPooja.route
+                        ) {
+                            VirtualPooja(app)
                         }
                     }
                 }

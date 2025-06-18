@@ -45,7 +45,7 @@ fun ParigaraThalangal(onBackReq: () -> Unit, onReturn: (String) -> Unit) {
             heading = "பரிகார தலங்கள்",
             bgColor = colorPrimaryDark,
             textColor = colorPrimary
-        ) { onBackReq}
+        ) { onBackReq }
 
         when(parigaramState) {
             is ParigaramState.Loading -> {}

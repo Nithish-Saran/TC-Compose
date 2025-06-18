@@ -96,4 +96,8 @@ sealed class Screen(
         route = "pranayamam"
     )
 
+    data object VirtualPooja : Screen(
+        route = "virtualPooja"
+    )
+
 }
