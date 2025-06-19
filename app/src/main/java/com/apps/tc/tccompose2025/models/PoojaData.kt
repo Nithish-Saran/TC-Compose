@@ -12,7 +12,9 @@ data class Song(
 
     @SerialName("image")
     val imageUrl: String
-)
+) {
+    val songImg get() = "file:///android_asset/virtualpooja/$imageUrl"
+}
 
 @Serializable
 data class Theme(
