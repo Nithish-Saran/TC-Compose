@@ -4,6 +4,7 @@ import android.app.UiModeManager
 import android.content.Context
 import android.util.Log
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -196,4 +197,8 @@ val Int.webScreenMode: WebScreenMode get() {
 
 val Date.displayStringWithSlash: String
     get() = SimpleDateFormat("dd/MM/yyyy").format(this)
+
+fun showToast(context: App, msg: String) {
+    Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+}
 

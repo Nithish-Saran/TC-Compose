@@ -1,0 +1,280 @@
+{
+  "gods": [
+    {
+      "god_id": 1,
+      "god": "விநாயகர்",
+      "image_url": "vinayakar.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_1_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_2.png"
+        },
+        {
+          "name": "பாடல்-3",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 2,
+      "god": "பெருமாள் ",
+      "image_url": "perumal.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_2_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 3,
+      "god": "முருகன்",
+      "image_url": "murugan.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_3_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_3_2.png"
+        },
+        {
+          "name": "பாடல்-3",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 4,
+      "god": "ஐயப்பன்",
+      "image_url": "iyappan.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_4_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 5,
+      "god": "லட்சுமி",
+      "image_url": "lakshmi.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_5_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_5_2.png"
+        },
+        {
+          "name": "பாடல்-3",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 6,
+      "god": "காளி",
+      "image_url": "kaali.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_6_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_6_2.png"
+        },
+        {
+          "name": "பாடல்-3",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 7,
+      "god": "சரஸ்வதி",
+      "image_url": "saraswathi.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_7_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 8,
+      "god": "சாயிபாபா",
+      "image_url": "saibaba.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_8_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 9,
+      "god": "சிவபெருமான்",
+      "image_url": "sivan.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_9_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_9_2.png"
+        },
+        {
+          "name": "பாடல்-3",
+          "image": "pooja_9_3.png"
+        },
+        {
+          "name": "பாடல்-4",
+          "image": "pooja_9_4.png"
+        },
+        {
+          "name": "பாடல்-5",
+          "image": "pooja_9_5.png"
+        },
+        {
+          "name": "பாடல்-6",
+          "image": "pooja_9_6.png"
+        },
+        {
+          "name": "பாடல்-7",
+          "image": "pooja_9_7.png"
+        },
+        {
+          "name": "பாடல்-8",
+          "image": "pooja_9_8.png"
+        },
+        {
+          "name": "பாடல்-9",
+          "image": "pooja_9_9.png"
+        },
+        {
+          "name": "பாடல்-10",
+          "image": "pooja_9_10.png"
+        },
+        {
+          "name": "பாடல்-11",
+          "image": "pooja_9_11.png"
+        },
+        {
+          "name": "பாடல்-12",
+          "image": "pooja_9_12.png"
+        },
+        {
+          "name": "பாடல்-13",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    },
+    {
+      "god_id": 10,
+      "god": "அனுமான்",
+      "image_url": "hanuman.png",
+      "songs": [
+        {
+          "name": "பாடல்-1",
+          "image": "pooja_10_1.png"
+        },
+        {
+          "name": "பாடல்-2",
+          "image": "pooja_1_3.png"
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "pooja_bg": "pt_1.png",
+      "god_bg" : "pt_1_god_bg.png",
+      "plate" : "pt_1_plate.png",
+      "bell" : "pt_1_bell.png",
+      "flower" : "pt_1_flower.png",
+      "incense" : "pt_1_incense.png",
+      "coconut" : "pt_1_coconut.png",
+      "theme" : "pt_1_theme.png",
+      "song" : "pt_1_song.png",
+      "lamp" : "pt_1_lamp.png",
+      "god" : "pt_1_god.png",
+      "stop" : "pt_1_stop.png"
+    },
+    {
+      "pooja_bg": "pt_2.png",
+      "god_bg" : "pt_2_god_bg.png",
+      "plate" : "pt_2_plate.png",
+      "bell" : "pt_2_bell.png",
+      "flower" : "pt_2_flower.png",
+      "incense" : "pt_2_incense.png",
+      "coconut" : "pt_2_coconut.png",
+      "theme" : "pt_2_theme.png",
+      "song" : "pt_2_song.png",
+      "lamp" : "pt_2_lamp.png",
+      "god" : "pt_2_god.png",
+      "stop" : "pt_2_stop.png"
+    },
+    {
+      "pooja_bg": "pt_3.png",
+      "god_bg" : "pt_3_god_bg.png",
+      "plate" : "pt_3_plate.png",
+      "bell" : "pt_3_bell.png",
+      "flower" : "pt_3_flower.png",
+      "incense" : "pt_3_incense.png",
+      "coconut" : "pt_3_coconut.png",
+      "theme" : "pt_3_theme.png",
+      "song" : "pt_3_song.png",
+      "lamp" : "pt_3_lamp.png",
+      "god" : "pt_3_god.png",
+      "stop" : "pt_3_stop.png"
+    }
+  ],
+  "flowers": [
+    {
+      "name": "செம்பருத்தி",
+      "image": "img_flower_1.png"
+    },
+    {
+      "name": "சாமந்தி",
+      "image": "img_flower_1.png"
+    },
+    {
+      "name": "ரோஜா",
+      "image": "img_flower_1.png"
+    },
+    {
+      "name": "செவ்வந்தி",
+      "image": "img_flower_1.png"
+    },
+    {
+      "name": "தாமரை",
+      "image": "img_flower_1.png"
+    }
+  ]
+}

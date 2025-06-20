@@ -1,6 +1,7 @@
 package com.apps.tc.tccompose2025.poojacorner
 
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Animatable
@@ -23,12 +24,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Text
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -39,26 +41,35 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.colorspace.Illuminant.C
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.ImageLoader
 import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
-import coil.request.ImageRequest
 import com.apps.tc.tccompose2025.App
+import com.apps.tc.tccompose2025.Constant
 import com.apps.tc.tccompose2025.R
-import com.apps.tc.tccompose2025.models.PoojaButton
-import com.apps.tc.tccompose2025.models.PoojaData
+import com.apps.tc.tccompose2025.log
+import com.apps.tc.tccompose2025.showToast
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
@@ -74,15 +85,13 @@ fun VirtualPooja(app: App) {
     val poojaState by poojaViewModel.poojaState.collectAsState()
     val scope = rememberCoroutineScope()
 
-    val coconutImage = remember { mutableIntStateOf(R.drawable.coconut) }
+    val coconutImage = remember { mutableStateOf("coconut.png") }
     val gifImage = remember { mutableStateOf("img_lamp.png") }
     val imageLoader = remember {
-        ImageLoader.Builder(app)
-            .components {
-                add(ImageDecoderDecoder.Factory()) // For API 28+
-                add(GifDecoder.Factory())          // For API <28
-            }
-            .build()
+        ImageLoader.Builder(app).components {
+            add(ImageDecoderDecoder.Factory()) // For API 28+
+            add(GifDecoder.Factory())          // For API <28
+        }.build()
     }
     val coconutClickCount = remember { mutableIntStateOf(0) }
     val bellShakeOffset = remember { Animatable(0f) }
@@ -97,7 +106,31 @@ fun VirtualPooja(app: App) {
     )
 
     val showBottomSheet = remember { mutableStateOf(false) }
-    val selectedGod = remember { mutableStateOf("") }
+    val mediaPlayer = remember { MediaPlayer() }
+    val isPlaying = remember { mutableStateOf(false) }
+    val orbitingInProgress = remember { mutableStateOf(false) }
+
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_PAUSE -> {
+                    if (mediaPlayer.isPlaying) mediaPlayer.stop()
+                }
+                Lifecycle.Event.ON_DESTROY -> {
+                    mediaPlayer.stop()
+                    mediaPlayer.release()
+                }
+                else -> {}
+            }
+        }
+
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
+        }
+    }
+
 
     // List of Y Animations for 10 flowers
     val flowerOffsets = remember {
@@ -113,30 +146,129 @@ fun VirtualPooja(app: App) {
         List(50) { mutableStateOf(false) } // Control visibility per flower
     }
 
-    val poojaButtons = listOf(
-        PoojaButton(R.drawable.ic_god, "God"),
-        PoojaButton(R.drawable.ic_music, "Music"),
-        PoojaButton(R.drawable.ic_theme, "Theme"),
-        PoojaButton(R.drawable.ic_lamp_off, "Lamp"),
-        PoojaButton(R.drawable.ic_fower, "Flower"),
-        PoojaButton(R.drawable.ic_plate, "Plate", orbitIndex = 0),
-        PoojaButton(R.drawable.ic_incense, "Incense", orbitIndex = 1),
-        PoojaButton(R.drawable.ic_bell, "Bell", orbitIndex = 2),
-        PoojaButton(R.drawable.ic_coconut, "Coconut"),
-    )
+    val flowerJobs = remember { MutableList<Job?>(50) { null } }
 
-    LaunchedEffect(Unit) {
-        scope.launch { poojaViewModel.fetchPoojaData(app) }
+    fun stopFlower() {
+        flowerJobs.forEachIndexed { index, job ->
+            scope.launch {
+                flowerVisible[index].value = false
+                job?.cancel()
+                flowerJobs[index] = null
+                flowerOffsets[index].snapTo(80f)
+            }
+        }
+    }
+
+    fun playSong(app: App, url: String) {
+        try {
+            mediaPlayer.reset()
+            mediaPlayer.setDataSource(app, url.toUri())
+            mediaPlayer.prepare()
+            mediaPlayer.start()
+            isPlaying.value = true
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    fun stopSong() {
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+            isPlaying.value = false
+        }
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
         when (val state = poojaState) {
-            is PoojaState.Success -> {
-                val god = state.poojaData[0]
-                val theme = god.themes[0]
+            is PoojaState.ShowPoojaItems -> {
+                val theme = state.themes
+                val god = state.godData
+                val flower = state.flowers
+                var poojaBottomSheetItem = remember {
+                    mutableStateOf<Pair<Int, List<Pair<String, String>>>?>(null)
+                }
+
+                fun orbitAnimation(index: Int) {
+                    if (orbitingInProgress.value) return
+                    orbitingInProgress.value = true
+
+                    scope.launch {
+                        liftAnimation(
+                            index = index,
+                            defaultPos = defaultPos,
+                            liftOffsets = liftOffsets,
+                            shakeOffset = bellShakeOffset,
+                            app = app
+                        )
+                        orbitingInProgress.value = false
+                    }
+                }
+
+                fun coconutBreak() {
+                    when (coconutClickCount.intValue) {
+                        0 -> {
+                            coconutImage.value = "coconut01.png"
+                            showToast(app, "Click 2 more times!")
+                            poojaViewModel.vibrator(
+                                app, 100
+                            )
+                        }
+
+                        1 -> {
+                            coconutImage.value = "coconut02.png"
+                            showToast(app, "Click 1 more time!")
+                            poojaViewModel.vibrator(
+                                app, 200
+                            )
+                        }
+
+                        2 -> {
+                            coconutImage.value = "coconut03.png"
+                            poojaViewModel.vibrator(
+                                app, 300
+                            )
+                        }
+                    }
+
+                    // Increment click count up to 3 max
+                    if (coconutClickCount.intValue < 2) {
+                        coconutClickCount.intValue += 1
+                    }
+                }
+
+                fun flowerFall() {
+
+                    val delayRange = (0..3000) // Maximum 3 seconds delay for any flower
+                    flowerOffsets.forEachIndexed { index, anim ->
+                        val job = scope.launch {
+                            val delayMillis =
+                                Random.nextInt(
+                                    delayRange.first,
+                                    delayRange.last
+                                )
+                            delay(delayMillis.toLong()) // Random human-like delay
+                            flowerVisible[index].value =
+                                true
+                            anim.snapTo(-100f)
+                            anim.animateTo(
+                                targetValue = 1300f,    //
+                                animationSpec = tween(
+                                    durationMillis = 4000,
+                                    easing = LinearEasing
+                                )
+                            )
+                        }
+                        flowerJobs[index]?.cancel()  // Cancel if already running
+                        flowerJobs[index] = job
+                    }
+                    scope.launch {
+                        delay(30_000L)  // 1 minute = 60,000 ms
+                        stopFlower()
+                    }
+                }
 
                 AsyncImage(
-                    model = theme.poojaBgImage,
+                    model = theme.poojaBgPath,
                     contentDescription = null,
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier.fillMaxSize()
@@ -148,13 +280,12 @@ fun VirtualPooja(app: App) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Box(
-                        modifier = Modifier
-                            .padding(bottom = 4.dp),
+                        modifier = Modifier.padding(bottom = 4.dp),
                         contentAlignment = Alignment.Center
                     ) {
                         // Rotating background
                         AsyncImage(
-                            model = theme.godBgImage,
+                            model = theme.godBgPath,
                             contentDescription = null,
                             modifier = Modifier
                                 .size(340.dp)
@@ -164,7 +295,7 @@ fun VirtualPooja(app: App) {
 
                         // God image
                         AsyncImage(
-                            model = selectedGod.value,
+                            model = god.godImage,
                             contentDescription = null,
                             modifier = Modifier
                                 .size(500.dp)
@@ -185,7 +316,7 @@ fun VirtualPooja(app: App) {
                                             * sin(offsetY.value / 100) causes a wave-like left-right oscillation.
                                             * It uses sine wave logic to simulate smooth natural motion.
                                             * offsetY.value / 100 controls the speed of swaying. Higher = slower sway.
-                                            * * 40 controls the amplitude (how far it swings left and right).
+                                            * 40 controls the amplitude (how far it swings left and right).
                                             * xOffsets[index] is the initial horizontal starting point for that flower.
                                             * IntOffset(x, y) sets the flower’s exact position on screen.
                                             */
@@ -196,18 +327,17 @@ fun VirtualPooja(app: App) {
                                                 y = offsetY.value.toInt()
                                             )
                                         }
-                                        .align(Alignment.TopCenter)
-                                )
+                                        .align(Alignment.TopCenter))
                             }
                         }
 
                         // Orbiting objects
                         arrayOf(
-                            "img_pooja_plate", "img_incense", "img_pooja_bell"
+                            "img_pooja_plate.png", "img_incense.png", "img_pooja_bell.png"
                         ).forEachIndexed { i, img ->
                             OrbitingItem(
                                 index = i,
-                                imageAsset = img,
+                                orbitingImg = img,
                                 angle = defaultPos[i].value,
                                 liftOffset = liftOffsets[i].value,
                                 rotation = if (i == 2) bellShakeOffset.value else 0f,
@@ -217,27 +347,22 @@ fun VirtualPooja(app: App) {
 
                     // Lamp & Coconut
                     Row(
-                        modifier = Modifier
-                            .padding(start = 32.dp, top = 64.dp, bottom = 18.dp),
+                        modifier = Modifier.padding(start = 32.dp, top = 64.dp, bottom = 18.dp),
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         AsyncImage(
-                            model = ImageRequest.Builder(app)
-                                .data("file:///android_asset/virtualpooja/${gifImage.value}")
-                                .crossfade(true)
-                                .build(),
+                            model = assetPath(gifImage.value),
                             imageLoader = imageLoader,
                             contentDescription = null,
                             modifier = Modifier.size(64.dp),
                             alignment = Alignment.BottomCenter
                         )
 
-                        Image(
-                            painter = painterResource(coconutImage.intValue),
+                        AsyncImage(
+                            model = assetPath(coconutImage.value),
                             contentDescription = null,
-                            modifier = Modifier
-                                .size(64.dp),
+                            modifier = Modifier.size(64.dp),
                             alignment = Alignment.Center
                         )
                     }
@@ -251,138 +376,103 @@ fun VirtualPooja(app: App) {
                         maxItemsInEachRow = 5,
                         itemVerticalAlignment = Alignment.CenterVertically
                     ) {
-                        poojaButtons.forEach { btn ->
-                            val isGodButton = btn.label == "God"
-                            val isEnabled = isGodButton || selectedGod.value.isNotEmpty()
-                            Image(
-                                painter = painterResource(btn.icon),
-                                contentDescription = btn.label,
+                        arrayOf(
+                            theme.godPath,
+                            if (isPlaying.value) theme.stopPath else theme.musicPath,
+                            theme.themePath,
+                            theme.lampPath,
+                            theme.flowerPath,
+                            theme.platePath,
+                            theme.incensePath,
+                            theme.bellPath,
+                            theme.coconutPath,
+                        ).forEachIndexed { index, btn ->
+
+                            AsyncImage(
+                                model = btn,
+                                contentDescription = "buttons",
                                 modifier = Modifier
                                     .size(64.dp)
                                     .padding(8.dp)
-                                    .clickable(enabled = isEnabled) {
-                                        scope.launch {
-                                            when (btn.orbitIndex) {
-                                                0, 1, 2 -> liftAnimation(
-                                                    index = btn.orbitIndex,
-                                                    defaultPos = defaultPos,
-                                                    liftOffsets = liftOffsets
-                                                )
+                                    .clickable {
+                                        when (index) {
+                                            0 -> {  // god
+                                                poojaBottomSheetItem.value =
+                                                    Pair(index, state.poojaData.gods.map {
+                                                        Pair(it.godImage, it.godName)
+                                                    })
+                                                showBottomSheet.value = true
+                                            }
 
-//                                                2 -> handleBellAnimation(
-//                                                    angle = defaultPos[2],
-//                                                    shakeOffset = bellShakeOffset,
-//                                                    app = app
-//                                                )
-
-                                                else -> {
-                                                    when (btn.label) {
-                                                        "Coconut" -> {
-                                                            when (coconutClickCount.intValue) {
-                                                                0 -> {
-                                                                    coconutImage.intValue =
-                                                                        R.drawable.coconut01
-                                                                    poojaViewModel.toastMsg(app)
-                                                                    poojaViewModel.vibrator(
-                                                                        app,
-                                                                        100
-                                                                    )
-                                                                }
-
-                                                                1 -> {
-                                                                    coconutImage.intValue =
-                                                                        R.drawable.coconut02
-                                                                    poojaViewModel.toastMsg(app)
-                                                                    poojaViewModel.vibrator(
-                                                                        app,
-                                                                        200
-                                                                    )
-                                                                }
-
-                                                                2 -> {
-                                                                    coconutImage.intValue =
-                                                                        R.drawable.coconut03
-                                                                    poojaViewModel.vibrator(
-                                                                        app,
-                                                                        300
-                                                                    )
-                                                                }
-                                                            }
-
-                                                            // Increment click count up to 3 max
-                                                            if (coconutClickCount.intValue < 2) {
-                                                                coconutClickCount.intValue += 1
-                                                            }
-                                                        }
-
-                                                        "God" -> {
-                                                            showBottomSheet.value = true
-                                                        }
-
-                                                        "Music" -> {
-                                                            //showBottomSheet.value = true
-                                                        }
-
-                                                        "Lamp" -> {
-                                                            gifImage.value = "gif_lamp.gif"
-                                                        }
-                                                        "Flower" -> {
-                                                            val delayRange =
-                                                                (0..3000) // Maximum 3 seconds delay for any flower
-                                                            // Start animations
-                                                            flowerOffsets.forEachIndexed { index, anim ->
-                                                                launch {
-                                                                    val delayMillis =
-                                                                        Random.nextInt(
-                                                                            delayRange.first,
-                                                                            delayRange.last
-                                                                        )
-                                                                    delay(delayMillis.toLong()) // Random human-like delay
-                                                                    flowerVisible[index].value =
-                                                                        true
-                                                                    anim.snapTo(-100f)
-                                                                    anim.animateTo(
-                                                                        targetValue = 1300f,    //
-                                                                        animationSpec = tween(
-                                                                            durationMillis = 4000,
-                                                                            easing = LinearEasing
-                                                                        )
-                                                                    )
-                                                                }
-                                                            }
-                                                        }
-                                                    }
+                                            1 -> {  // song
+                                                if (isPlaying.value) {
+                                                    stopSong()
+                                                } else {
+                                                    poojaBottomSheetItem.value =
+                                                        Pair(index, god.songs.map {
+                                                            Pair(it.serviceIcon, it.name)
+                                                        })
+                                                    showBottomSheet.value = true
                                                 }
                                             }
+
+                                            2 -> {  // theme
+                                                poojaBottomSheetItem.value = Pair(
+                                                    index, state.poojaData.themes.map {
+                                                        Pair(it.poojaBgPath, "")
+                                                    }
+                                                )
+                                                showBottomSheet.value = true
+                                            }
+
+                                            3 -> gifImage.value = "gif_lamp.gif"
+                                            4 -> {
+                                                poojaBottomSheetItem.value = Pair(
+                                                    index, state.poojaData.flowers.map {
+                                                        Pair(it.serviceIcon, it.name)
+                                                    }
+                                                )
+                                                showBottomSheet.value = true
+                                            }
+
+                                            5 -> orbitAnimation(0)  // 0th index is plate
+                                            6 -> orbitAnimation(1)  // 1 is incense
+                                            7 -> orbitAnimation(2)  // 2 is bell
+                                            8 -> coconutBreak()
                                         }
                                     })
                         }
                     }
                 }
+
                 if (showBottomSheet.value) {
-                    PoojaBottomSheet(
-                        godData = state.poojaData,
-                        onSelectedItem = { god ->
-                            selectedGod.value = god
-
-                            // 🔁 Reset all animation and state values
-                            coconutClickCount.intValue = 0
-                            coconutImage.intValue = R.drawable.coconut
-                            gifImage.value = "img_lamp.png"
-                            scope.launch {
-                                liftOffsets.forEach { launch { it.snapTo(0f) } }
-                                defaultPos[0].snapTo(90f)
-                                defaultPos[1].snapTo(107f)
-                                defaultPos[2].snapTo(70f)
-
-                                flowerVisible.forEach { it.value = false }
-                                flowerOffsets.forEach { launch { it.snapTo(0f) } }
-                            }
-                            // Optionally stop any media players or effects here
-                        },
-                        onDismiss = { showBottomSheet.value = false },
-                        showSheet = showBottomSheet.value,
-                    )
+                    poojaBottomSheetItem.value?.let {
+                        PoojaBottomSheet(
+                            poojaItems = it.second,
+                            onSelectedItem = { index ->
+                                log(index)
+                                log(god.godId)
+                                when (it.first) {
+                                    0 -> {
+                                        poojaViewModel.selectedGod = index
+                                        poojaViewModel.updateTheme()
+                                    }
+                                    1 -> {
+                                        val songUrl =
+                                            "${Constant.ContentURL}calendar/tamil/pooja/pooja_${god.godId}_${index + 1}.mp3"
+                                        playSong(app, songUrl)
+                                    }
+                                    2 -> {
+                                        poojaViewModel.selectedTheme = index
+                                        poojaViewModel.updateTheme()
+                                    }
+                                    4 -> flowerFall()
+                                }
+                            },
+                            onDismiss = { showBottomSheet.value = false },
+                            showSheet = showBottomSheet.value,
+                        )
+                    }
                 }
             }
 
@@ -393,12 +483,34 @@ fun VirtualPooja(app: App) {
             }
         }
     }
+
+    LaunchedEffect(Unit) {
+        scope.launch { poojaViewModel.fetchPoojaData(app) }
+    }
+    LaunchedEffect(poojaViewModel.selectedGod) {
+        // Reset orbiting items' positions
+        defaultPos[0].snapTo(90f)
+        defaultPos[1].snapTo(110f)
+        defaultPos[2].snapTo(65f)
+
+        liftOffsets.forEach { it.snapTo(0f) }
+
+        // Reset coconut
+        coconutClickCount.intValue = 0
+        coconutImage.value = "coconut.png"
+
+        // Reset gif lamp
+        gifImage.value = "img_lamp.png"
+
+        stopFlower()
+        stopSong()
+    }
 }
 
 @Composable
 fun OrbitingItem(
     index: Int,
-    imageAsset: String,
+    orbitingImg: String,
     angle: Float,
     liftOffset: Float,
     rotation: Float,
@@ -407,7 +519,7 @@ fun OrbitingItem(
     val radian = Math.toRadians(angle.toDouble())
 
     Image(
-        painter = rememberAsyncImagePainter("file:///android_asset/virtualpooja/$imageAsset.png"),
+        painter = rememberAsyncImagePainter(assetPath(orbitingImg)),
         contentDescription = "Orbit Item",
         modifier = Modifier
             .padding(top = 285.dp)
@@ -415,75 +527,85 @@ fun OrbitingItem(
             .graphicsLayer {
                 translationX = cos(radian).toFloat() * radius
                 translationY = sin(radian).toFloat() * radius + liftOffset
-                //rotationZ = rotation
+                rotationZ = rotation
             })
 }
 
 suspend fun liftAnimation(
     index: Int,
     defaultPos: List<Animatable<Float, AnimationVector1D>>,
-    liftOffsets: List<Animatable<Float, AnimationVector1D>>
-) {
-    val lift = liftOffsets[index]
-    val angle = defaultPos[index]
-    val origin = angle.value % 360
-
-    lift.animateTo(
-        targetValue = -280f,
-        animationSpec = tween(
-            durationMillis = 500,
-            easing = FastOutSlowInEasing
-        )
-    )
-    angle.animateTo(
-        targetValue = angle.value + 1080f,
-        animationSpec = tween(
-            durationMillis = 8000,
-            easing = LinearEasing
-        )
-    )
-    angle.snapTo(origin)
-    lift.animateTo(
-        targetValue = 0f,
-        animationSpec = tween(
-            durationMillis = 500,
-            easing = FastOutSlowInEasing
-        )
-    )
-}
-
-suspend fun handleBellAnimation(
-    angle: Animatable<Float, AnimationVector1D>,
+    liftOffsets: List<Animatable<Float, AnimationVector1D>>,
     shakeOffset: Animatable<Float, AnimationVector1D>,
     app: App
 ) {
-    val bellPlayer = MediaPlayer.create(app, R.raw.bell_sound).apply { isLooping = true; start() }
+    val lift = liftOffsets[index]
+    val angle = defaultPos[index]
+    val origin = angle.value % 360f
+
+    val bellPlayer = if (index == 2) MediaPlayer.create(app, R.raw.bell_sound) else null
+
+    lift.animateTo(
+        targetValue = -280f,
+        animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
+    )
 
     coroutineScope {
-        val shake = launch {
-            while (isActive) {
-                shakeOffset.animateTo(10f, tween(50))
-                shakeOffset.animateTo(-10f, tween(50))
+        var shakeJob: Job? = null
+        var rotateJob: Job? = null
+
+        if (index == 2 && bellPlayer != null) {
+            bellPlayer.isLooping = true
+            bellPlayer.start()
+
+            // Shake and rotate at the same time
+            shakeJob = launch {
+                while (isActive) {
+                    shakeOffset.animateTo(10f, tween(80))
+                    shakeOffset.animateTo(-10f, tween(80))
+                }
             }
+
+            rotateJob = launch {
+                angle.animateTo(
+                    targetValue = angle.value + 1080f,
+                    animationSpec = tween(
+                        durationMillis = 8000,
+                        easing = LinearEasing
+                    )
+                )
+            }
+
+            rotateJob.join() // Wait until rotation finishes
+
+            shakeJob.cancelAndJoin()
+            shakeOffset.snapTo(0f)
+
+            bellPlayer.stop()
+            bellPlayer.release()
+        } else {
+            // For other items: just rotate
+            angle.animateTo(
+                targetValue = angle.value + 1080f, animationSpec = tween(
+                    durationMillis = 8000, easing = LinearEasing
+                )
+            )
         }
-
-        angle.animateTo(angle.value + 1080f, tween(8000, easing = LinearEasing))
-        angle.snapTo(68f)
-
-        shake.cancel()
-        shakeOffset.snapTo(0f)
-        bellPlayer.stop()
-        bellPlayer.release()
     }
+
+    angle.snapTo(origin)
+
+    lift.animateTo(
+        targetValue = 0f, animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PoojaBottomSheet(
-    godData: Array<PoojaData>,
-    onSelectedItem: (String) -> Unit,
+    poojaItems: List<Pair<String, String>>,
+    onSelectedItem: (Int) -> Unit,
     onDismiss: () -> Unit,
-    showSheet: Boolean
+    showSheet: Boolean,
 ) {
     if (!showSheet) return
     val sheetState = rememberModalBottomSheetState()
@@ -492,40 +614,43 @@ fun PoojaBottomSheet(
         onDismissRequest = { onDismiss() },
         sheetState = sheetState,
         containerColor = Color.White,
-        modifier = Modifier
-            .padding(8.dp)
+        modifier = Modifier.padding(8.dp)
     ) {
         FlowRow(
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.Center,
             maxItemsInEachRow = 4,
             modifier = Modifier
                 .fillMaxWidth()
+                .padding(horizontal = 12.dp)
         ) {
-            godData.forEach { god ->
+            poojaItems.forEachIndexed { index, item ->
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
-                        .padding(horizontal = 8.dp, vertical = 8.dp)
+                        .padding(vertical = 8.dp)
+                        .fillMaxWidth(0.225f)
                         .clickable {
-                            onSelectedItem(god.godImage)
+                            onSelectedItem(index)
                             onDismiss()
-                        }
-                ) {
+                        }) {
                     AsyncImage(
-                        model = god.godImage,
-                        contentDescription = god.godName,
+                        model = item.first,
+                        contentDescription = "god",
                         //contentScale = ContentScale.Fit,
-                        modifier = Modifier
-                            .size(64.dp)
+                        modifier = Modifier.size(64.dp)
                     )
-                    Text(
-                        modifier = Modifier.padding(top = 4.dp),
-                        text = god.godName,
-                        style = MaterialTheme.typography.labelSmall,
-                        textAlign = TextAlign.Center
-                    )
+                    if (item.second.isNotEmpty()) {
+                        Text(
+                            modifier = Modifier.padding(top = 4.dp),
+                            text = item.second,
+                            style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                            textAlign = TextAlign.Center,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
                 }
             }
         }

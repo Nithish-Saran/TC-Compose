@@ -18,19 +18,22 @@ import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 
-class PoojaViewModel: ViewModel() {
+class PoojaViewModel : ViewModel() {
     private val _poojaState = MutableStateFlow<PoojaState>(PoojaState.Loading)
     val poojaState: StateFlow<PoojaState> = _poojaState.asStateFlow()
+
+    var poojaData: PoojaData? = null
+    var selectedGod = 0
+    var selectedTheme = 0
+    var selectedFlower = 0
 
     fun fetchPoojaData(context: App) {
         _poojaState.value = PoojaState.Loading
         viewModelScope.launch(Dispatchers.IO) {
-            val json = loadJsonFromAssets(context, "virtualpooja/virtual_pooja.json")
-            val data = JSONArray(json).objectArray()
-            val poojaList = data.mapNotNull {
-                PoojaData.serialize(it)
-            }.toTypedArray()
-            _poojaState.value = PoojaState.Success(poojaList)
+            val json = loadJsonFromAssets(context, "poojacorner/virtual_pooja.json")
+            val data = JSONObject(json)
+            poojaData = PoojaData.serialize(data)
+            updateTheme()
         }
     }
 
@@ -38,13 +41,25 @@ class PoojaViewModel: ViewModel() {
         val vibrator = context.getSystemService(Vibrator::class.java)
         vibrator.let {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                it.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            }
-            else it.vibrate(duration)
+                it.vibrate(
+                    VibrationEffect.createOneShot(
+                        duration,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                )
+            } else it.vibrate(duration)
         }
     }
 
-    fun toastMsg(context: App) {
-        Toast.makeText(context, "Click again", Toast.LENGTH_SHORT).show()
+    fun updateTheme() {
+        poojaData?.let {
+            if (it.themes.isNotEmpty() && it.gods.isNotEmpty() && it.flowers.isNotEmpty())
+                _poojaState.value = PoojaState.ShowPoojaItems(
+                    poojaData = it,
+                    godData = it.gods[selectedGod],
+                    themes = it.themes[selectedTheme],
+                    flowers = it.flowers[selectedFlower]
+                )
+        }
     }
 }
