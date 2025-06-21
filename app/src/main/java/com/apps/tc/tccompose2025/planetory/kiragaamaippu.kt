@@ -4,16 +4,19 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -27,9 +30,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -51,24 +56,27 @@ import kotlin.ranges.contains
 
 @Composable
 fun KiragaAmaippu() {
-    val angle = remember { Animatable(270f) }
-    val secondPlanetAngle = remember { Animatable(270f) }
-    val bgSize = 260.dp
-    val rotatingImageSize = 42.dp
+    val defaultPos = remember { Animatable(270f) }
     val selectedTab = remember { mutableIntStateOf(0) }
-
-    val radius = remember(bgSize, rotatingImageSize) {
-        (bgSize + 40.dp - rotatingImageSize) / 2
-    }
-    val radiusPx = with(LocalDensity.current) { radius.toPx() }
 
     var days = remember { mutableIntStateOf(0) }
     var infoText = remember { mutableStateOf("") }
 
+    val radius = with(LocalDensity.current) { 70.dp.toPx() }
+    val radian = Math.toRadians(defaultPos.value.toDouble())
+
     val tabTitle = arrayOf("சனி பகவான்", "ராகு/கேது பகவான்", "குரு பகவான்")
 
-    Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize()) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             ScrollableTabRow(
                 selectedTabIndex = selectedTab.intValue,
                 containerColor = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -97,122 +105,123 @@ fun KiragaAmaippu() {
                 }
             }
 
-            Spacer(Modifier.padding(top = 16.dp))
-            PlanetaryData(selectedTab.intValue, days.intValue, angle.value)
-            PlanetaryData(selectedTab.intValue, days.intValue, angle.value)
-            PlanetaryData(selectedTab.intValue, days.intValue, angle.value)
-
-            Box(
+            Column(
                 modifier = Modifier
-                    .padding(vertical = 32.dp)
-                    .fillMaxWidth(),
-                contentAlignment = Alignment.Center
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                val x = radiusPx * cos(Math.toRadians(angle.value.toDouble())).toFloat()
-                val y = radiusPx * sin(Math.toRadians(angle.value.toDouble())).toFloat()
-                val x2 = radiusPx * cos(Math.toRadians(secondPlanetAngle.value.toDouble())).toFloat()
-                val y2 = radiusPx * sin(Math.toRadians(secondPlanetAngle.value.toDouble())).toFloat()
-
-                Image(
-                    painter = painterResource(id = R.drawable.planet_background),
-                    contentDescription = null,
-                    modifier = Modifier.size(bgSize)
+                Text(
+                    text = tabTitle[selectedTab.intValue],
+                    color = MaterialTheme.colorScheme.onBackground,
+                    style = MaterialTheme.typography.bodyLarge,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .padding(top = 64.dp)
+                        .fillMaxWidth()
                 )
+                Spacer(modifier = Modifier.height(28.dp))
 
-                when (selectedTab.intValue) {
-                    0 -> {
-                        Image(
-                            painter = painterResource(id = R.drawable.planet_saturn),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .offset { IntOffset(x.roundToInt(), y.roundToInt()) }
-                                .size(rotatingImageSize)
-                        )
-                    }
-                    1 -> {
-                        Image(
-                            painter = painterResource(id = R.drawable.planet_raagu),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .offset { IntOffset(x.roundToInt(), y.roundToInt()) }
-                                .size(rotatingImageSize)
-                        )
-                        Image(
-                            painter = painterResource(id = R.drawable.planet_kaedhu),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .offset { IntOffset(x2.roundToInt(), y2.roundToInt()) }
-                                .size(rotatingImageSize)
-                        )
-                    }
-                    2 -> {
-                        Image(
-                            painter = painterResource(id = R.drawable.planet_guru),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .offset { IntOffset(x.roundToInt(), y.roundToInt()) }
-                                .size(rotatingImageSize)
-                        )
+                Box(
+                    modifier = Modifier
+                        .wrapContentSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Image(
+                        painter = painterResource(
+                            id = R.drawable.planet_background),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(460.dp)
+                    )
+
+                    when (selectedTab.intValue) {
+                        0 -> {
+                            Image(
+                                painter = painterResource(id = R.drawable.planet_saturn),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .graphicsLayer {
+                                        translationX = cos(radian).toFloat() * radius
+                                        translationY = sin(radian).toFloat() * radius
+                                    }
+                            )
+                        }
+
+                        1 -> {
+                            val radian2 = Math.toRadians(360 - defaultPos.value.toDouble())
+                            Image(
+                                painter = painterResource(
+                                    id = R.drawable.planet_raagu),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .graphicsLayer {
+                                        translationX = cos(radian).toFloat() * radius
+                                        translationY = sin(radian).toFloat() * radius
+                                    }
+                            )
+
+                            Image(
+                                painter = painterResource(id = R.drawable.planet_kaedhu),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .graphicsLayer {
+                                        translationX = cos(radian2).toFloat() * radius
+                                        translationY = sin(radian2).toFloat() * radius
+                                    }
+                            )
+                        }
+
+                        2 -> {
+                            Image(
+                                painter = painterResource(id = R.drawable.planet_guru),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .graphicsLayer {
+                                        translationX = cos(radian).toFloat() * radius
+                                        translationY = sin(radian).toFloat() * radius
+                                    }
+                            )
+                        }
                     }
                 }
-            }
 
-            Text(
-                text = infoText.value,
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.labelMedium,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp)
-            )
+                Text(
+                    text = infoText.value,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    style = MaterialTheme.typography.labelMedium,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                )
+            }
         }
 
         FloatingActionButton(
             onClick = {},
             containerColor = Color.Transparent,
             modifier = Modifier
-                .padding(end = 12.dp)
+                .padding(end = 8.dp, bottom = 8.dp)
                 .align(Alignment.BottomEnd),
             elevation = FloatingActionButtonDefaults.elevation(0.dp)
         ) {
             Image(
                 painter = painterResource(R.drawable.ic_share),
                 contentDescription = " ",
-                modifier = Modifier.size(64.dp)
+                modifier = Modifier.size(48.dp)
             )
         }
     }
 
     LaunchedEffect(selectedTab.intValue) {
-        days.intValue = when (selectedTab.intValue) {
-            0 -> Date().totalDays("17/5/2023")
-            1 -> Date().totalDays("29/4/2024")
-            else -> Date().totalDays("1/5/2024")
-        }
-
-        val degree = when (selectedTab.intValue) {
-            0 -> {
-                infoText.value = "12 ராசியை சுற்றி வர சனி பகவான் 30 வருடம் வரை எடுத்துக்கொள்வார். ஒரு ராசியில் 2 வருடம் 6 மாதம் சஞ்சரிப்பார்."
-                135 + days.intValue * 0.0328f
-            }
-            1 -> {
-                infoText.value = "12 ராசியை சுற்றி வர ராகு/கேது பகவான் 18 வருடம் வரை எடுத்துக்கொள்வார். ஒரு ராசியில் 1 வருடம் 6 மாதம் சஞ்சரிப்பார்."
-                val raaghuDegree = days.intValue * -0.0547f - 70
-                val kethuDegree = 130 + (days.intValue * -0.0547f) - 20
-                secondPlanetAngle.snapTo(kethuDegree)
-                raaghuDegree
-            }
-            else -> {
-                val peyarchiDate = SimpleDateFormat("dd/MM/yyyy").parse("1/5/2024")
-                infoText.value = "12 ராசியை சுற்றி வர குரு பகவான் 12 வருடம் வரை எடுத்துக்கொள்வார். ஒரு ராசியில் 1 வருடம் சஞ்சரிப்பார்."
-                135 + days.intValue * 0.08219178f + if (Date().after(peyarchiDate)) 90 else 0
-            }
-        }
-
-        angle.snapTo(degree)
-        angle.animateTo(
-            targetValue = angle.value + 360f,
+        //angle.snapTo(angle.value)
+        defaultPos.animateTo(
+            targetValue = defaultPos.value + 360,
             animationSpec = tween(durationMillis = 2000, easing = LinearEasing)
         )
     }
@@ -239,9 +248,9 @@ private fun PlanetaryData(index: Int, days: Int, degree: Float) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = when(index) {
+            text = when (index) {
                 0 -> "தற்போதைய ராசி"
-                1-> "சஞ்சரித்த காலம்"
+                1 -> "சஞ்சரித்த காலம்"
                 else -> "பாகை"
             },
             color = MaterialTheme.colorScheme.onBackground,
@@ -263,7 +272,15 @@ private fun displayPlanetDegree(degree: Float): String {
     return originalDegree.toString()
 }
 
-@Preview(showBackground = true, showSystemUi = true,)
+fun totalDegrees(diffDays: Int, totalDays: Int): Double {
+    return if (diffDays > totalDays) {
+        (diffDays % totalDays).toDouble() / totalDays * 360.0
+    } else {
+        diffDays.toDouble() / totalDays * 360.0
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun KiragaAmaipuPreview() {
     ComposeTamilCalendar2025Theme {

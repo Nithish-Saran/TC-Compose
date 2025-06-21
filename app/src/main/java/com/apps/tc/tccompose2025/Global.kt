@@ -15,6 +15,8 @@ import org.json.JSONObject
 import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 const val AppPref = "whiture.reader.pref"
 const val PrefNotes = "PrefNotes"
@@ -200,5 +202,24 @@ val Date.displayStringWithSlash: String
 
 fun showToast(context: App, msg: String) {
     Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+}
+
+fun dateFromString(value: String, format: String): Date? =
+    runCatching {
+        SimpleDateFormat(format, Locale.getDefault()).parse(value)
+    }.getOrNull()
+
+
+// method to find out dates between these two
+fun Date.daysBetween(date: Date): Int = TimeUnit.DAYS.convert(
+    this.time - date.time,
+    TimeUnit.MILLISECONDS
+).toInt()
+
+fun Date.totalDays(dateString: String): Int {
+    dateFromString(dateString, "dd/MM/yyyy")?.let {
+        return this.daysBetween(it)
+    }
+    return 1
 }
 
