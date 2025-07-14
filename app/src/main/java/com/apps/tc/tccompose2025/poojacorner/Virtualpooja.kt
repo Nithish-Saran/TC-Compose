@@ -184,7 +184,7 @@ fun VirtualPooja(app: App) {
                 val theme = state.themes
                 val god = state.godData
                 val flower = state.flowers
-                var poojaBottomSheetItem = remember {
+                val poojaBottomSheetItem = remember {
                     mutableStateOf<Pair<Int, List<Pair<String, String>>>?>(null)
                 }
 
@@ -305,8 +305,8 @@ fun VirtualPooja(app: App) {
                         // Falling Flowers
                         flowerOffsets.forEachIndexed { index, offsetY ->
                             if (flowerVisible[index].value) {
-                                Image(
-                                    painter = painterResource(id = R.drawable.img_flower),
+                                AsyncImage(
+                                    model = flower.serviceIcon,
                                     contentDescription = "Falling Flower",
                                     modifier = Modifier
                                         .size(38.dp)
@@ -377,11 +377,28 @@ fun VirtualPooja(app: App) {
                         itemVerticalAlignment = Alignment.CenterVertically
                     ) {
                         arrayOf(
-                            theme.godPath,
+                            when(poojaViewModel.selectedGod) {
+                                0 -> theme.vinayagarPath
+                                1 -> theme.perumalPath
+                                2 -> theme.muruganPath
+                                3 -> theme.iyappanPath
+                                4 -> theme.lakshmiPath
+                                5 -> theme.durgaPath
+                                6 -> theme.saraswathiPath
+                                7 -> theme.saibabaPath
+                                8 -> theme.sivanPath
+                                else -> theme.hanumanPath
+                            },
                             if (isPlaying.value) theme.stopPath else theme.musicPath,
                             theme.themePath,
                             theme.lampPath,
-                            theme.flowerPath,
+                            when(poojaViewModel.selectedFlower) {
+                                0 -> theme.hybiscusPath
+                                1 -> theme.samanthiPath
+                                2 -> theme.rosePath
+                                3 -> theme.sevvanthiPath
+                                else -> theme.lotusPath
+                            },
                             theme.platePath,
                             theme.incensePath,
                             theme.bellPath,
@@ -466,7 +483,11 @@ fun VirtualPooja(app: App) {
                                         poojaViewModel.selectedTheme = index
                                         poojaViewModel.updateTheme()
                                     }
-                                    4 -> flowerFall()
+                                    4 -> {
+                                        poojaViewModel.selectedFlower = index
+                                        poojaViewModel.updateTheme()
+                                        flowerFall()
+                                    }
                                 }
                             },
                             onDismiss = { showBottomSheet.value = false },

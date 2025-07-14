@@ -24,13 +24,13 @@ class PoojaViewModel : ViewModel() {
 
     var poojaData: PoojaData? = null
     var selectedGod = 0
-    var selectedTheme = 0
+    var selectedTheme = 2
     var selectedFlower = 0
 
     fun fetchPoojaData(context: App) {
         _poojaState.value = PoojaState.Loading
         viewModelScope.launch(Dispatchers.IO) {
-            val json = loadJsonFromAssets(context, "poojacorner/virtual_pooja.json")
+            val json = loadJsonFromAssets(context, "virtualpooja/virtual_pooja.json")
             val data = JSONObject(json)
             poojaData = PoojaData.serialize(data)
             updateTheme()

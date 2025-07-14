@@ -28,9 +28,6 @@ sealed class Screen(
         route = "parigaraThalangal"
     )
 
-    data object Planetory : Screen(
-        route = "planetory"
-    )
     data object KiragaAmaippu : Screen(
         route = "kiragaAmaippu"
     )

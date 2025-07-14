@@ -217,13 +217,26 @@
       "god_bg" : "pt_1_god_bg.png",
       "plate" : "pt_1_plate.png",
       "bell" : "pt_1_bell.png",
-      "flower" : "pt_1_flower.png",
+      "hybiscus" : "pt_1_flower1.png",
+      "samanthi" : "pt_1_flower2.png",
+      "rose" : "pt_1_flower3.png",
+      "sevvanthi" : "pt_1_flower4.png",
+      "lotus" : "pt_1_flower5.png",
       "incense" : "pt_1_incense.png",
       "coconut" : "pt_1_coconut.png",
       "theme" : "pt_1_theme.png",
       "song" : "pt_1_song.png",
       "lamp" : "pt_1_lamp.png",
-      "god" : "pt_1_god.png",
+      "vinayagar" : "pt_1_vinayagar.png",
+      "murugan" : "pt_1_murugan.png",
+      "hanuman" : "pt_1_hanuman.png",
+      "saibaba" : "pt_1_saibaba.png",
+      "lakshmi" : "pt_1_lakshmi.png",
+      "saraswathi" : "pt_1_saraswathi.png",
+      "iyappan" : "pt_1_iyappan.png",
+      "perumal" : "pt_1_perumal.png",
+      "sivan" : "pt_1_sivan.png",
+      "durga" : "pt_1_durga.png",
       "stop" : "pt_1_stop.png"
     },
     {
@@ -231,13 +244,26 @@
       "god_bg" : "pt_2_god_bg.png",
       "plate" : "pt_2_plate.png",
       "bell" : "pt_2_bell.png",
-      "flower" : "pt_2_flower.png",
+      "hybiscus" : "pt_2_flower1.png",
+      "samanthi" : "pt_2_flower2.png",
+      "rose" : "pt_2_flower3.png",
+      "sevvanthi" : "pt_2_flower4.png",
+      "lotus" : "pt_2_flower5.png",
       "incense" : "pt_2_incense.png",
       "coconut" : "pt_2_coconut.png",
       "theme" : "pt_2_theme.png",
       "song" : "pt_2_song.png",
       "lamp" : "pt_2_lamp.png",
-      "god" : "pt_2_god.png",
+      "vinayagar" : "pt_2_vinayagar.png",
+      "murugan" : "pt_2_murugan.png",
+      "hanuman" : "pt_2_hanuman.png",
+      "saibaba" : "pt_2_saibaba.png",
+      "lakshmi" : "pt_2_lakshmi.png",
+      "saraswathi" : "pt_2_saraswathi.png",
+      "iyappan" : "pt_2_iyappan.png",
+      "perumal" : "pt_2_perumal.png",
+      "sivan" : "pt_2_sivan.png",
+      "durga" : "pt_2_durga.png",
       "stop" : "pt_2_stop.png"
     },
     {
@@ -245,14 +271,54 @@
       "god_bg" : "pt_3_god_bg.png",
       "plate" : "pt_3_plate.png",
       "bell" : "pt_3_bell.png",
-      "flower" : "pt_3_flower.png",
+      "hybiscus" : "pt_3_flower1.png",
+      "samanthi" : "pt_3_flower2.png",
+      "rose" : "pt_3_flower3.png",
+      "sevvanthi" : "pt_3_flower4.png",
+      "lotus" : "pt_3_flower5.png",
       "incense" : "pt_3_incense.png",
       "coconut" : "pt_3_coconut.png",
       "theme" : "pt_3_theme.png",
       "song" : "pt_3_song.png",
       "lamp" : "pt_3_lamp.png",
-      "god" : "pt_3_god.png",
+      "vinayagar" : "pt_3_vinayagar.png",
+      "murugan" : "pt_3_murugan.png",
+      "hanuman" : "pt_3_hanuman.png",
+      "saibaba" : "pt_3_saibaba.png",
+      "lakshmi" : "pt_3_lakshmi.png",
+      "saraswathi" : "pt_3_saraswathi.png",
+      "iyappan" : "pt_3_iyappan.png",
+      "perumal" : "pt_3_perumal.png",
+      "sivan" : "pt_3_sivan.png",
+      "durga" : "pt_3_durga.png",
       "stop" : "pt_3_stop.png"
+    },
+    {
+      "pooja_bg": "pt_4.png",
+      "god_bg" : "pt_4_god_bg.png",
+      "plate" : "pt_4_plate.png",
+      "bell" : "pt_4_bell.png",
+      "hybiscus" : "pt_4_flower1.png",
+      "samanthi" : "pt_4_flower2.png",
+      "rose" : "pt_4_flower3.png",
+      "sevvanthi" : "pt_4_flower4.png",
+      "lotus" : "pt_4_flower5.png",
+      "incense" : "pt_4_incense.png",
+      "coconut" : "pt_4_coconut.png",
+      "theme" : "pt_4_theme.png",
+      "song" : "pt_4_song.png",
+      "lamp" : "pt_4_lamp.png",
+      "vinayagar" : "pt_4_vinayagar.png",
+      "murugan" : "pt_4_murugan.png",
+      "hanuman" : "pt_4_hanuman.png",
+      "saibaba" : "pt_4_saibaba.png",
+      "lakshmi" : "pt_4_lakshmi.png",
+      "saraswathi" : "pt_4_saraswathi.png",
+      "iyappan" : "pt_4_iyappan.png",
+      "perumal" : "pt_4_perumal.png",
+      "sivan" : "pt_4_sivan.png",
+      "durga" : "pt_4_durga.png",
+      "stop" : "pt_4_stop.png"
     }
   ],
   "flowers": [
@@ -262,19 +328,19 @@
     },
     {
       "name": "சாமந்தி",
-      "image": "img_flower_1.png"
+      "image": "img_flower_2.png"
     },
     {
       "name": "ரோஜா",
-      "image": "img_flower_1.png"
+      "image": "img_flower_3.png"
     },
     {
       "name": "செவ்வந்தி",
-      "image": "img_flower_1.png"
+      "image": "img_flower_4.png"
     },
     {
       "name": "தாமரை",
-      "image": "img_flower_1.png"
+      "image": "img_flower_5.png"
     }
   ]
 }

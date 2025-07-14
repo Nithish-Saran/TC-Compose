@@ -71,7 +71,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         composable(Screen.SplashScreen.route) {
                             SplashScreen {
-                                navController.navigate(Screen.KiragaAmaippu.route) {
+                                navController.navigate(Screen.VirtualPooja.route) {
                                     popUpTo(Screen.SplashScreen.route) { inclusive = true }
                                 }
                             }
@@ -94,15 +94,9 @@ class MainActivity : ComponentActivity() {
                         }
 
                         composable(
-                            route = Screen.Planetory.route,
-                        ) {
-                            Planetary()
-                        }
-
-                        composable(
                             route = Screen.KiragaAmaippu.route,
                         ) {
-                            KiragaAmaippu()
+                            KiragaAmaippu(app)
                         }
 
                         composable(

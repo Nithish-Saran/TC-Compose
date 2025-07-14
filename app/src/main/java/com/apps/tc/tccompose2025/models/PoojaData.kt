@@ -35,26 +35,52 @@ data class Theme(
     @SerialName("god_bg") val godBg: String,
     val plate: String,
     val bell: String,
-    val flower: String,
+    val hybiscus: String,
+    val samanthi: String,
+    val rose: String,
+    val sevvanthi: String,
+    val lotus: String,
     val incense: String,
     val coconut: String,
     val theme: String,
     val song: String,
     val lamp: String,
-    val god: String,
+    val vinayagar: String,
+    val murugan: String,
+    val hanuman: String,
+    val saibaba: String,
+    val lakshmi: String,
+    val saraswathi: String,
+    val iyappan: String,
+    val durga: String,
+    val perumal: String,
+    val sivan: String,
     val stop: String,
 ) {
     val poojaBgPath get() = assetPath(poojaBg)
     val godBgPath get() = assetPath(godBg)
     val platePath get() = assetPath(plate)
     val bellPath get() = assetPath(bell)
-    val flowerPath get() = assetPath(flower)
+    val hybiscusPath get() = assetPath(hybiscus)
+    val samanthiPath get() = assetPath(samanthi)
+    val rosePath get() = assetPath(rose)
+    val sevvanthiPath get() = assetPath(sevvanthi)
+    val lotusPath get() = assetPath(lotus)
     val incensePath get() = assetPath(incense)
     val coconutPath get() = assetPath(coconut)
     val themePath get() = assetPath(theme)
     val musicPath get() = assetPath(song)
     val lampPath get() = assetPath(lamp)
-    val godPath get() = assetPath(god)
+    val vinayagarPath get() = assetPath(vinayagar)
+    val muruganPath get() = assetPath(murugan)
+    val hanumanPath get() = assetPath(hanuman)
+    val saibabaPath get() = assetPath(saibaba)
+    val lakshmiPath get() = assetPath(lakshmi)
+    val saraswathiPath get() = assetPath(saraswathi)
+    val durgaPath get() = assetPath(durga)
+    val iyappanPath get() = assetPath(iyappan)
+    val perumalPath get() = assetPath(perumal)
+    val sivanPath get() = assetPath(sivan)
     val stopPath get() = assetPath(stop)
 }
 

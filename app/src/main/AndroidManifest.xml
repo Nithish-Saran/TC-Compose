@@ -39,6 +39,62 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--Daily Sheet Widget-->
+        <receiver
+            android:name=".widgets.DailySheetWidgetReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_OPTIONS_CHANGED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/daily_sheet_widget_info" />
+        </receiver>
+
+        <!--Fasting Day Widget-->
+        <receiver
+            android:name=".widgets.FastingDayWidgetReceiver"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/fasting_widget_info" />
+        </receiver>
+
+        <!--Rasi Widget-->
+        <receiver
+            android:name=".widgets.RasiWidgetReceiver"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/rasi_widget_info" />
+        </receiver>
+
+        <!--Good Time Widget-->
+        <receiver
+            android:name=".widgets.GoodTimeReceiver"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/good_time_widget" />
+        </receiver>
+
     </application>
 
 </manifest>
