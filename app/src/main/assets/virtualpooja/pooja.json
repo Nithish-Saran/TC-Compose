@@ -1,0 +1,272 @@
+{
+	"gods": [
+		{
+			"name": "முருகப் பெருமான்",
+			"desc": "அறுபடை வீடு கொண்ட சேவற்கொடியோனை மனதில் நினைத்தாலே போதும், நம் துன்பங்கள் அனைத்தும் நீங்கி விடும்.",
+			"img": "god_murugan",
+			"decor": "decor_1"
+		},
+		{
+			"name": "சிவ பெருமான்",
+			"desc": "தென்னாடுடையவன், எந்நாட்டவர்க்கும் இறைவன், சிவபூஜை செய்வது நம் கஷ்டங்கள் அனைத்தையும் போக்கும்.",
+			"img": "god_sivan",
+			"decor": "decor_2"
+		},
+		{
+			"name": "விநாயகப் பெருமான்",
+			"desc": "மும்முதர் கடவுளான், இவனை தொழுது உங்கள் நாளை சிறப்பாக ஆரம்பிக்கவும்.",
+			"img": "god_vinayakar",
+			"decor": "decor_1"
+		},
+		{
+			"name": "லட்சுமி தெய்வம்",
+			"desc": "செல்வத்திற்கு அதிபதி, அள்ளிக் கொடுப்பவள் இவளே, இவளை வணங்கி உங்கள் தொழிலை ஆரம்பியுங்கள்.",
+			"img": "god_lakshmi",
+			"decor": "decor_2"
+		},
+		{
+			"name": "சரஸ்வதி தெய்வம்",
+			"desc": "அறிவுக்கூர்மை உடையாள், கல்வி தரும் இவளை போற்றி உங்கள் வாழ்க்கையை நலமாக அமைத்திடுங்கள்.",
+			"img": "god_saraswathi",
+			"decor": "decor_1"
+		},
+		{
+			"name": "திருப்பதி வெங்கடாசலபதி",
+			"desc": "கோவில் சென்றால் கோடி நன்மை என்பது போல், திருப்பதி சென்றால் பல்லாயிரம் கோடி நன்மை.",
+			"img": "god_perumal",
+			"decor": "decor_2"
+		},
+		{
+			"name": "ஐயப்ப கடவுள்",
+			"desc": "அருள்வாயே அய்யனே, அருள்வாயே ஐயப்பா என்று வாருங்கள், இவன் யாரையும் கைவிடான்.",
+			"img": "god_iyappan",
+			"decor": "decor_1"
+		},
+		{
+			"name": "ஷீர்டி சாய்பாபா",
+			"desc": "சாயி பாதம் சரணம், உனது பாதங்களில் வீழ்ந்தேன் சாயி என்று இவரிடம் உங்களை அர்ப்பணித்து விடுங்கள்.",
+			"img": "god_saibaba",
+			"decor": "decor_2"
+		},
+		{
+			"name": "ஜெய் அனுமான்",
+			"desc": "சிந்தை துடிக்கும் சமயத்தில் தோன்றும், சிவனும் வணங்கும் சஞ்சீவி வீரா! இவனை நாம் வணங்குவோம்.",
+			"img": "god_hanuman",
+			"decor": "decor_1"
+		},
+		{
+			"name": "ஜெய் காளி",
+			"desc": "இருளின் நடுவே ஒளியாய் தோன்றும், எரியைக் குடித்த கொள்ளி காளி! இவளை நாடி, தீமையை கொளுத்துவோம்.",
+			"img": "god_kaali",
+			"decor": "decor_2"
+		}
+	],
+	"bgs": [
+		{
+			"name": "மஞ்சள் மாலை",
+			"desc": "மஞ்சள் மாலை, சூரியோன் ஒளி வெள்ளம், மாவிலை தோரணத்தில் உங்கள் கடவுளை காணுங்கள்.",
+			"img": "bg_01"
+		},
+		{
+			"name": "செவ்விளங்க் காலை",
+			"desc": "இளங்காலை சூரிய வெளிச்சம், கோவில் மணி சத்தம், மாவிலை தோரணம், பிரம்ம முகூர்த்தத்தில் உங்கள் கடவுளை காணுங்கள்.",
+			"img": "bg_02"
+		},
+		{
+			"name": "ஆதிமந்தி நேரம்",
+			"desc": "விடியாத இரவும், முதல் சூரிய ஒளியும் சேரப்போகும் இந்த நேரத்தில், விளக்கு தோரணங்களுடன் உங்கள் கடவுளை காணுங்கள்.",
+			"img": "bg_03"
+		},
+		{
+			"name": "திருக்கல்யாண மேடை",
+			"desc": "நம் அருள்மிகு கடவுள்களின், திருக்கல்யாண மேடையில் உங்கள் கடவுளை காணுங்கள்.",
+			"img": "bg_04"
+		}
+	],
+	"flowers": [
+		{
+			"name": "தாமரை மலர்கள்",
+			"desc": "செவ்விதழ் தாமரை மலர்கள் கொண்டு இறைவன் பாதம் பட வழிபட்டால், எப்பேர்ப்பட்ட இறைவனும் மனமிரங்கி நம் வேண்டுதலை செவி மடுப்பான்.",
+			"img": "flower_thamarai"
+		},
+		{
+			"name": "ரோஜா இதழ்கள்",
+			"desc": "பிறந்த குழந்தையின் உதட்டு சிவப்பில் உள்ள நிறத்தை போன்ற ரோஜா இதழ்கள், எப்பொழுதும் இறைவனுக்கு பிடித்தவையே.",
+			"img": "flower_roja"
+		},
+		{
+			"name": "செவ்வந்தி பூக்கள்",
+			"desc": "திருமணங்கள், பண்டிகைகள், மங்கள நிகழ்வுகளில் உபயோகிக்கப்படும் இப்பூக்களை கொண்டு, இறைவன் சன்னதியை நாடுங்கள், என்றும் சுபீட்சமே நடக்கும்.",
+			"img": "flower_chevvanthi"
+		},
+		{
+			"name": "செம்பருத்தி மலர்கள்",
+			"desc": "அம்பாள், லட்சுமி, காளி போன்ற தேவிகளுக்கு மிகவும் பிரியமானவை. சக்தி, பெண்மை, வீரம் போன்றவற்றை, இந்த பூ இதழ்கள் கொண்ட சிவப்பு நிறம் சொல்லும்.",
+			"img": "flower_chemparuthi"
+		},
+		{
+			"name": "சாமந்தி மலர்கள்",
+			"desc": "கோவில்களில், வீட்டு பூஜைகளில் முக்கிய பங்கு வகிக்கும் இம்மலர்கள் விஷ்ணு, லட்சுமி, சரஸ்வதி போன்ற தெய்வங்களுக்கு மிகவும் பிரியமானவை.",
+			"img": "flower_chamanthi"
+		}
+	],
+	"songs": [
+		{
+			"god": "விநாயகப் பெருமான்",
+			"img": "god_vinayakar",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_1_1.mp3"
+		},
+		{
+			"god": "விநாயகப் பெருமான்",
+			"img": "god_vinayakar",
+			"title": "பாடல்-2",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_1_2.mp3"
+		},
+		{
+			"god": "விநாயகப் பெருமான்",
+			"img": "god_vinayakar",
+			"title": "பாடல்-3",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_1_3.mp3"
+		},
+		{
+			"god": "திருப்பதி வெங்கடாசலபதி",
+			"img": "god_perumal",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_2_1.mp3"
+		},
+		{
+			"god": "முருகப் பெருமான்",
+			"img": "god_murugan",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_3_1.mp3"
+		},
+		{
+			"god": "முருகப் பெருமான்",
+			"img": "god_murugan",
+			"title": "பாடல்-2",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_3_2.mp3"
+		},
+		{
+			"god": "ஐயப்ப கடவுள்",
+			"img": "god_iyappan",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_4_1.mp3"
+		},
+		{
+			"god": "லட்சுமி தெய்வம்",
+			"img": "god_lakshmi",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_5_1.mp3"
+		},
+		{
+			"god": "லட்சுமி தெய்வம்",
+			"img": "god_lakshmi",
+			"title": "பாடல்-2",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_5_2.mp3"
+		},
+		{
+			"god": "ஜெய் காளி",
+			"img": "god_kaali",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_6_1.mp3"
+		},
+		{
+			"god": "ஜெய் காளி",
+			"img": "god_kaali",
+			"title": "பாடல்-2",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_6_2.mp3"
+		},
+		{
+			"god": "சரஸ்வதி தெய்வம்",
+			"img": "god_saraswathi",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_7_1.mp3"
+		},
+		{
+			"god": "ஷீர்டி சாய்பாபா",
+			"img": "god_saibaba",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_8_1.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_1.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-2",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_2.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-3",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_3.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-4",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_4.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-5",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_5.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-6",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_6.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-7",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_7.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-8",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_8.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-9",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_9.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-10",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_10.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-11",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_11.mp3"
+		},
+		{
+			"god": "சிவ பெருமான்",
+			"img": "god_sivan",
+			"title": "பாடல்-12",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_9_12.mp3"
+		},
+		{
+			"god": "ஜெய் அனுமான்",
+			"img": "god_hanuman",
+			"title": "பாடல்-1",
+			"url": "https://cdn.kadalpura.com/calendar/tamil/pooja/pooja_10_1.mp3"
+		}
+	]
+}
+

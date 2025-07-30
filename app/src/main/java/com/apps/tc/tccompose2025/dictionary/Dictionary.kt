@@ -288,7 +288,7 @@ fun Today() {
 
         item {
             Image(
-                painter = painterResource(R.drawable.ic_fower),
+                painter = painterResource(R.drawable.ic_morning),
                 contentDescription = "fav_icon",
                 modifier = Modifier
                     .fillMaxWidth()

@@ -1,16 +1,22 @@
 package com.apps.tc.tccompose2025.widgets.view
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.glance.ColorFilter
 import androidx.glance.GlanceModifier
 import androidx.glance.Image
 import androidx.glance.ImageProvider
+import androidx.glance.LocalContext
 import androidx.glance.LocalSize
+import androidx.glance.action.clickable
+import androidx.glance.appwidget.action.actionStartActivity
 import androidx.glance.background
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
@@ -28,24 +34,34 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
+import com.apps.tc.tccompose2025.MainActivity
 import com.apps.tc.tccompose2025.R
+import com.apps.tc.tccompose2025.dayTa
 import com.apps.tc.tccompose2025.log
+import com.apps.tc.tccompose2025.models.WidgetData
 import com.apps.tc.tccompose2025.widgets.DateView
 import com.apps.tc.tccompose2025.widgets.HorizondalDivider
+import com.apps.tc.tccompose2025.widgets.NallaNeramView
 import com.apps.tc.tccompose2025.widgets.VerticalDivider
+import java.util.Date
 
 @SuppressLint("RestrictedApi")
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
-fun DailySheetExpandView() {
-    val isSpecial = true
-    val size = LocalSize.current
-    //log(size)
+fun DailySheetExpandView(data: WidgetData, context: Context) {
     Box(
         modifier = GlanceModifier
             .wrapContentSize()
-            .background(ColorProvider(Color(0xFFFFF8DD).copy(alpha = 0.93f)))
+            .background(ColorProvider(Color(0xFFFFF8DD)))
             .padding(12.dp)
+            .clickable(
+                actionStartActivity(
+                    Intent(context, MainActivity::class.java).apply {
+                        putExtra("open_module", "daily_sheet")
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    }
+                )
+            )
     ) {
         Column(
             verticalAlignment = Alignment.CenterVertically,
@@ -57,74 +73,56 @@ fun DailySheetExpandView() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 DateView(
-                    day = "செவ்வாய்",
-                    date = "29",
-                    month = "செப்டம்பர்",
+                    day = Date().dayTa,
+                    date = data.date,
+                    month = data.monthEn,
                     isTamil = false,
                     modifier = GlanceModifier
                         .defaultWeight(),
-                    fontSizeDate = 64
+                    fontSizeDate = 58
                 )
                 VerticalDivider(64)
-                Spacer(modifier = GlanceModifier.width(10.dp))
                 DateView(
-                    day = "ருத்ரோத்காரி",
-                    date = "29",
-                    month = "கார்த்திகை",
+                    day = data.taYear,
+                    date = data.taDate,
+                    month = data.monthTa,
                     isTamil = true,
                     modifier = GlanceModifier
                         .defaultWeight(),
-                    fontSizeDate = 64
+                    fontSizeDate = 58
                 )
-                Spacer(modifier = GlanceModifier.width(10.dp))
                 VerticalDivider(64)
-
                 Column(
                     modifier = GlanceModifier
-                        .padding(start = if (size.width <= 250.dp) 8.dp else 0.dp)
                         .defaultWeight(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    horizontalAlignment = Alignment.CenterHorizontally,
+
                 ) {
                     Text(
-                        text = "தேய்பிறை",
+                        text = data.piraiName,
                         style = TextStyle(
                             fontSize = 9.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ColorProvider(Color(0xFF252525)),
+                            color = ColorProvider( Color(0xFF252525)),
                             textAlign = TextAlign.Center
                         )
                     )
-                    Spacer(modifier = GlanceModifier.height(if (!isSpecial)18.dp else 22.dp))
-                    Row(
+                    Spacer(modifier = GlanceModifier.height(15.dp))
+                    Image(
+                        provider = ImageProvider(data.importantDay?.getImage() ?: data.piraiImg),
+                        contentDescription = "3D Calendar",
                         modifier = GlanceModifier
-                            .defaultWeight(),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        if (isSpecial) {
-                            Image(
-                                provider = ImageProvider(R.drawable.month_muhurtham),
-                                contentDescription = "3D Calendar",
-                                modifier = GlanceModifier
-                                    .size(42.dp),
-                            )
-                        }
-                        Spacer(modifier = GlanceModifier.width(if (size.width <= 250.dp)0.dp else 12.dp))
-                        Image(
-                            provider = ImageProvider(R.drawable.month_sasti),
-                            contentDescription = "3D Calendar",
-                            modifier = GlanceModifier
-                                .size(if (!isSpecial) 50.dp else 42.dp)
-                        )
-                    }
-                    Spacer(modifier = GlanceModifier.height(if (!isSpecial)18.dp else 22.dp))
+                            .size(48.dp),
+                        colorFilter = ColorFilter.tint(
+                            ColorProvider(Color(0xFFB51E25)))
+                    )
+                    Spacer(modifier = GlanceModifier.height(15.dp))
                     Text(
-                        text = "கீழ்நோக்கு",
+                        text = data.nokkuName,
                         style = TextStyle(
                             fontSize = 9.sp,
                             fontWeight = FontWeight.Bold,
-                            color = ColorProvider(Color(0xFF252525)),
+                            color = ColorProvider( Color(0xFF252525)),
                             textAlign = TextAlign.Center
                         )
                     )
@@ -137,29 +135,53 @@ fun DailySheetExpandView() {
                 modifier = GlanceModifier
                     .padding(vertical = 8.dp)
                     .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = "விருச்சிகம் - இன்பம்",
-                    modifier = GlanceModifier.defaultWeight(),
-                    style = TextStyle(
-                        fontSize = 10.sp,
-                        fontWeight = FontWeight.Medium,
-                        color = ColorProvider(Color(0xFF252525)),
-                        textAlign = TextAlign.Center
-                    )
-                )
-                if (size.width > 280.dp) {
-                    VerticalDivider(24)
+                Column {
                     Text(
-                        text = "சூரிய உதயம் - 6.00",
-                        modifier = GlanceModifier.defaultWeight(),
+                        text = "நல்ல நேரம்",
+                        modifier = GlanceModifier
+                            .padding(bottom = 4.dp),
                         style = TextStyle(
-                            fontSize = 10.sp,
+                            fontSize = 8.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = ColorProvider(Color(0xFF252525)),
+                        )
+                    )
+                    Row {
+                        NallaNeramView(
+                            image = R.drawable.ic_morning,
+                            text = "6.00 - 7.00"
+                        )
+                        Spacer(modifier = GlanceModifier.width(8.dp))
+                        NallaNeramView(
+                            image = R.drawable.ic_night,
+                            text = "12.00 - 1.00"
+                        )
+                    }
+
+                }
+                Spacer(modifier = GlanceModifier.width(16.dp))
+                Column(
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(
+                        text = "எமகண்டம்",
+                        modifier = GlanceModifier
+                            .padding(bottom = 4.dp),
+                        style = TextStyle(
+                            fontSize = 8.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = ColorProvider(Color(0xFF252525)),
+                        )
+                    )
+                    Text(
+                        text = data.emagandam,
+                        style = TextStyle(
+                            fontSize = 8.sp,
                             fontWeight = FontWeight.Medium,
                             color = ColorProvider(Color(0xFFB51E25)),
-                            textAlign = TextAlign.Center
                         )
                     )
                 }

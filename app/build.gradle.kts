@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     implementation(libs.androidx.navigation.compose)
 
+    //work manager
+    implementation(libs.androidx.work.runtime.ktx)
+
     // android tools
     debugImplementation(libs.androidx.ui.tooling)
 

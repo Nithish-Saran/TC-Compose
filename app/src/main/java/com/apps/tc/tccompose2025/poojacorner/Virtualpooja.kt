@@ -1,7 +1,6 @@
 package com.apps.tc.tccompose2025.poojacorner
 
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Animatable
@@ -66,6 +65,7 @@ import com.apps.tc.tccompose2025.App
 import com.apps.tc.tccompose2025.Constant
 import com.apps.tc.tccompose2025.R
 import com.apps.tc.tccompose2025.log
+import com.apps.tc.tccompose2025.models.assetPath
 import com.apps.tc.tccompose2025.showToast
 import com.apps.tc.tccompose2025.ui.theme.ComposeTamilCalendar2025Theme
 import kotlinx.coroutines.Job
@@ -85,8 +85,8 @@ fun VirtualPooja(app: App) {
     val poojaState by poojaViewModel.poojaState.collectAsState()
     val scope = rememberCoroutineScope()
 
-    val coconutImage = remember { mutableStateOf("coconut.png") }
-    val gifImage = remember { mutableStateOf("img_lamp.png") }
+    val coconutImage = remember { mutableStateOf("things_coconut.png") }
+    val gifImage = remember { mutableStateOf("things_lamp_off.png") }
     val imageLoader = remember {
         ImageLoader.Builder(app).components {
             add(ImageDecoderDecoder.Factory()) // For API 28+
@@ -117,10 +117,12 @@ fun VirtualPooja(app: App) {
                 Lifecycle.Event.ON_PAUSE -> {
                     if (mediaPlayer.isPlaying) mediaPlayer.stop()
                 }
+
                 Lifecycle.Event.ON_DESTROY -> {
                     mediaPlayer.stop()
                     mediaPlayer.release()
                 }
+
                 else -> {}
             }
         }
@@ -181,14 +183,16 @@ fun VirtualPooja(app: App) {
     Box(modifier = Modifier.fillMaxSize()) {
         when (val state = poojaState) {
             is PoojaState.ShowPoojaItems -> {
-                val theme = state.themes
-                val god = state.godData
+                val state = state.poojaData
+                val god = state.gods
                 val flower = state.flowers
+                val songs = state.songs
+                val bgs = state.bgs
                 val poojaBottomSheetItem = remember {
                     mutableStateOf<Pair<Int, List<Pair<String, String>>>?>(null)
                 }
 
-                fun orbitAnimation(index: Int) {
+/*                fun orbitAnimation(index: Int) {
                     if (orbitingInProgress.value) return
                     orbitingInProgress.value = true
 
@@ -265,13 +269,13 @@ fun VirtualPooja(app: App) {
                         delay(30_000L)  // 1 minute = 60,000 ms
                         stopFlower()
                     }
-                }
+                }*/
 
                 AsyncImage(
-                    model = theme.poojaBgPath,
+                    model = assetPath(bgs[1].img),
                     contentDescription = null,
                     contentScale = ContentScale.FillBounds,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.size(50.dp)
                 )
 
                 Column(
@@ -285,33 +289,33 @@ fun VirtualPooja(app: App) {
                     ) {
                         // Rotating background
                         AsyncImage(
-                            model = theme.godBgPath,
+                            model = god[0].decorImage,
                             contentDescription = null,
                             modifier = Modifier
-                                .size(340.dp)
+                                .size(40.dp)
                                 .graphicsLayer { rotationZ = infiniteRotation.value },
                             contentScale = ContentScale.FillBounds
                         )
 
                         // God image
                         AsyncImage(
-                            model = god.godImage,
+                            model = god[0].godImage,
                             contentDescription = null,
                             modifier = Modifier
                                 .size(500.dp)
                                 .padding(top = 108.dp)
                         )
 
-                        // Falling Flowers
-                        flowerOffsets.forEachIndexed { index, offsetY ->
-                            if (flowerVisible[index].value) {
-                                AsyncImage(
-                                    model = flower.serviceIcon,
-                                    contentDescription = "Falling Flower",
-                                    modifier = Modifier
-                                        .size(38.dp)
-                                        .offset {
-                                            /*
+                        /*                        // Falling Flowers
+                                                flowerOffsets.forEachIndexed { index, offsetY ->
+                                                    if (flowerVisible[index].value) {
+                                                        AsyncImage(
+                                                            model = flower.serviceIcon,
+                                                            contentDescription = "Falling Flower",
+                                                            modifier = Modifier
+                                                                .size(38.dp)
+                                                                .offset {
+                                                                    *//*
                                             * offsetY.value is the current vertical Y-position of the flower (animated).
                                             * sin(offsetY.value / 100) causes a wave-like left-right oscillation.
                                             * It uses sine wave logic to simulate smooth natural motion.
@@ -319,7 +323,7 @@ fun VirtualPooja(app: App) {
                                             * 40 controls the amplitude (how far it swings left and right).
                                             * xOffsets[index] is the initial horizontal starting point for that flower.
                                             * IntOffset(x, y) sets the flower’s exact position on screen.
-                                            */
+                                            *//*
                                             val swayX =
                                                 (sin(offsetY.value / 100) * 40).toInt() // swing in air
                                             IntOffset(
@@ -329,11 +333,11 @@ fun VirtualPooja(app: App) {
                                         }
                                         .align(Alignment.TopCenter))
                             }
-                        }
+                        }*/
 
                         // Orbiting objects
                         arrayOf(
-                            "img_pooja_plate.png", "img_incense.png", "img_pooja_bell.png"
+                            "things_plate", "things_incense", "things_bell"
                         ).forEachIndexed { i, img ->
                             OrbitingItem(
                                 index = i,
@@ -347,7 +351,7 @@ fun VirtualPooja(app: App) {
 
                     // Lamp & Coconut
                     Row(
-                        modifier = Modifier.padding(start = 32.dp, top = 64.dp, bottom = 18.dp),
+                        //modifier = Modifier.padding(start = 32.dp, top = 64.dp, bottom = 18.dp),
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
@@ -377,124 +381,105 @@ fun VirtualPooja(app: App) {
                         itemVerticalAlignment = Alignment.CenterVertically
                     ) {
                         arrayOf(
-                            when(poojaViewModel.selectedGod) {
-                                0 -> theme.vinayagarPath
-                                1 -> theme.perumalPath
-                                2 -> theme.muruganPath
-                                3 -> theme.iyappanPath
-                                4 -> theme.lakshmiPath
-                                5 -> theme.durgaPath
-                                6 -> theme.saraswathiPath
-                                7 -> theme.saibabaPath
-                                8 -> theme.sivanPath
-                                else -> theme.hanumanPath
-                            },
-                            if (isPlaying.value) theme.stopPath else theme.musicPath,
-                            theme.themePath,
-                            theme.lampPath,
-                            when(poojaViewModel.selectedFlower) {
-                                0 -> theme.hybiscusPath
-                                1 -> theme.samanthiPath
-                                2 -> theme.rosePath
-                                3 -> theme.sevvanthiPath
-                                else -> theme.lotusPath
-                            },
-                            theme.platePath,
-                            theme.incensePath,
-                            theme.bellPath,
-                            theme.coconutPath,
+                            "btn_god",
+                            "btn_music",
+                            "btn_bg",
+                            "btn_lamp",
+                            "btn_flower",
+                            "btn_plate",
+                            "btn_incense",
+                            "btn_bell",
+                            "btn_coconut"
                         ).forEachIndexed { index, btn ->
-
                             AsyncImage(
-                                model = btn,
+                                model = assetPath(btn),
                                 contentDescription = "buttons",
                                 modifier = Modifier
-                                    .size(64.dp)
+                                    .size(14.dp)
                                     .padding(8.dp)
                                     .clickable {
                                         when (index) {
                                             0 -> {  // god
-                                                poojaBottomSheetItem.value =
-                                                    Pair(index, state.poojaData.gods.map {
-                                                        Pair(it.godImage, it.godName)
-                                                    })
-                                                showBottomSheet.value = true
+
                                             }
 
                                             1 -> {  // song
-                                                if (isPlaying.value) {
-                                                    stopSong()
-                                                } else {
-                                                    poojaBottomSheetItem.value =
-                                                        Pair(index, god.songs.map {
-                                                            Pair(it.serviceIcon, it.name)
-                                                        })
-                                                    showBottomSheet.value = true
-                                                }
+//                                                if (isPlaying.value) {
+//                                                    stopSong()
+//                                                } else {
+//                                                    poojaBottomSheetItem.value =
+//                                                        Pair(index, god.songs.map {
+//                                                            Pair(it.serviceIcon, it.name)
+//                                                        })
+//                                                    showBottomSheet.value = true
+//                                                }
                                             }
 
                                             2 -> {  // theme
-                                                poojaBottomSheetItem.value = Pair(
-                                                    index, state.poojaData.themes.map {
-                                                        Pair(it.poojaBgPath, "")
-                                                    }
-                                                )
-                                                showBottomSheet.value = true
+//                                                poojaBottomSheetItem.value = Pair(
+//                                                    index, state.poojaData.themes.map {
+//                                                        Pair(it.poojaBgPath, "")
+//                                                    }
+//                                                )
+//                                                showBottomSheet.value = true
                                             }
 
-                                            3 -> gifImage.value = "gif_lamp.gif"
+                                            3 -> gifImage.value = "things_lamp_anim.gif"
                                             4 -> {
-                                                poojaBottomSheetItem.value = Pair(
-                                                    index, state.poojaData.flowers.map {
-                                                        Pair(it.serviceIcon, it.name)
-                                                    }
-                                                )
-                                                showBottomSheet.value = true
+//                                                poojaBottomSheetItem.value = Pair(
+//                                                    index, state.poojaData.flowers.map {
+//                                                        Pair(it.serviceIcon, it.name)
+//                                                    }
+//                                                )
+//                                                showBottomSheet.value = true
                                             }
 
-                                            5 -> orbitAnimation(0)  // 0th index is plate
-                                            6 -> orbitAnimation(1)  // 1 is incense
-                                            7 -> orbitAnimation(2)  // 2 is bell
-                                            8 -> coconutBreak()
+//                                            5 -> orbitAnimation(0)  // 0th index is plate
+//                                            6 -> orbitAnimation(1)  // 1 is incense
+//                                            7 -> orbitAnimation(2)  // 2 is bell
+//                                            8 -> coconutBreak()
                                         }
                                     })
                         }
                     }
                 }
 
-                if (showBottomSheet.value) {
-                    poojaBottomSheetItem.value?.let {
-                        PoojaBottomSheet(
-                            poojaItems = it.second,
-                            onSelectedItem = { index ->
-                                log(index)
-                                log(god.godId)
-                                when (it.first) {
-                                    0 -> {
-                                        poojaViewModel.selectedGod = index
-                                        poojaViewModel.updateTheme()
+                /*                if (showBottomSheet.value) {
+                                    poojaBottomSheetItem.value?.let {
+                                        PoojaBottomSheet(
+                                            poojaItems = it.second,
+                                            onSelectedItem = { index ->
+                                                log(index)
+                                                log(god.godId)
+                                                when (it.first) {
+                                                    0 -> {
+                                                        poojaViewModel.selectedGod = index
+                                                        poojaViewModel.updateTheme()
+                                                    }
+
+                                                    1 -> {
+                                                        val songUrl =
+                                                            "${Constant.ContentURL}calendar/tamil/pooja/pooja_${god.godId}_${index + 1}.mp3"
+                                                        playSong(app, songUrl)
+                                                    }
+
+                                                    2 -> {
+                                                        poojaViewModel.selectedTheme = index
+                                                        poojaViewModel.updateTheme()
+                                                    }
+
+                                                    4 -> {
+                                                        poojaViewModel.selectedFlower = index
+                                                        poojaViewModel.updateTheme()
+                                                        flowerFall()
+                                                    }
+                                                }
+                                            },
+                                            onDismiss = { showBottomSheet.value = false },
+                                            showSheet = showBottomSheet.value,
+                                        )
                                     }
-                                    1 -> {
-                                        val songUrl =
-                                            "${Constant.ContentURL}calendar/tamil/pooja/pooja_${god.godId}_${index + 1}.mp3"
-                                        playSong(app, songUrl)
-                                    }
-                                    2 -> {
-                                        poojaViewModel.selectedTheme = index
-                                        poojaViewModel.updateTheme()
-                                    }
-                                    4 -> {
-                                        poojaViewModel.selectedFlower = index
-                                        poojaViewModel.updateTheme()
-                                        flowerFall()
-                                    }
-                                }
-                            },
-                            onDismiss = { showBottomSheet.value = false },
-                            showSheet = showBottomSheet.value,
-                        )
-                    }
-                }
+                                }*/
             }
 
             is PoojaState.Loading -> { /* Add loader if needed */
@@ -508,24 +493,24 @@ fun VirtualPooja(app: App) {
     LaunchedEffect(Unit) {
         scope.launch { poojaViewModel.fetchPoojaData(app) }
     }
-    LaunchedEffect(poojaViewModel.selectedGod) {
-        // Reset orbiting items' positions
-        defaultPos[0].snapTo(90f)
-        defaultPos[1].snapTo(110f)
-        defaultPos[2].snapTo(65f)
-
-        liftOffsets.forEach { it.snapTo(0f) }
-
-        // Reset coconut
-        coconutClickCount.intValue = 0
-        coconutImage.value = "coconut.png"
-
-        // Reset gif lamp
-        gifImage.value = "img_lamp.png"
-
-        stopFlower()
-        stopSong()
-    }
+//    LaunchedEffect(poojaViewModel.selectedGod) {
+//        // Reset orbiting items' positions
+//        defaultPos[0].snapTo(90f)
+//        defaultPos[1].snapTo(110f)
+//        defaultPos[2].snapTo(65f)
+//
+//        liftOffsets.forEach { it.snapTo(0f) }
+//
+//        // Reset coconut
+//        coconutClickCount.intValue = 0
+//        coconutImage.value = "coconut.png"
+//
+//        // Reset gif lamp
+//        gifImage.value = "img_lamp.png"
+//
+//        stopFlower()
+//        stopSong()
+//    }
 }
 
 @Composable

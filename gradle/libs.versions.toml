@@ -16,6 +16,7 @@ navigationFragmentKtx = "2.9.1"
 media3Exoplayer = "1.7.1"
 media3Ui = "1.7.1"
 numberpicker = "1.0.3"
+workRuntimeKtx = "2.10.2"
 
 [libraries]
 android-async-http = { module = "com.loopj.android:android-async-http", version.ref = "androidAsyncHttp" }
@@ -41,6 +42,7 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3Exoplayer" }
 androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media3Ui" }
 numberpicker = { module = "com.chargemap.compose:numberpicker", version.ref = "numberpicker" }
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workRuntimeKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

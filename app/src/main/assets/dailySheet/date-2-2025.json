@@ -1,0 +1,2535 @@
+[
+  {
+    "date": 1,
+    "taDate": 19,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று காலை 06.35 வரை சித்தயோகம் பின்பு காலை 06.58 வரை அமிர்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "சதயம் காலை 6.58 வரை பின்பு பூரட்டாதி முழுவதும்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 319,
+    "visaesam": "முதல் தமிழக முதல்வர் ஓமண்டூர் O.P. ராமசாமி ரெட்டியார் பிறந்தநாள். இந்திய கடலோர காவல் படை தினம்",
+    "muDateIndex": 2,
+    "ragu": {
+      "msm": 540,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 360,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1290,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஆதாயம்",
+      "ஆதரவு",
+      "தோல்வி",
+      "போட்டி",
+      "லாபம்",
+      "பெருமை",
+      "பயம்",
+      "நற்செயல்",
+      "மகிழ்ச்சி",
+      "கீர்த்தி",
+      "சோதனை",
+      "வாழ்வு"
+    ],
+    "chandrashtamam": "மகம்",
+    "chandrashtamamRasi": "கும்பம் / மீனம்",
+    "daySpecial": "முதல் தமிழக முதல்வர்  ஓமண்டூர் O.P. ராமசாமி ரெட்டியார் பிறந்தநாள். இந்திய கடலோர காவல் படை தினம்.",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "திரிதியை பகல் 2.36 வரை பின்பு சதுர்த்தி",
+    "karanamPanjangam": "இன்று அதிகாலை 03.33 வரை தைதுலம் பின்பு பிற்பகல் 02.36 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று பிற்பகல் 2.58 வரை பரிகம் பின்பு சிவம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "leaders": {
+      "date": 1,
+      "name": "O.P.ராமசாமி ரெட்டியார் பிறந்த நாள்",
+      "desc": "ஓமந்தூர் ராமசாமி ரெட்டியார், இந்திய தேசிய காங்கிரசு கட்சியை சேர்ந்த ஒரு அரசியல்வாதி ஆவார். சென்னை மாகாணம் மற்றும் சென்னை மாநிலத்தின் முதல்வராகப் பணியாற்றியவர். அவரது ஆட்சியின் போது மடங்கள், ஆதீனங்கள், கோயில்களின் சொத்துக்களை சிலர் மட்டுமே சுரண்டி வருவதைத் தடுக்க சட்டம் கொண்டுவந்தார். ஜமீன்தார் இனாம் முறையை ஒழித்தார், ஊழலுக்கு எதிராக நடவடிக்கை எடுத்தார். பூரண மதுவிலக்கை அமல்படுத்தினார். இவரது பிறந்த தினம் இன்று.",
+      "icon": "op_ramasamy"
+    }
+  },
+  {
+    "date": 2,
+    "taDate": 20,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று அதிகாலை 05.21 வரை மரணயோகம் பின்பு காலை 06.35 வரை சித்தயோகம் பின்பு அமிர்தயோகம்",
+    "sooranam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "பூரட்டாதி அதிகாலை 5.21 வரை பின்பு உத்திரட்டாதி முழுவதும்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 43,
+    "visaesam": "முகுந்த சதுர்த்தி. வர சதுர்த்தி. சதுர்த்தி விரதம். வளர்பிறை சுபமுகூர்த்தம். உலக ஈர நிலங்கள் தினம். தேவமாதா பரிசுத்தரானத் திருநாள். சிறியநகசு.",
+    "muDateIndex": 3,
+    "ragu": {
+      "msm": 270,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 180,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஜெயம்",
+      "மறதி",
+      "சுகம்",
+      "உயர்வு",
+      "நட்பு",
+      "அமைதி",
+      "புகழ்",
+      "ஆதரவு",
+      "பெருமை",
+      "சுபம்",
+      "செலவு",
+      "போட்டி"
+    ],
+    "chandrashtamam": "பூரம்",
+    "chandrashtamamRasi": "மீனம்",
+    "daySpecial": "முகுந்த சதுர்த்தி. வர சதுர்த்தி. சதுர்த்தி விரதம். வளர்பிறை சுபமுகூர்த்தம். தேவமாதா பரிசுத்தரானத் திருநாள். சிறியநகசு.உலக ஈர நிலங்கள் தினம்.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "சதுர்த்தி நண்பகல் 12.29 வரை பின்பு பஞ்சமி",
+    "karanamPanjangam": "இன்று அதிகாலை 01.33 வரை வணிசை பின்பு பிற்பகல் 12.29 வரை பத்திரை பின்பு இரவு 11.21 வரை பவம் பின்பு பாலவம்",
+    "namaYogam": "இன்று பிற்பகல் 12.04 வரை சிவம் பின்பு சித்தம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": true,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "marriage": {
+      "date": 2,
+      "time": {
+        "msm": 450,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    },
+    "christ": {
+      "date": 2,
+      "name": "தேவமாதா பரிசுத்தரான திருநாள்",
+      "desc": "பரிசுத்த ஆவியானவர் தேவமாதாவுக்குள் இறங்கிய தினம் இன்று",
+      "icon": "feb_2"
+    }
+  },
+  {
+    "date": 3,
+    "taDate": 21,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று காலை 06.35 வரை அமிர்தயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "உத்திரட்டாதி அதிகாலை 4.07 வரை பின்பு ரேவதி பின் இரவு 2.30 வரை பின்பு அசுபதி",
+    "nallaNeram": [
+      {
+        "msm": 390,
+        "dur": 60
+      },
+      {
+        "msm": 1020,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 316,
+    "visaesam": "ஷஷ்டி விரதம். பைம்மொழில் ஸ்ரீ முருகப்பெருமான் கலை வாகனத்தில் பவனி. அறிஞர் அண்ணா நினைவு நாள். வளர்பிறை சுப முகூர்த்தம்.",
+    "muDateIndex": 4,
+    "ragu": {
+      "msm": 450,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 90,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "பீடை",
+      "நன்மை",
+      "அமைதி",
+      "செலவு",
+      "பயம்",
+      "கவலை",
+      "வரவு",
+      "தாமதம்",
+      "ஜெயம்",
+      "ஆதரவு",
+      "வெற்றி",
+      "ஆக்கம்"
+    ],
+    "chandrashtamam": "பூரம், உத்திரம்",
+    "chandrashtamamRasi": "மீனம்",
+    "daySpecial": "ஷஷ்டி விரதம். அறிஞர் அண்ணா நினைவு நாள். வளர்பிறை சுப முகூர்த்தம்.",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "பஞ்சமி காலை 10.12 வரை பின்பு சஷ்டி",
+    "karanamPanjangam": "இன்று காலை 10.12 வரை பாலவம் பின்பு இரவு 09.03 வரை கௌலவம் பின்பு தைதுலம்",
+    "namaYogam": "இன்று காலை 9.00 வரை சித்தம் பின்பு சாத்தியம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": true,
+    "piradosham": false,
+    "marriage": {
+      "date": 3,
+      "time": {
+        "msm": 390,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    },
+    "leaders": {
+      "date": 3,
+      "name": "அறிஞர் அண்ணா நினைவு தினம்",
+      "desc": "காஞ்சீவரம் நடராசன் அண்ணாதுரை ஓர் இந்திய அரசியல்வாதியும், தமிழகத்தின் ஆறாவது முதலமைச்சருமாவார். பரவலாக இவர் அறிஞர் அண்ணா என்றே அறியப்பட்டார். இந்தியா குடியரசான பிறகு, ஆட்சி அமைத்த காங்கிரசல்லாத முதலாவது திராவிடக்கட்சித் தலைவரும், அறுதிப் பெரும்பான்மையுடன் ஆட்சி அமைத்தவரும் ஆவார். இன்று அவரது நினைவு தினம்.",
+      "icon": "anna_durai"
+    }
+  },
+  {
+    "date": 4,
+    "taDate": 22,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "அசுபதி நள்ளிரவு 12.52 வரை பின்பு பரணி",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 75,
+    "visaesam": "ரத ஸப்தமி. சூரியசந்திர விரதம். இலங்கை சுதந்திர தினம். வீரமாமுனிவர் நினைவு நாள். சிறிய நகசு.உலக இரத்த புற்றுநோய் தினம்.",
+    "muDateIndex": 5,
+    "ragu": {
+      "msm": 180,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 0,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "நன்மை",
+      "ஆதாயம்",
+      "போட்டி",
+      "புகழ்",
+      "லாபம்",
+      "தாமதம்",
+      "முயற்சி",
+      "வெற்றி",
+      "ஆதரவு",
+      "பரிவு",
+      "நிம்மதி",
+      "உயர்வு"
+    ],
+    "chandrashtamam": "உத்திரம், ஹஸ்தம்",
+    "chandrashtamamRasi": "மேஷம்",
+    "daySpecial": "ரத ஸப்தமி. சூரியசந்திர விரதம். இலங்கை சுதந்திர தினம். வீரமாமுனிவர் நினைவு நாள். சிறிய நகசு. உலக புற்று நோய் தினம்,சர்வதேச மனித சகோதரத்துவ தினம்.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "சஷ்டி காலை 7.54 வரை பின்பு ஸப்தமி முழுவதும்",
+    "karanamPanjangam": "இன்று காலை 07.54 வரை தைதுலம் பின்பு மாலை 06.05 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று அதிகாலை 5.52 வரை சாத்தியம் பின்பு சுபம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "hindu": {
+      "date": 4,
+      "name": "ரத ஸப்தமி",
+      "desc": "தை மாதத்தில் வரும் வளர்பிறை ஏழாம் நாள் வரும் சப்தமி திதியை ரத சப்தமி திதி என கொண்டாடுகிறோம். இந்த தினம் சூரிய ஜெயந்தியாகவும் கொண்டாடப்படுகின்றது.",
+      "icon": "ratha_sapthami"
+    }
+  },
+  {
+    "date": 5,
+    "taDate": 23,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று இரவு 11.18 வரை சித்தயோகம் பின்பு அமிர்தயோகம்",
+    "sooranam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "பரணி இரவு 11.18 வரை பின்பு கார்த்திகை",
+    "nallaNeram": [
+      {
+        "msm": 690,
+        "dur": 30
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 33,
+    "visaesam": "திருவிடைமருதூர் ஸ்ரீ சிவபெருமான் வெள்ளி யானை வாகனத்தில் திருவீதிவுலா. பழனி ஸ்ரீ ஆண்டவர் விழா தொடக்கம்.",
+    "muDateIndex": 6,
+    "ragu": {
+      "msm": 0,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 630,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 90,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "பொறுமை",
+      "ஆக்கம்",
+      "ஆதரவு",
+      "நலம்",
+      "பக்தி",
+      "தடங்கல்",
+      "போட்டி",
+      "வாழ்வு",
+      "மகிழ்ச்சி",
+      "வெற்றி",
+      "பயம்",
+      "ஏமாற்றம்"
+    ],
+    "chandrashtamam": "ஹஸ்தம், சித்திரை",
+    "chandrashtamamRasi": "மேஷம்",
+    "daySpecial": "-",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "ஸப்தமி அதிகாலை 4.15 வரை பின்பு அஷ்டமி முழுவதும்",
+    "karanamPanjangam": "இன்று அதிகாலை 04.15 வரை வணிசை பின்பு மாலை 03.48 வரை பத்திரை பின்பு பவம்",
+    "namaYogam": "இன்று அதிகாலை 2.43 வரை சுபம் பின்பு இரவு 11.38 வரை சுப்பிரம் பின்பு பிராம்யம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "ashtami": {
+      "date": 5,
+      "name": "இன்று அதிகாலை 4.16 முதல் நாளை அதிகாலை 3.20 வரை அஷ்டமி பின்பு நவமி.",
+      "desc": "",
+      "icon": "ic_astami_navami"
+    }
+  },
+  {
+    "date": 6,
+    "taDate": 24,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று காலை 06.35 வரை அமிர்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "sunrise": "6.36",
+    "star": "கார்த்திகை இரவு 9.53 வரை பின்பு ரோகிணி",
+    "nallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 207,
+    "visaesam": "காஞ்சிபுரம் ஸ்ரீ உலகளந்த பெருமாள், திருமயம் ஸ்ரீ ஆண்டாள் இத்தலங்களில் பவனி வரும் காக்ஷி. கார்த்திகை விரதம்.",
+    "muDateIndex": 7,
+    "ragu": {
+      "msm": 90,
+      "dur": 90
+    },
+    "soolam": "தெற்கு",
+    "kuligai": {
+      "msm": 540,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "தாமதம்",
+      "லாபம்",
+      "அச்சம்",
+      "பகை",
+      "வரவு",
+      "நஷ்டம்",
+      "முயற்சி",
+      "ஊக்கம்",
+      "நன்மை",
+      "மேன்மை",
+      "சுகம்",
+      "உற்சாகம்"
+    ],
+    "chandrashtamam": "சித்திரை, சுவாதி",
+    "chandrashtamamRasi": "மேஷம் / ரிஷபம்",
+    "daySpecial": "கார்த்திகை விரதம்.",
+    "parigaram": "தைலம்",
+    "yamagandam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "அஷ்டமி அதிகாலை 3.20 வரை பின்பு நவமி பின் இரவு 1.17 வரை பின்பு தசமி",
+    "karanamPanjangam": "இன்று அதிகாலை 03.20 வரை பவம் பின்பு பிற்பகல் 02.19 வரை பாலவம் பின்பு கௌலவம்",
+    "namaYogam": "இன்று இரவு 8.39 வரை பிராம்யம் பின்பு ஐந்திரம்.",
+    "kiruthigai": true,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "navami": {
+      "date": 6,
+      "name": "இன்று பின்னிரவு 1.17 வரை நவமி.",
+      "desc": "",
+      "icon": "ic_astami_navami"
+    }
+  },
+  {
+    "date": 7,
+    "taDate": 25,
+    "month": 2,
+    "taMonth": 10,
+    "year": 25,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று இரவு 08.41 வரை மரணயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "ரோகிணி இரவு 8.41 வரை பின்பு மிருகசீருஷம்",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 305,
+    "visaesam": "கோவை ஸ்ரீபாலதண்டாயுதபாணி யானை வாகனத்தில் பவனி. காஞ்சிபுரம் ஸ்ரீஉலகளந்த பெருமாள் புறப்பாடு.",
+    "muDateIndex": 8,
+    "ragu": {
+      "msm": 630,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 450,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 0,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஆக்கம்",
+      "அமைதி",
+      "இரக்கம்",
+      "எதிர்ப்பு",
+      "மகிழ்ச்சி",
+      "பொறுமை",
+      "போட்டி",
+      "புகழ்",
+      "உயர்வு",
+      "லாபம்",
+      "நலம்",
+      "நற்செயல்"
+    ],
+    "chandrashtamam": "சுவாதி, விசாகம்",
+    "chandrashtamamRasi": "ரிஷபம்",
+    "daySpecial": "-",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "தசமி இரவு 11.26 வரை பின்பு ஏகாதசி",
+    "karanamPanjangam": "இன்று அதிகாலை 01.17 வரை கௌலவம் பின்பு பிற்பகல் 12.22 வரை தைதுலம் பின்பு இரவு 11.26 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று மாலை 5.50 வரை ஐந்திரம் பின்பு வைதிருதி.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 8,
+    "taDate": 26,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "மிருகசீரிஷம் இரவு 7.47 வரை பின்பு திருவாதிரை",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 184,
+    "visaesam": "ஸர்வ ஏகாதசி. மதுரை மீனாட்சி சுந்தரேசுவரர் காலை எடுப்பு தேர் இரவு ஸப்தாவர்ணம். திருமயம் ஸ்ரீ ஆண்டாள் புறப்பாடு.",
+    "muDateIndex": 9,
+    "ragu": {
+      "msm": 540,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 360,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1290,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "போட்டி",
+      "வெற்றி",
+      "நஷ்டம்",
+      "ஆதரவு",
+      "புகழ்",
+      "சாதனை",
+      "உற்சாகம்",
+      "ஆதாயம்",
+      "ஜெயம்",
+      "சாந்தம்",
+      "கடன்தீரல்",
+      "செலவு"
+    ],
+    "chandrashtamam": "விசாகம், அனுஷம்",
+    "chandrashtamamRasi": "ரிஷபம் / மிதுனம்",
+    "daySpecial": "ஸர்வ ஏகாதசி",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "ஏகாதசி இரவு 9.55 வரை பின்பு துவாதசி",
+    "karanamPanjangam": "இன்று காலை 10.41 வரை வணிசை பின்பு இரவு 09.55 வரை பத்திரை பின்பு பவம்",
+    "namaYogam": "இன்று மாலை 3.17 வரை வைதிருதி பின்பு விஷ்கம்பம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": true,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 9,
+    "taDate": 27,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "திருவாதிரை இரவு 7.17 வரை பின்பு புனர்பூசம்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 930,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 14,
+    "visaesam": "திருப்புடைமருதூர் சுவாமி கைலாச வாகனத்திலும் அம்பாள் கிளி வாகனத்திலும் பவனி. ஆழ்வார்திருநகரி. ஸ்ரீநம்மாழ்வார் விழா தொடக்கம்.",
+    "muDateIndex": 10,
+    "ragu": {
+      "msm": 270,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 180,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "மேன்மை",
+      "உயர்வு",
+      "ஆதரவு",
+      "முயற்சி",
+      "நன்மை",
+      "போட்டி",
+      "ஆக்கம்",
+      "வெற்றி",
+      "ஆர்வம்",
+      "லாபம்",
+      "கவனம்",
+      "பகை"
+    ],
+    "chandrashtamam": "அனுஷம், கேட்டை",
+    "chandrashtamamRasi": "மிதுனம்",
+    "daySpecial": "பாதுகாப்பான இணைய தினம்.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "துவாதசி இரவு 8.47 வரை பின்பு திரயோதசி",
+    "karanamPanjangam": "இன்று காலை 09.21 வரை பவம் பின்பு இரவு 08.47 வரை பாலவம் பின்பு கௌலவம்",
+    "namaYogam": "இன்று பிற்பகல் 12.59 வரை விஷ்கம்பம் பின்பு ப்ரீதி.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 10,
+    "taDate": 28,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று காலை 06.34 வரை சித்தசியோகம் பின்பு இரவு 07.12 வரை அமிர்தயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "புனர்பூசம் இரவு 7.12 வரை பின்பு பூசம்",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 109,
+    "visaesam": "பிரதோஷம். மதுரை ஸ்ரீமீனாக்ஷி சொக்கநாதர் தங்கப் பல்லக்கில் நாட்கதிரறுப்பு விழா. தேசிய குடற்புழு நீக்க தினம்,உலக பருப்பு தினம். வளர்பிறை சுபமுகூர்த்தம்.",
+    "muDateIndex": 11,
+    "ragu": {
+      "msm": 450,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 90,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 90,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஆக்கம்",
+      "அமைதி",
+      "பிரீதி",
+      "லாபம்",
+      "நட்பு",
+      "உதவி",
+      "பெருமை",
+      "நற்செயல்",
+      "சோதனை",
+      "நேர்மை",
+      "உயர்வு",
+      "பணிவு"
+    ],
+    "chandrashtamam": "கேட்டை, மூலம்",
+    "chandrashtamamRasi": "மிதுனம் / கடகம்",
+    "daySpecial": "பிரதோஷம். வளர்பிறை சுபமுகூர்த்தம். தேசிய குடற்புழு நீக்க தினம், உலக பருப்பு தினம்.",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "திரயோதசி இரவு 8.08 வரை பின்பு சதுர்த்தசி.",
+    "karanamPanjangam": "இன்று காலை 08.28 வரை கௌலவம் பின்பு இரவு 08.08 வரை தைதுலம் பின்பு கரசை",
+    "namaYogam": "இன்று காலை 11.02 வரை ப்ரீதி பின்பு ஆயுஷ்மான்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": true,
+    "marriage": {
+      "date": 10,
+      "time": {
+        "msm": 570,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    }
+  },
+  {
+    "date": 11,
+    "taDate": 29,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "பூசம் இரவு 7.31 வரை பின்பு ஆயில்யம்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 294,
+    "visaesam": "தைப்பூசம். அரசினர் விடுமுறை. குன்றக்குடி ஸ்ரீ முருகப்பெருமான் வெள்ளி கேடயத்தில் பவனி. திருநெல்வேலி ஸ்ரீநெல்லையப்பர் பவனி. மகளிர் மற்றும் சிறுமிகளுக்கான அறிவியல் தினம்.ஜப்பான் சுதந்திர தினம்.",
+    "muDateIndex": 12,
+    "ragu": {
+      "msm": 180,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 0,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "லாபம்",
+      "நன்மை",
+      "நலம்",
+      "நஷ்டம்",
+      "மேன்மை",
+      "சாதனை",
+      "எதிர்ப்பு",
+      "உழைப்பு",
+      "தேர்ச்சி",
+      "சிக்கனம்",
+      "நிம்மதி",
+      "கீர்த்தி"
+    ],
+    "chandrashtamam": "மூலம், பூராடம்",
+    "chandrashtamamRasi": "கடகம்",
+    "daySpecial": "தைப்பூசம். அரசினர் விடுமுறை. மகளிர் மற்றும் சிறுமிகளுக்கான அறிவியல் தினம்.ஜப்பான் சுதந்திர தினம்.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "சதுர்த்தசி இரவு 7.50 வரை பின்பு பௌர்ணமி.",
+    "karanamPanjangam": "இன்று காலை 07.59 வரை கரசை பின்பு இரவு 07.50 வரை வணிசை பின்பு பத்திரை",
+    "namaYogam": "இன்று காலை 9.26 வரை ஆயுஷ்மான் பின்பு சௌபாக்கியம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "guvHoliday": {
+      "date": 11,
+      "desc": "இன்று முருகப் பெருமானுக்கு உகந்த நன்னாள்",
+      "name": "தைப்பூசம்",
+      "icon": "thaipusam"
+    },
+    "hindu": {
+      "date": 11,
+      "name": "தைப்பூசம்",
+      "desc": "முருகனுக்கு விசேஷமான நன்னாள். முருகன் பிறந்த தினமாகவும் இது சொல்லப்படுகிறது.",
+      "icon": "thaipusam"
+    }
+  },
+  {
+    "date": 12,
+    "taDate": 30,
+    "month": 2,
+    "taMonth": 10,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "ஆயில்யம் இரவு 8.24 வரை பின்பு மகம்",
+    "nallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 78,
+    "visaesam": "விஷ்ணுபதி புண்ணிய காலம். ஆபிரஹாம் லிங்கன் பிறந்தநாள். ஸ்ரீவைகுண்டம் ஸ்ரீகள்ளபிரானுக்கு பால் அபிஷேகம். பௌர்ணமி. தேசிய உற்பத்தி திறன் தினம்.",
+    "muDateIndex": 13,
+    "ragu": {
+      "msm": 0,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 630,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 90,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "தாமதம்",
+      "களிப்பு",
+      "உழைப்பு",
+      "மகிழ்ச்சி",
+      "விவேகம்",
+      "நேர்மை",
+      "கடன்தீரல்",
+      "உற்சாகம்",
+      "நற்சொல்",
+      "நன்மை",
+      "அமைதி",
+      "போட்டி"
+    ],
+    "chandrashtamam": "பூராடம், உத்திராடம்",
+    "chandrashtamamRasi": "கடகம்",
+    "daySpecial": "ஆபிரஹாம் லிங்கன் பிறந்தநாள், பௌர்ணமி. தேசிய உற்பத்தி திறன் தினம்.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "பௌர்ணமி இரவு 8.12 வரை பின்பு பிரதமை.",
+    "karanamPanjangam": "இன்று காலை 08.01 வரை பத்திரை பின்பு இரவு  08.12 வரை பவம் பின்பு பாலவம்",
+    "namaYogam": "இன்று காலை 8.14 வரை சௌபாக்கியம் பின்பு சோபனம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": true,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "leaders": {
+      "date": 12,
+      "name": "ஆபிரஹாம் லிங்கன் பிறந்த நாள்.",
+      "desc": "ஆபிரகாம் லிங்கன் ஐக்கிய அமெரிக்காவின் 16 வது குடியரசுத் தலைவர் ஆவார். இவர் அடிமை முறைக்கு எதிர்ப்புத் தெரிவித்து அதனை ஒழிக்க முனைந்தவர்களில் ஒருவர். 1860ல் மேற்கு மாநிலங்களில் தலைவராக இருந்த இவர் குடியரசுக் கட்சியின் வேட்பாளராகத் தேர்ந்தெடுக்கப்பட்டு அமெரிக்காவின் குடியரசுத் தலைவராக வெற்றி பெற்றார். இன்று இவரது பிறந்த தினம்.",
+      "icon": "abiraham_lincon"
+    }
+  },
+  {
+    "date": 13,
+    "taDate": 1,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.34 வரை சித்தசியோகம் பின்பு இரவு 09.47 வரை அமிர்தயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "மகம் இரவு 9.47 வரை பின்பு பூரம்",
+    "nallaNeram": [
+      {
+        "msm": 660,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 93,
+    "visaesam": "கவிக்குயில் சரோஜினி பிறந்தநாள். பெரியநகசு. திருத்தணி ஸ்ரீமுருகப்பெருமானுக்கு பால் அபிஷேகம். ஷபேபாரத். உலக வானொலி தினம்,சரோஜினி நாயுடு தினம்.",
+    "muDateIndex": 14,
+    "ragu": {
+      "msm": 90,
+      "dur": 90
+    },
+    "soolam": "தெற்கு",
+    "kuligai": {
+      "msm": 540,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 0,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "சாந்தம்",
+      "திறமை",
+      "சஞ்சலம்",
+      "சிரத்தை",
+      "வாழ்வு",
+      "சிக்கல்",
+      "போட்டி",
+      "இன்பம்",
+      "பாசம்",
+      "பணவரவு",
+      "பகை",
+      "குழப்பம்"
+    ],
+    "chandrashtamam": "உத்திராடம், திருவோணம்",
+    "chandrashtamamRasi": "கடகம் / சிம்மம்",
+    "daySpecial": "கவிக்குயில் சரோஜினி பிறந்தநாள். பெரியநகசு. உலக வானொலி தினம்,சரோஜினி நாயுடு தினம்.",
+    "parigaram": "தைலம்",
+    "yamagandam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "பிரதமை இரவு 9.01 வரை பின்பு துவிதியை",
+    "karanamPanjangam": "இன்று காலை 08.37 வரை பாலவம் பின்பு இரவு 09.01 வரை கௌலவம் பின்பு தைதுலம்",
+    "namaYogam": "இன்று காலை 7.26 வரை சோபனம் பின்பு அதிகண்டம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "muslim": {
+      "date": 13,
+      "name": "ஷாபே பாரத்",
+      "desc": "",
+      "icon": "shaheed_bharat"
+    }
+  },
+  {
+    "date": 14,
+    "taDate": 2,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "sunrise": "6.35",
+    "star": "பூரம் இரவு 11.41 வரை பின்பு உத்திரம்",
+    "nallaNeram": [
+      {
+        "msm": 600,
+        "dur": 30
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 55,
+    "visaesam": "ஆழ்வார்திருநகரி ஸ்ரீநம்மாழ்வார் புறப்பாடு. புல்வாமா தாக்குதலில் பலியான 40 வீரர்களின் வீரவணக்கநாள். உலக காதலர் தினம்.",
+    "muDateIndex": 15,
+    "ragu": {
+      "msm": 630,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 450,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "செலவு",
+      "போட்டி",
+      "சினம்",
+      "வெற்றி",
+      "கவலை",
+      "ஆக்கம்",
+      "ஒய்வு",
+      "உற்சாகம்",
+      "நன்மை",
+      "உழைப்பு",
+      "மேன்மை",
+      "கடன்தீரல்"
+    ],
+    "chandrashtamam": "திருவோணம்,அவிட்டம்",
+    "chandrashtamamRasi": "சிம்மம்",
+    "daySpecial": "புல்வாமா தாக்குதலில் பலியான 40 வீரர்களின் வீரவணக்கநாள். உலக காதலர் தினம்.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "துவிதியை இரவு 10.21 வரை பின்பு திரிதியை",
+    "karanamPanjangam": "இன்று காலை 09.41 வரை தைதுலம் பின்பு இரவு 10.21 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று காலை 7.01 வரை அதிகண்டம் பின்பு சுகர்மம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 15,
+    "taDate": 3,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.33 வரை சித்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "sunrise": "6.34",
+    "star": "உத்திரம் பின் இரவு 1.51 வரை பின்பு ஹஸ்தம்",
+    "nallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 258,
+    "visaesam": "குச்சனூர் சனிபகவானுக்கு சிறப்பு அபிஷேக, ஆராதனை செய்ய நன்று. ஆழ்வார்திருநகரி ஸ்ரீநம்மாழ்வார் பவனி. சிறியநகசு.",
+    "muDateIndex": 16,
+    "ragu": {
+      "msm": 540,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 360,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1290,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஏமாற்றம்",
+      "நலம்",
+      "சுகம்",
+      "அமைதி",
+      "பயம்",
+      "ஆர்வம்",
+      "முயற்சி",
+      "தனம்",
+      "தாமதம்",
+      "ஆக்கம்",
+      "அமைதி",
+      "உழைப்பு"
+    ],
+    "chandrashtamam": "அவிட்டம், சதயம்",
+    "chandrashtamamRasi": "சிம்மம் / கன்னி",
+    "daySpecial": "சிறியநகசு",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "திரிதியை நள்ளிரவு 12.01 வரை பின்பு சதுர்த்தி",
+    "karanamPanjangam": "இன்று காலை 11.11 வரை வணிசை பின்பு பத்திரை",
+    "namaYogam": "இன்று காலை 6.57 வரை சுகர்மம் பின்பு திருதி.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 16,
+    "taDate": 4,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.33 வரை மரணயோகம் பின்பு அமிர்தயோகம்",
+    "sooranam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "sunrise": "6.34",
+    "star": "ஹஸ்தம் இன்று முழுவதும்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 930,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 240,
+    "visaesam": "சங்கடஹர சதுர்த்தி. ஆழ்வார் திருநகரின் ஸ்ரீநம்மாழ்வார் புறப்பாடு. இன்று செடி, கொடிகள் வைக்க நன்று. சுபமுகூர்த்தம்.",
+    "muDateIndex": 17,
+    "ragu": {
+      "msm": 270,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 180,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 90,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "நஷ்டம்",
+      "பிரீதி",
+      "பயம்",
+      "நலம்",
+      "ஆதரவு",
+      "உயர்வு",
+      "ஆக்கம்",
+      "பீடை",
+      "ஆதாயம்",
+      "வரவு",
+      "மேன்மை",
+      "முயற்சி"
+    ],
+    "chandrashtamam": "சதயம், பூரட்டாதி",
+    "chandrashtamamRasi": "கன்னி",
+    "daySpecial": "சங்கடஹர சதுர்த்தி. சுபமுகூர்த்தம்.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "சதுர்த்தி பின் இரவு 1.59 வரை பின்பு பஞ்சமி",
+    "karanamPanjangam": "இன்று அதிகாலை 12.01 வரை பத்திரை பின்பு பிற்பகல் 01.00 வரை பவம் பின்பு பாலவம்",
+    "namaYogam": "இன்று காலை 7.11 வரை திருதி பின்பு சூலம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": true,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "marriage": {
+      "date": 16,
+      "time": {
+        "msm": 450,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    }
+  },
+  {
+    "date": 17,
+    "taDate": 5,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று அதிகாலை 04.18 வரை அமிர்தயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "sunrise": "6.33",
+    "star": "ஹஸ்தம் அதிகாலை 4.18 வரை பின்பு சித்திரை முழுவதும்",
+    "nallaNeram": [
+      {
+        "msm": 390,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 387,
+    "visaesam": "சுபமுகூர்த்தம். சங்கரன் கோவில் ஸ்ரீகோமதியம்மன் புஷ்ப பாவாடை தரிசனம். திருத்தணி ஸ்ரீமுருகப்பெருமானுக்கு பால் அபிஷேகம்.",
+    "muDateIndex": 18,
+    "ragu": {
+      "msm": 450,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 90,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "வரவு",
+      "நட்பு",
+      "புகழ்",
+      "சுகம்",
+      "பிரயாசை",
+      "அமைதி",
+      "லாபம்",
+      "சாதனை",
+      "ஆர்வம்",
+      "உயர்வு",
+      "முயற்சி",
+      "மேன்மை"
+    ],
+    "chandrashtamam": "உத்திரட்டாதி",
+    "chandrashtamamRasi": "கன்னி / துலாம்",
+    "daySpecial": "சுபமுகூர்த்தம்",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "பஞ்சமி இன்று முழுவதும்",
+    "karanamPanjangam": "இன்று அதிகாலை 01.59 வரை பாலவம் பின்பு மாலை 03.03 வரை கௌலவம் பின்பு தைதுலம்",
+    "namaYogam": "இன்று காலை 7.36 வரை சூலம் பின்பு கண்டம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "marriage": {
+      "date": 17,
+      "time": {
+        "msm": 390,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    }
+  },
+  {
+    "date": 18,
+    "taDate": 6,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "sunrise": "6.33",
+    "star": "சித்திரை காலை 6.57 வரை பின்பு சுவாதி முழுவதும்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 260,
+    "visaesam": "தேய்பிறை ஷஷ்டி விரதம். கோயம்புத்தூர் ஸ்ரீகோணியம்மன் பூச்சாற்று விழா. ராமேசுவரம் ஸ்ரீராமநாதர் விழா தொடக்கம்.",
+    "muDateIndex": 19,
+    "ragu": {
+      "msm": 180,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 0,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "மகிழ்ச்சி",
+      "வெற்றி",
+      "உயர்வு",
+      "நஷ்டம்",
+      "ஆதரவு",
+      "அன்பு",
+      "ஊக்கம்",
+      "நலம்",
+      "பக்தி",
+      "ஆக்கம்",
+      "முயற்சி",
+      "சிந்தனை"
+    ],
+    "chandrashtamam": "ரேவதி",
+    "chandrashtamamRasi": "துலாம்",
+    "daySpecial": "தேய்பிறை ஷஷ்டி விரதம்",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "பஞ்சமி அதிகாலை 4.06 வரை பின்பு சஷ்டி முழுவதும்",
+    "karanamPanjangam": "இன்று அதிகாலை 04.06 வரை தைதுலம் பின்பு மாலை 05.10 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று காலை 8.10 வரை கண்டம் பின்பு விருத்தி.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": true,
+    "piradosham": false
+  },
+  {
+    "date": 19,
+    "taDate": 7,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "sunrise": "6.33",
+    "star": "சுவாதி காலை 9.27 வரை பின்பு விசாகம்",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 80,
+    "visaesam": "ராமநாதபுரம் செட்டி தெரு ஸ்ரீ முத்தாலம்மன் பவனி வரும் காக்ஷி. தமிழ் தாத்தா உ.வே.சா பிறந்தநாள். பெரியநகசு. மண் ஆரோக்கிய அட்டை தினம்.",
+    "muDateIndex": 20,
+    "ragu": {
+      "msm": 0,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 630,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "நலம்",
+      "வெற்றி",
+      "சுகம்",
+      "ஜெயம்",
+      "அமைதி",
+      "மகிழ்ச்சி",
+      "உயர்வு",
+      "புகழ்",
+      "ஆதாயம்",
+      "உற்சாகம்",
+      "சாந்தம்",
+      "நன்மை"
+    ],
+    "chandrashtamam": "அசுபதி",
+    "chandrashtamamRasi": "துலாம்",
+    "daySpecial": "தமிழ் தாத்தா உ.வே.சா பிறந்தநாள். பெரியநகசு. மண் ஆரோக்கிய அட்டை தினம்.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "சஷ்டி காலை 6.13 வரை பின்பு ஸப்தமி முழுவதும்",
+    "karanamPanjangam": "இன்று காலை 06.13 வரை வணிசை பின்பு இரவு 07.08 வரை பத்திரை பின்பு பவம்",
+    "namaYogam": "இன்று காலை 8.42 வரை விருத்தி பின்பு துருவம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 20,
+    "taDate": 8,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று முழுவதும் சித்தயோகம்",
+    "sooranam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "sunrise": "6.33",
+    "star": "விசாகம் காலை 11.46 வரை பின்பு அனுஷம்",
+    "nallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 3,
+    "visaesam": "திருவண்ணாமலை யோகிராம் சுரத்குமார் நினைவு நாள். சமூக நீதிக்கான உலக தினம். திருப்பதி ஸ்ரீஏழுமலையப்பன் புஷ்பாங்கி ஸேவை. சிறியநகசு.",
+    "muDateIndex": 21,
+    "ragu": {
+      "msm": 90,
+      "dur": 90
+    },
+    "soolam": "தெற்கு",
+    "kuligai": {
+      "msm": 540,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "செலவு",
+      "சுபம்",
+      "வரவு",
+      "சுகம்",
+      "பாராட்டு",
+      "பயம்",
+      "முயற்சி",
+      "தெளிவு",
+      "ஆக்கம்",
+      "பக்தி",
+      "உழைப்பு",
+      "தாமதம்"
+    ],
+    "chandrashtamam": "அசுபதி, பரணி",
+    "chandrashtamamRasi": "துலாம் / விருச்சிகம்",
+    "daySpecial": "திருவண்ணாமலை யோகிராம் சுரத்குமார் நினைவு நாள். சிறியநகசு. சமூக நீதிக்கான உலக தினம்.",
+    "parigaram": "தைலம்",
+    "yamagandam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "ஸப்தமி காலை 8.03 வரை பின்பு அஷ்டமி",
+    "karanamPanjangam": "இன்று காலை 08.03 வரை பவம் பின்பு இரவு 08.52 வரை பாலவம் பின்பு கௌலவம்",
+    "namaYogam": "இன்று காலை 9.05 வரை துருவம் பின்பு வ்யாகாதம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "ashtami": {
+      "date": 20,
+      "name": "இன்று காலை 8.04 முதல் நாளை காலை 9.40 வரை அஷ்டமி பின்பு நவமி.",
+      "desc": "",
+      "icon": "ic_astami_navami"
+    }
+  },
+  {
+    "date": 21,
+    "taDate": 9,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று பிற்பகல் 01.47 வரை சித்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "sunrise": "6.33",
+    "star": "அனுஷம் பகல் 1.47 வரை பின்பு கேட்டை",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 330,
+    "visaesam": "உலகதாய்மொழி தினம். திருமாலிருஞ்சோலை ஸ்ரீகள்ளழகர் கோவிலில் ஸ்ரீசுந்தரவல்லித் தாயார் புறப்பாடு.",
+    "muDateIndex": 22,
+    "ragu": {
+      "msm": 630,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 450,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஆதாயம்",
+      "ஆதரவு",
+      "தோல்வி",
+      "போட்டி",
+      "லாபம்",
+      "பெருமை",
+      "பயம்",
+      "நற்செயல்",
+      "மகிழ்ச்சி",
+      "கீர்த்தி",
+      "சாதனை",
+      "வாழ்வு"
+    ],
+    "chandrashtamam": "பரணி, கார்த்திகை",
+    "chandrashtamamRasi": "விருச்சிகம்",
+    "daySpecial": "உலகதாய்மொழி தினம்",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "அஷ்டமி காலை 9.40 வரை பின்பு நவமி",
+    "karanamPanjangam": "இன்று காலை 09.40 வரை கௌலவம் பின்பு இரவு 10.13 வரை தைதுலம் பின்பு கரசை",
+    "namaYogam": "இன்று காலை 9.15 வரை வ்யாகாதம் பின்பு ஹர்ஷணம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "navami": {
+      "date": 21,
+      "name": "இன்று காலை 9.40 வரை அஷ்டமி பின்பு நவமி.",
+      "desc": "",
+      "icon": "ic_astami_navami"
+    },
+    "leaders": {
+      "date": 21,
+      "name": "மால்கம் X மறைந்த நாள்.",
+      "desc": "",
+      "icon": "malcolmX"
+    }
+  },
+  {
+    "date": 22,
+    "taDate": 10,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.31 வரை மரணயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "sunrise": "6.32",
+    "star": "கேட்டை பகல் 3.22 வரை பின்பு மூலம்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 321,
+    "visaesam": "வேதாரண்யம் ஸ்ரீசிவபெருமான் விழா தொடக்கம். உலக சிந்தனை தினம். திருநள்ளார் சனிபகவானுக்கு சிறப்பு அபிஷேக, ஆராதனை செய்ய நன்று.",
+    "muDateIndex": 23,
+    "ragu": {
+      "msm": 540,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 360,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1290,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "ஜெயம்",
+      "பிரீதி",
+      "சுகம்",
+      "உயர்வு",
+      "நட்பு",
+      "அமைதி",
+      "புகழ்",
+      "ஆதரவு",
+      "பெருமை",
+      "சுபம்",
+      "செலவு",
+      "கீர்த்தி"
+    ],
+    "chandrashtamam": "கார்த்திகை, ரோகிணி",
+    "chandrashtamamRasi": "விருச்சிகம் / தனுசு",
+    "daySpecial": "உலக சிந்தனை தினம்.",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "nokkuNaal": 2,
+    "thithi": "நவமி காலை 10.46 வரை பின்பு தசமி",
+    "karanamPanjangam": "இன்று காலை 10.46 வரை கரசை பின்பு இரவு 11.07 வரை வணிசை பின்பு பத்திரை",
+    "namaYogam": "இன்று காலை 9.04 வரை ஹர்ஷணம் பின்பு வஜ்ரம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 23,
+    "taDate": 11,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.31 வரை சித்தயோகம் பின்பு மாலை 04.29 வரை அமிர்தயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "sunrise": "6.32",
+    "star": "மூலம் மாலை 4.29 வரை பின்பு பூராடம்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 30
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 281,
+    "visaesam": "ஸ்ரீவைகுண்டம் ஸ்ரீகள்ளபிரானுக்கு பால் அபிஷேகம். சூரியவழிபாடு செய்ய நன்று. சுபமுகூர்த்தம். சிறியநகசு.",
+    "muDateIndex": 24,
+    "ragu": {
+      "msm": 270,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 180,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 810,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "பொறுமை",
+      "இன்பம்",
+      "அமைதி",
+      "போட்டி",
+      "ஆதரவு",
+      "உற்சாகம்",
+      "நட்பு",
+      "பெருமை",
+      "ஆக்கம்",
+      "புகழ்",
+      "அனுகூலம்",
+      "பக்தி"
+    ],
+    "chandrashtamam": "ரோகிணி, மிருகசீரிஷம்",
+    "chandrashtamamRasi": "தனுசு",
+    "daySpecial": "சுபமுகூர்த்தம். சிறியநகசு.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 0,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "தசமி காலை 11.27 வரை பின்பு ஏகாதசி",
+    "karanamPanjangam": "இன்று காலை 11.27 வரை பத்திரை பின்பு இரவு  11.30 வரை பவம் பின்பு பாலவம்",
+    "namaYogam": "இன்று காலை 8.33 வரை வஜ்ரம் பின்பு சித்தி.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "marriage": {
+      "date": 23,
+      "time": {
+        "msm": 450,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    }
+  },
+  {
+    "date": 24,
+    "taDate": 12,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று மாலை 05.04 வரை சித்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "sunrise": "6.31",
+    "star": "பூராடம் மாலை 5.04 வரை பின்பு உத்திராடம்",
+    "nallaNeram": [
+      {
+        "msm": 390,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 100,
+    "visaesam": "சர்வ ஏகாதசி. செல்வி. ஜெ. ஜெயலலிதா பிறந்தநாள். மாநில பெண் குழந்தைகள் பாதுகாப்பு நாள். சிறியநகசு.",
+    "muDateIndex": 25,
+    "ragu": {
+      "msm": 450,
+      "dur": 90
+    },
+    "soolam": "கிழக்கு",
+    "kuligai": {
+      "msm": 90,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "மேன்மை",
+      "நிம்மதி",
+      "வெற்றி",
+      "ஆசை",
+      "செலவு",
+      "சுகம்",
+      "நன்மை",
+      "அமைதி",
+      "வரவு",
+      "சுபம்",
+      "ஆதரவு",
+      "போட்டி"
+    ],
+    "chandrashtamam": "மிருகசீரிஷம், திருவாதிரை",
+    "chandrashtamamRasi": "தனுசு / மகரம்",
+    "daySpecial": "சர்வ ஏகாதேசி. செல்வி. ஜெ. ஜெயலலிதா பிறந்தநாள். மாநில பெண் குழந்தைகள் பாதுகாப்பு நாள். சிறியநகசு.",
+    "parigaram": "தயிர்",
+    "yamagandam": {
+      "msm": 630,
+      "dur": 90
+    },
+    "nokkuNaal": 0,
+    "thithi": "ஏகாதசி காலை 11.33 வரை பின்பு துவாதசி",
+    "karanamPanjangam": "இன்று காலை 11.33 வரை பாலவம் பின்பு இரவு 11.21 வரை கௌலவம் பின்பு தைதுலம்",
+    "namaYogam": "இன்று காலை 7.36 வரை சித்தி பின்பு வ்யதீபாதம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": true,
+    "shasti": false,
+    "piradosham": false,
+    "leaders": {
+      "date": 24,
+      "name": "செல்வி ஜெ. ஜெயலிதா பிறந்த நாள்",
+      "desc": "செல்வி. ஜெ. ஜெயலலிதா, முன்னாள் தமிழக முதல்வரும், அரசியல் தலைவரும், பிரபல முன்னாள் தென்னிந்தியத் திரைப்பட நடிகையும் ஆவார். இவர் தமிழக முதலமைச்சராக ஐந்து முறை பதவி வகித்துள்ளார். இவர் 1991 முதல் 1996 வரையும், 2001 ஆம் ஆண்டில் சில மாதங்களும், பின்னர் 2002 முதல் 2006 வரையும், 2011 முதல் 2014 வரையும் இருந்தார். 2015 மே 23 முதல் இறக்கும் வரையில் முதலமைச்சராகப் பணி புரிந்தார். அண்ணா திராவிட முன்னேற்றக் கழகத்தின் பொதுச் செயலாளராக இருந்த இவரை \\\"புரட்சித் தலைவி\\\" எனவும் \\\"அம்மா\\\" எனவும் இவரது ஆதரவாளர்கள் அழைத்தனர்.தனது தொட்டில் குழந்தை திட்டத்துக்காக ஐக்கிய நாடுகள் சபையில் (ஐ.நா சபை) மத்தியில் கைதட்டைப் பெற்ற இந்தியாவை சார்ந்த முதல் பெண் முதலமைச்சர் இவரே ஆவார். இன்று இவரது பிறந்த நாள்.",
+      "icon": "j_jayalalithaa"
+    }
+  },
+  {
+    "date": 25,
+    "taDate": 13,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.29 வரை மரணயோகம் பின்பு சித்தயோகம்",
+    "sooranam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "sunrise": "6.30",
+    "star": "உத்திராடம் மாலை 5.11 வரை பின்பு திருவோணம்",
+    "nallaNeram": [
+      {
+        "msm": 450,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 138,
+    "visaesam": "திருப்பதி ஸ்ரீஏழுமலையப்பன் கத்தவால் சமஸ்தான மண்டபம் எழுந்தருளல். திருவோண விரதம். பிரதோஷம். மத்திய கலால் வரி தினம்..",
+    "muDateIndex": 26,
+    "ragu": {
+      "msm": 180,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 0,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1170,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "முயற்சி",
+      "புகழ்",
+      "ஆசை",
+      "நேர்மை",
+      "செய்தி",
+      "நன்மை",
+      "உயர்வு",
+      "லாபம்",
+      "செலவு",
+      "வெற்றி",
+      "தாமதம்",
+      "உழைப்பு"
+    ],
+    "chandrashtamam": "திருவாதிரை, புனர்பூசம்",
+    "chandrashtamamRasi": "மகரம்",
+    "daySpecial": "திருவோண விரதம். பிரதோஷம். மத்திய கலால் வரி தினம்.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 540,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "துவாதசி காலை 11.09 வரை பின்பு திரியோதசி",
+    "karanamPanjangam": "இன்று காலை 11.09 வரை தைதுலம் பின்பு இரவு 10.44 வரை கரசை பின்பு வணிசை",
+    "namaYogam": "இன்று காலை 6.16 வரை வ்யதீபாதம் பின்பு வரீயான்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": true
+  },
+  {
+    "date": 26,
+    "taDate": 14,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று மாலை 04.51 வரை சித்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "sunrise": "6.29",
+    "star": "திருவோணம் மாலை 4.51 வரை பின்பு அவிட்டம்",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 192,
+    "visaesam": "ஸ்ரீமஹா சிவராத்திரி. மூங்கிலணை ஸ்ரீ காமாட்சி அம்மன் பெருந்திருவிழா. சுபமுகூர்த்தம். நகசு.",
+    "muDateIndex": 27,
+    "ragu": {
+      "msm": 0,
+      "dur": 90
+    },
+    "soolam": "வடக்கு",
+    "kuligai": {
+      "msm": 630,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "பக்தி",
+      "நன்மை",
+      "சிந்தனை",
+      "பரிசு",
+      "உற்சாகம்",
+      "அனுகூலம்",
+      "வெற்றி",
+      "உயர்வு",
+      "குழப்பம்",
+      "நற்செய்தி",
+      "உதவி",
+      "புகழ்"
+    ],
+    "chandrashtamam": "புனர்பூசம், பூசம்",
+    "chandrashtamamRasi": "மகரம் / கும்பம்",
+    "daySpecial": "ஸ்ரீமஹா சிவராத்திரி. சுபமுகூர்த்தம். நகசு.",
+    "parigaram": "பால்",
+    "yamagandam": {
+      "msm": 450,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "திரியோதசி காலை 10.18 வரை பின்பு சதுர்த்தசி.",
+    "karanamPanjangam": "இன்று காலை 10.18 வரை வணிசை பின்பு இரவு 09.40 வரை பத்திரை பின்பு சகுனி",
+    "namaYogam": "இன்று அதிகாலை 4.33 வரை வரீயான் பின்பு பரிகம்.",
+    "kiruthigai": false,
+    "kariNaal": false,
+    "sivarathiri": true,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "marriage": {
+      "date": 26,
+      "time": {
+        "msm": 570,
+        "dur": 60
+      },
+      "yogam": "-",
+      "star": "-",
+      "thithi": "-",
+      "lagnam": "-"
+    },
+    "hindu": {
+      "date": 26,
+      "name": "ஸ்ரீ மஹா சிவராத்திரி",
+      "desc": "இன்று சிவனுக்காக உண்ணா நோன்பு இருந்து வழிபட்டால் சிவ கதி கிடைக்கும். அதாவது மோக்ஷம் தரும். பிறவிப் பிணி நீங்கும். இனி பிறவா வரம் கிடைக்கும்.",
+      "icon": "siva_rathri"
+    }
+  },
+  {
+    "date": 27,
+    "taDate": 15,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": false,
+    "yogam": "இன்று காலை 06.28 வரை மரணயோகம் பின்பு மாலை 04.07 வரை சித்தயோகம் பின்பு மரணயோகம்",
+    "sooranam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "sunrise": "6.29",
+    "star": "அவிட்டம் மாலை 4.07 வரை பின்பு சதயம்",
+    "nallaNeram": [
+      {
+        "msm": 630,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 376,
+    "visaesam": "சர்வ அமாவாஸ்யை. சுவாமிமலை ஸ்ரீமுருகப்பெருமான் தங்கக்கவசம் அணிந்து வைரவேல் தரிசனம். கரிநாள். உலக அரசு சாரா நிறுவனங்களின் தினம்.",
+    "muDateIndex": 28,
+    "ragu": {
+      "msm": 90,
+      "dur": 90
+    },
+    "soolam": "தெற்கு",
+    "kuligai": {
+      "msm": 540,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "செலவு",
+      "முயற்சி",
+      "புகழ்",
+      "அலைச்சல்",
+      "சிக்கல்",
+      "சினம்",
+      "பரிசு",
+      "சிந்தனை",
+      "கவனம்",
+      "தடங்கல்",
+      "பக்தி",
+      "ஓய்வு"
+    ],
+    "chandrashtamam": "பூசம், ஆயில்யம்",
+    "chandrashtamamRasi": "கும்பம்",
+    "daySpecial": "சர்வ அமாவாஸ்யை. கரிநாள். உலக அரசு சாரா நிறுவனங்களின் தினம்.",
+    "parigaram": "தைலம்",
+    "yamagandam": {
+      "msm": 360,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "சதுர்த்தசி  காலை 9.01 வரை பின்பு அமாவாசை",
+    "karanamPanjangam": "இன்று காலை 09.01 வரை சகுனி பின்பு இரவு 08.09 வரை சதுஷ்பாதம் பின்பு நாகவம்",
+    "namaYogam": "இன்று அதிகாலை 2.30 வரை பரிகம் பின்பு சிவம்.",
+    "kiruthigai": false,
+    "kariNaal": true,
+    "sivarathiri": false,
+    "ammavasai": true,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false
+  },
+  {
+    "date": 28,
+    "taDate": 16,
+    "month": 2,
+    "taMonth": 11,
+    "year": 2025,
+    "taYear": "குரோதி",
+    "valarpirai": true,
+    "yogam": "இன்று காலை 06.28 வரை மரணயோகம் சித்தயோகம்",
+    "sooranam": {
+      "msm": 90,
+      "dur": 90
+    },
+    "sunrise": "6.29",
+    "star": "சதயம் பகல் 3.04 வரை பின்பு பூரட்டாதி",
+    "nallaNeram": [
+      {
+        "msm": 570,
+        "dur": 60
+      },
+      {
+        "msm": 990,
+        "dur": 60
+      }
+    ],
+    "muMonthName": "ஷாபான்",
+    "proverbIndex": 299,
+    "visaesam": "வேதாரண்யம் ஸ்ரீசிவபெருமான் பவனி. கஸ்தூரிபாய் நினைவு நாள். கரிநாள். தேசிய அறிவியல் தினம். உலக அரிதான நோய்கள் தினம்",
+    "muDateIndex": 29,
+    "ragu": {
+      "msm": 630,
+      "dur": 90
+    },
+    "soolam": "மேற்கு",
+    "kuligai": {
+      "msm": 450,
+      "dur": 90
+    },
+    "gowriNallaNeram": [
+      {
+        "msm": 30,
+        "dur": 60
+      },
+      {
+        "msm": 1110,
+        "dur": 60
+      }
+    ],
+    "rasi": [
+      "தாமதம்",
+      "ஆதரவு",
+      "பாராட்டு",
+      "மேன்மை",
+      "புகழ்",
+      "பணிவு",
+      "வெற்றி",
+      "செலவு",
+      "பயம்",
+      "கவலை",
+      "லாபம்",
+      "ஆதாயம்"
+    ],
+    "chandrashtamam": "ஆயில்யம், மகம்",
+    "chandrashtamamRasi": "கும்பம் / மீனம்",
+    "daySpecial": "கஸ்தூரிபாய் நினைவு நாள். கரிநாள். தேசிய அறிவியல் தினம்,உலக அரிதான நோய்கள் தினம்.",
+    "parigaram": "வெல்லம்",
+    "yamagandam": {
+      "msm": 180,
+      "dur": 90
+    },
+    "nokkuNaal": 1,
+    "thithi": "அமாவாசை காலை 7.17 வரை பின்பு பிரதமை முழுவதும்",
+    "karanamPanjangam": "இன்று காலை 07.17 வரை நாகவம் பின்பு மாலை 05.59 வரை கிமிஸ்துக்கினம் பின்பு பவம்",
+    "namaYogam": "இன்று அதிகாலை 12.08 வரை சிவம் பின்பு இரவு 9.29 வரை சித்தம் பின்பு சாத்தியம்.",
+    "kiruthigai": false,
+    "kariNaal": true,
+    "sivarathiri": false,
+    "ammavasai": false,
+    "pournami": false,
+    "sathurthi": false,
+    "sSathurthi": false,
+    "egathasi": false,
+    "shasti": false,
+    "piradosham": false,
+    "leaders": {
+      "date": 28,
+      "name": "டாக்டர்.ராஜேந்திர பிரசாத் நினைவு தினம்",
+      "desc": "டாக்டர் இராஜேந்திர பிரசாத், இந்தியாவின் முதல் குடியரசுத் தலைவரும் இந்திய விடுதலைப் போராட்ட வீரரும் ஆவார். காங்கிரஸ் கட்சித் தலைவர்களுள் ஒருவர். 1950 முதல் 1962 வரை இந்திய குடியரசுத் தலைவராக இருந்தார். இன்று அவரின் நினைவு தினம்.\"",
+      "icon": "rajendra_prasad"
+    }
+  }
+]

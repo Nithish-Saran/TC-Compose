@@ -21,6 +21,9 @@ sealed class Screen(
     data object Numerology : Screen(
         route = "numerology"
     )
+    data object CoffeeMeetUp : Screen(
+        route = "coffee_meetup"
+    )
     data object Wishes : Screen(
         route = "wishes"
     )
@@ -30,6 +33,10 @@ sealed class Screen(
 
     data object KiragaAmaippu : Screen(
         route = "kiragaAmaippu"
+    )
+
+    data object Rasipalan : Screen(
+        route = "rasipalan"
     )
 
     data object WebScreen : Screen(

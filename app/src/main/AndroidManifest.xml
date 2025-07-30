@@ -35,10 +35,15 @@
             android:theme="@style/Theme.ComposeTamilCalendar2025">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".widgets.CalendarWidgetConfigureActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ComposeTamilCalendar2025">
+        </activity>
+
 
         <!--Daily Sheet Widget-->
         <receiver
@@ -65,6 +70,7 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/fasting_widget_info" />
+
         </receiver>
 
         <!--Rasi Widget-->
@@ -79,6 +85,9 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/rasi_widget_info" />
+            <meta-data
+                android:name="android.appwidget.provider.configure"
+                android:value="com.whiture.apps.tamil.calendar.widgets.CalendarWidgetConfigureActivity" />
         </receiver>
 
         <!--Good Time Widget-->
